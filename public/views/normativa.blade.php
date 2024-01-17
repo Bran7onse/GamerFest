@@ -636,7 +636,7 @@
                                 individual</li>
                             <li style="color:rgba(255, 255, 255,100);">Las partidas se disputaran en los
                                 computadores del aula/laboratorio indicado</li>
-                            <li style="color:rgba(255, 255, 255,100);">Cualquier intento de trampa sera
+                            <li style="color:rgba(255, 255, 255,100);">Por Cualquier intento de trampa sera
                                 sancionado
                                 con la descalificacion inmediata</li>
                             <li style="color:rgba(255, 255, 255,100);">La puntuacion sera segun la posicion final se vera al final de cada disco</li>
