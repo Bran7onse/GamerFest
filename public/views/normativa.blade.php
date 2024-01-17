@@ -590,18 +590,18 @@
                         <ol>
                             <li style="color:rgba(255, 255, 255,100);">El equipo debera tener 5 jugadores y
                                 un
-                                suplente como maximo</li>
+                                suplente como maximo </li>
                             <li style="color:rgba(255, 255, 255,100);">Las partidas se disputaran en los
-                                computadores del aula/laboratorio indicado</li>
+                                computadores del aula/laboratorio indicado </li>
                             <li style="color:rgba(255, 255, 255,100);">Cualquier intento de trampa sera
                                 sancionado
-                                con la descalificacion inmediata del equipo</li>
+                                con la descalificacion inmediata del equipo </li>
                             <li style="color:rgba(255, 255, 255,100);">Todas las partidas se apegaran al
                                 reglamento
                                 y normativas impuestas por Riot Games</li>
                             <li style="color:rgba(255, 255, 255,100);">La partida iniciara con un maximo de
                                 15
-                                minutos de atraso</li>
+                                minutos de atraso </li>
 
                         </ol>
                     </div>
@@ -639,7 +639,7 @@
                             <li style="color:rgba(255, 255, 255,100);">Cualquier intento de trampa sera
                                 sancionado
                                 con la descalificacion inmediata</li>
-                            <li style="color:rgba(255, 255, 255,100);">La puntuacion sera segun la posicion final se vera al final de cada cancion</li>
+                            <li style="color:rgba(255, 255, 255,100);">La puntuacion sera segun la posicion final se vera al final de cada disco</li>
                             <li style="color:rgba(255, 255, 255,100);">Se tocaran 3 canciones, una elejida por el jugador 1, otra elejida por el jugador 2 y la ultima por el ordanizador</li>
                             <li style="color:rgba(255, 255, 255,100);">Las carreras se realizaran 1 vs 1</li>
 
