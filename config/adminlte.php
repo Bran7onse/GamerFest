@@ -387,38 +387,38 @@ return [
                 
             ],
         ],
-        [
-            'text'    => 'Reportes',
-            'icon'    => 'fas fa-fw fa-chess',
-            'submenu' => [
-                [
-                    'text' => 'Juegos',
-                    'url'  => 'juegos-rep',
-                    'icon' => 'fas fa-chess',
-                ],
-                [
-                    'text' => 'Jugadores Inscritos',
-                    'url'  => 'jugadores-ins',//Alex
-                    'icon' => '	fas fa-chess-knight',
-                ],
-                [
-                    'text' => 'Equipos Inscritos',
-                    'url'  => 'equipos-ins',//Kenneth
-                    'icon' => '	fas fa-chess-knight',
-                ],
-                [
-                    'text' => 'Recaudacion',
-                    'url'  => 'recaudacion',
-                    'icon' => '	fas fa-chess-knight',
-                ],
-                [
-                    'text' => 'Partidos',
-                    'url'  => 'partidos',
-                    'icon' => '	fas fa-chess-knight',
-                ],
+        // [
+        //     'text'    => 'Reportes',
+        //     'icon'    => 'fas fa-fw fa-chess',
+        //     'submenu' => [
+        //         [
+        //             'text' => 'Juegos',
+        //             'url'  => 'juegos-rep',
+        //             'icon' => 'fas fa-chess',
+        //         ],
+        //         [
+        //             'text' => 'Jugadores Inscritos',
+        //             'url'  => 'jugadores-ins',//Alex
+        //             'icon' => '	fas fa-chess-knight',
+        //         ],
+        //         [
+        //             'text' => 'Equipos Inscritos',
+        //             'url'  => 'equipos-ins',//Kenneth
+        //             'icon' => '	fas fa-chess-knight',
+        //         ],
+        //         [
+        //             'text' => 'Recaudacion',
+        //             'url'  => 'recaudacion',
+        //             'icon' => '	fas fa-chess-knight',
+        //         ],
+        //         [
+        //             'text' => 'Partidos',
+        //             'url'  => 'partidos',
+        //             'icon' => '	fas fa-chess-knight',
+        //         ],
                 
-            ],
-        ],
+        //     ],
+        // ],
         
     ],
 
