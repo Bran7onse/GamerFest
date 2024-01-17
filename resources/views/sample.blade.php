@@ -36,6 +36,11 @@
         line-height: 1.5
     }
 
+    .fondo-transparente {
+    background-color: rgba(255, 255, 255, 0); /* RGB blanco con 0 de opacidad */
+    }
+
+
     *,
     :after,
     :before {
@@ -63,6 +68,12 @@
         --tw-bg-opacity: 1;
         background-color: rgb(255 255 255 / var(--tw-bg-opacity))
     }
+
+    .bg-dark {
+        --tw-bg-opacity: 5;
+        background-color: rgba(255, 255, 255, 0); / var(--tw-bg-opacity)
+    }
+   
 
     .bg-gray-100 {
         --tw-bg-opacity: 1;
@@ -1016,10 +1027,10 @@
             --tw-text-opacity: 1;
             color: rgb(107 114 128 / var(--tw-text-opacity))
         }
-
+         /* FONDO DE PANTALLA */
         .bg {
             /* The image used */
-            background-image: url("{{ url('images/fondo.png') }}");
+            background-image: url("{{ url('https://img.freepik.com/vector-premium/plantilla-banner-juego-simple-unica_92741-92.jpg?w=1380') }}");
 
             /* Full height */
             height: 100%;
@@ -1044,14 +1055,14 @@
     <div class="relative  items-top min-h-screen bg bg-gray-100 dark:bg-gray-900  py-4 sm:pt-0">
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-transparent  ">
-            <img src="{{ url('images/gamer_fest.png') }}" width="100" height="100">
+            <img src="{{ url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Video-Game-Controller-Icon-IDV-green.svg/2048px-Video-Game-Controller-Icon-IDV-green.svg.png') }}" width="100" height="100">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
                     </li>
@@ -1065,151 +1076,29 @@
                     </li>
                     <li class="nav-item">
                         @if (Route::has('register'))
-                        <a class="nav-link" href="{{ url('images/gamerfest1.jpg') }}">Registrarse</a>
+                        <a class="nav-link" href="{{ route('register') }}">Registrarse</a>
                         @endif
                         @endauth
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
 
                         <a class="nav-link" href="{{ url('views/productos.blade.php') }}">Productos</a>
 
-                    </li>
-                    <li class="nav-item">
+                    </li> --}}
+                    {{-- <li class="nav-item">
 
                         <a class="nav-link" href="{{ url('views/normativa.blade.php') }}">Normativa</a>
 
-                    </li>
+                    </li> --}}
 
                 </ul>
             </div>
         </nav>
         <section class="dark">
             <div class="container py-4">
-                <h1 class="postcard__title blue" style="color:rgba(255, 255, 255,100);" id="pageHeaderTitle">Gamer Fest
+                <h1 class="postcard__title blue" style="color:rgba(255, 255, 255,100);" id="pageHeaderTitle"><strong>Gamer Fest</strong>
                 </h1>
 
-                <article class="postcard dark blue">
-                    <a class="postcard__img_link">
-                        <div class="map-responsive">
-
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.2120238450116!2d-78.58828638569456!3d-0.9988702992713584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d4639e3fb9755f%3A0x22fe7f63301b5fee!2sESPE%20-%20Campus%20Belisario%20Quevedo!5e0!3m2!1ses!2sec!4v1669608261033!5m2!1ses!2sec"
-                                width="500" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-                        </div>
-                    </a>
-                    <div class="postcard__text">
-                        <h1 class="postcard__title blue">Ubicacion del evento</h1>
-                        <div class="postcard__subtitle small">
-                            <time datetime="2020-05-25 12:00:00">
-                                <i class="fas fa-calendar-alt mr-2"></i>
-                            </time>
-                        </div>
-                        <div class="postcard__bar"></div>
-                        <div class="postcard__preview-txt">El evento "Gamer Fest" se realizara en el campus Gral.
-                            Guillermo Rodríguez Lara ubicado en la parroquia Belisario Quevedo, para una mejor
-                            referencia de como llegar dejamos un mapa.</div>
-                        <br>
-                        <ul class="postcard__tagbox">
-                            <li class="tag__item"><i class="fas fa-tag mr-2"></i>INICIO DEL EVENTO: 8:00 am</li>
-
-                        </ul>
-                    </div>
-                </article>
-                <article class="postcard dark red">
-
-                    <div class="postcard__text">
-                        <h1 class="postcard__title red">Nuestras redes sociales</h1>
-                        <div class="postcard__subtitle small">
-                            <time datetime="2020-05-25 12:00:00">
-                            </time>
-                        </div>
-                        <div class="postcard__bar"></div>
-                        <div class="postcard__preview-txt">Para mantenerte informado con noticias, actualizaciones y
-                            resultados del Gamer Fest te recomendamos acceder a nuestras redes sociales en las cuales se
-                            actualizará el contenido antes, durante y despues del evento.</div>
-                        <br>
-                        <ul class="postcard__tagbox text-center">
-                            <li class="tag__item"><i class="fas fa-tag mr-2"></i>Canal de Discord: <a
-                                    href="https://discord.gg/NjFM2dDr" class="btn btn-primary btn-lg" role="button"
-                                    aria-disabled="true" style="BORDER: 0px; background-color: transparent">
-                                    <img class="card-img-top" src="{{ url('images/discord.png') }}" width="50"
-                                        height="50" alt="Discord">
-                                </a></li>
-                            <li class="tag__item"><i class="fas fa-clock mr-2"></i>Instagram: <a
-                                    href="https://www.instagram.com/gamerfest.ec/?hl=es-la"
-                                    class="btn btn-primary btn-lg" role="button" aria-disabled="true"
-                                    style="BORDER: 0px; background-color: transparent">
-                                    <img class="card-img-top" src="{{ url('images/instagram.png') }}" width="50"
-                                        height="50" alt="Instagram">
-                                </a> </li>
-                            </li>
-                            <li class="tag__item"><i class="fas fa-clock mr-2"></i>Facebook: <a
-                                    href="https://www.facebook.com/gamerfest.ec" class="btn btn-primary btn-lg"
-                                    role="button" aria-disabled="true"
-                                    style="BORDER: 0px; background-color: transparent">
-                                    <img class="card-img-top" src="{{ url('images/facebook.png') }}" width="50"
-                                        height="50" alt="Facebook">
-                                </a></li>
-
-                        </ul>
-                    </div>
-                    <a class="postcard__img_link" href="#">
-
-
-                    </a>
-                </article>
-                <article class="postcard dark green">
-
-                    <div class="postcard__text">
-                        <h1 class="postcard__title green">Eventos anteriores</h1>
-                        <div class="postcard__subtitle small">
-                            <time datetime="2020-05-25 12:00:00">
-                            </time>
-                        </div>
-                        <div class="postcard__bar"></div>
-                        <div class="postcard__preview-txt">En nuestros eventos anteriores hemos sido testigos de grandes
-                            participaciones por parte de estudiantes e invitados, hemos pasado grandes momentos tanto
-                            estudiantes como profesores logrando unir a carreras gracias a los videjuegos y esperamos
-                            que este no sea la excepción.
-                            Aparte de los juegos de competencia contamos con:</div>
-                        <br>
-                        <ul class="postcard__tagbox">
-                            <li class="tag__item"><i class="fas fa-tag mr-2"></i>Videojuegos gratuitos de exibición</li>
-                            <li class="tag__item"><i class="fas fa-clock mr-2"></i>Comidas y bebidas</li>
-                            <li class="tag__item"><i class="fas fa-clock mr-2"></i>Stands de ventas de productos</li>
-
-                        </ul>
-                    </div>
-                    <a class="postcard__img_link">
-                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img class="d-block" src="{{ url('images/gamerfest1.jpg') }}" width="500"
-                                        height="350" alt="First slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block" src="{{ url('images/gamerfest2.jpg') }}" width="500"
-                                        height="350" alt="Second slide">
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block" src="{{ url('images/gamerfest3.jpg') }}" width="500"
-                                        height="350" alt="Third slide">
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
-                                data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleControls" role="button"
-                                data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </a>
-                </article>
                 <article class="postcard dark yellow">
                     <a class="postcard__img_link" href="#">
                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -1285,10 +1174,250 @@
         </section>
         <br><br><br>
 
-        <div class="parent">
+
+        {{-- UBICACION --}}
+{{-- 
+        <article class="postcard dark blue">
+
+            <div class="postcard__text">
+            <ul class="postcard__tagbox text-center">
+                <li class="tag__item"><i class="fas fa-tag mr-2"></i>UNIVERSIDAD DE LAS FUERZAS ARMADAS ESEPE-L
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255320.8492452357!2d-78.82275426580185!3d-0.841249646455157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d4610819e1d63b%3A0x7843aaaabafcc6cf!2sUniversidad%20de%20las%20Fuerzas%20Armadas%20ESPE%20Centro%20de%20Apoyo%20N%C2%BA%209%20Latacunga!5e0!3m2!1ses-419!2sec!4v1705428958715!5m2!1ses-419!2sec"
+                     width="600" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </li>
+            </ul>
+            </div>
+
+            <div class="postcard__text">
+                <h1 class="postcard__title blue"><strong>Ubicacion del evento</strong></h1>
+                <div class="postcard__subtitle small">
+                    <time datetime="2020-05-25 12:00:00">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                    </time>
+                </div>
+                <div class="postcard__bar"></div>
+                <div class="postcard__preview-txt">
+                    <center>
+                       <strong> ERES UN APACIONADO DE LOS VIDEOJUEGOS</strong>
+                    </center>
+                    <br>
+                   <strong> ¡Entonces no puedes perderte el GAMER FEST! </strong>
+                    <br>
+                    Lugar: El evento "Gamer Fest" se realizara en el campus Gral.
+                    Guillermo Rodríguez Lara ubicado en la parroquia Belisario Quevedo, para una mejor
+                    referencia de como llegar dejamos un mapa.
+                    <br>
+                    <center>
+                        <strong>VIVE UNA EXPERIENCIA AL MAXIMO</strong>
+                    </center>
+                      
+                </div>
+                
+                <div class="postcard__preview-txt">
+                    <strong>Torneos:</strong>Participa o anima a tus equipos favoritos en emocionantes torneos de
+                     League of Legends,Dota 2, Clash Royale,FIFA 21,Fortnite, Free Fire, Call of Duty, entre otros.    
+                    <br> 
+                    <strong>Zona Arcade:</strong> Revive la nostalgia con juegos clásicos y descubre nuevas aventuras.
+                    <br>
+                    <strong>Stands de Merchandising:</strong> Encuentra esa camiseta, figura coleccionable o accesorio gamer que siempre has querido.
+                    <br>
+                    <strong>Paneles y Talleres:</strong> Aprende de expertos en desarrollo de juegos, estrategias competitivas y más.
+                    <br>
+                    <strong>Zona de Descanso y Proyecciones:</strong> Relájate viendo partidas en vivo y conoce a otros aficionados.
+                </div>
+                
+                <br>
+                <ul class="postcard__tagbox">
+                    <li class="tag__item"><i class="fas fa-tag mr-2"></i>INICIO DEL EVENTO: 8:00 am</li>
+
+                </ul>
+            </div>
+        </article> --}}
+
+        {{-- REDES SOCIALES  --}}
+
+        {{-- <article class="postcard dark red">
+
+            <div class="postcard__text">
+                <ul class="postcard__tagbox text-center">
+                    <li class="tag__item"><i class="fas fa-tag mr-2"></i>GAMER FEST ESPE-L
+                        <iframe width="600" height="600" src="https://www.youtube.com/embed/FGmVQJEGfrY?si=5mBhKHf53pRW_6Ei" 
+                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </li>
+                </ul>
+            </div>
+            <br>
+
+            <div class="postcard__text">
+                <h1 class="postcard__title red"><strong><center>Nuestras redes sociales</center></strong></h1>
+                <div class="postcard__subtitle small">
+                    <time datetime="2020-05-25 12:00:00">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                    </time>
+                </div>
+
+                <div class="postcard__bar"></div>
+                <div>
+                    <center>  Para mantenerte informado con noticias, actualizaciones y resultados del Gamer 
+                        Fest te recomendamos acceder a nuestras redes sociales en las cuales se actualizará el contenido 
+                        antes, durante y después del evento.
+                    </center>
+                </div>
+                <div class="postcard__preview-txt">¡Síguenos en nuestras redes sociales!</div>
+                <br>
+                <strong>🎮 Facebook: GAMER FEST ESPE-L</strong>
+                <div class="postcard__preview-txt">Únete a nuestra comunidad en Facebook. ¡No te pierdas nuestras actualizaciones, fotos del evento, y mucho más!</div>
+            
+                <li class="tag__item">
+                    <i class="fas fa-clock mr-2"></i>Facebook:
+                    
+                </li>
+                <strong>📸 Instagram: gamerfest_espel</strong>
+                <div class="postcard__preview-txt">Mira nuestras historias y publicaciones para ver las mejores fotos y videos del GAMER FEST.</div>
+                
+                <li class="tag__item">
+                    <i class="fas fa-clock mr-2"></i>Instagram:
+                    
+                </li>
+                <strong>🎮 Discord: GAMER FEST ESPE-L</strong>
+                <div class="postcard__preview-txt">Únete a nuestra comunidad en Discord para hablar con otros asistentes, jugadores y personal del evento.</div>
+                
+                <li class="tag__item">
+                    <i class="fas fa-tag mr-2"></i>Discord:
+                    
+                </li>   
+                
+            </div>
+            <a class="postcard__img_link" href="#"></a>
+        </article>
+ --}}
+    <section class="dark">
+        <div class="text-white">
+            <div class="row" >
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-3">
+                    <br>
+
+                </div>
+                <div class="col-sm-4">
+                    <br>
+                    <center>
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-2">Contactos</h6>
+                            <ul class="list-unstyled">
+                                {{-- REDES SOCIALES  --}}
+                                <a href="https://discord.gg/NjFM2dDr" class="btn btn-primary btn-lg" role="button" aria-disabled="true" style="border: 0px; background-color: transparent">
+                                    <img class="card-img-top" src="{{ url('images/discord.png') }}" width="50" height="50" alt="Discord">
+                                </a>
+                                <a href="https://www.instagram.com/gamerfest.ec/?hl=es-la" class="btn btn-primary btn-lg" role="button" aria-disabled="true" style="border: 0px; background-color: transparent">
+                                    <img class="card-img-top" src="{{ url('images/instagram.png') }}" width="50" height="50" alt="Instagram">
+                                </a>
+                                <a href="https://www.facebook.com/gamerfest.ec" class="btn btn-primary btn-lg" role="button" aria-disabled="true" style="border: 0px; background-color: transparent">
+                                    <img class="card-img-top" src="{{ url('images/facebook.png') }}" width="50" height="50" alt="Facebook">
+                                </a>
+                                <li>
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Brandon Fonseca</span> - bafonseca"espe.edu.ec
+                                </li>
+                                <li>
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Jhony Wolker</span> - jmtoapanta12@espe.edu.ec
+                                </li>
+                                <li>
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Tonato</span> - tonato@espe.edu.ec
+                                </li>
+                                <li>
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Gualpa</span> - bagualpa@espe.edu.ec
+                                </li>
+                            </ul>
+                            <br>
+                    </center>
+                </div>
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-2">
+
+                </div>
+
+            </div>
+    </section>
+        </div>
+    
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
+
+                
+                
+                {{-- <article class="postcard dark green">
+
+                    <div class="postcard__text">
+                        <h1 class="postcard__title green">Eventos anteriores</h1>
+                        <div class="postcard__subtitle small">
+                            <time datetime="2020-05-25 12:00:00">
+                            </time>
+                        </div>
+                        <div class="postcard__bar"></div>
+                        <div class="postcard__preview-txt">En nuestros eventos anteriores hemos sido testigos de grandes
+                            participaciones por parte de estudiantes e invitados, hemos pasado grandes momentos tanto
+                            estudiantes como profesores logrando unir a carreras gracias a los videjuegos y esperamos
+                            que este no sea la excepción.
+                            Aparte de los juegos de competencia contamos con:</div>
+                        <br>
+                        <ul class="postcard__tagbox">
+                            <li class="tag__item"><i class="fas fa-tag mr-2"></i>Videojuegos gratuitos de exibición</li>
+                            <li class="tag__item"><i class="fas fa-clock mr-2"></i>Comidas y bebidas</li>
+                            <li class="tag__item"><i class="fas fa-clock mr-2"></i>Stands de ventas de productos</li>
+
+                        </ul>
+                    </div>
+                    <a class="postcard__img_link">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block" src="{{ url('images/gamerfest1.jpg') }}" width="500"
+                                        height="350" alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block" src="{{ url('images/gamerfest2.jpg') }}" width="500"
+                                        height="350" alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block" src="{{ url('images/gamerfest3.jpg') }}" width="500"
+                                        height="350" alt="Third slide">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
+                                data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button"
+                                data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </a>
+                </article> --}}
+
+
+         {{-- <div>
             <center>
                 <h3 style="color:rgba(255, 255, 255,100);">Comentarios y Sugerencias</h3>
-            </center>
+            
 
             <form method="post" action="http://saytome.net/gn8" class="fxform" style="width:550px">
                 <fieldset>
@@ -1322,43 +1451,5 @@
                 <div class="submit"><input type="submit" />
                 </div>
             </form>
-        </div>
-
-
-        <div class="card text-white bg-dark mb-3">
-
-            <div class="row">
-                <div class="col-sm-1">
-                </div>
-                <div class="col-sm-3">
-                    <br>
-
-                </div>
-                <div class="col-sm-4">
-                    <br>
-                    <center>
-                        <h3>Soporte:</h3>
-                        <h4>WhatsApp: +593 958775282</h4>
-                        <h4>Correo: heiturralde@espe.edu.ec</h4>
-                    </center>
-                </div>
-                <div class="col-sm-1">
-                </div>
-                <div class="col-sm-2">
-
-                </div>
-
-            </div>
-        </div>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-        </script>
-</body>
-
-</html>
+            
+        </div> --}}               

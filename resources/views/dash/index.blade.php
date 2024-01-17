@@ -13,7 +13,7 @@ $data = $dashboard->ObtenerData();
 
 ?>
 @section('content')
-<div class="row">
+{{-- <div class="row">
     <div class="col-lg-3 col-6">
 
         <div class="small-box bg-info">
@@ -70,8 +70,8 @@ $data = $dashboard->ObtenerData();
 
     
 
-</div>
-<section class="content">
+</div> --}}
+{{-- <section class="content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
@@ -305,7 +305,7 @@ $data = $dashboard->ObtenerData();
     </div>
 
     </div>
-</section>
+</section> --}}
 
 
 @stop

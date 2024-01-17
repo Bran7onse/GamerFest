@@ -63,13 +63,12 @@ return [
     |
     */
 
-    'logo' => '<b>GamerFest</b>',
-    'logo_img' => '../images/gamer_fest.png',
+    'logo' => '<b>GAMER</b>Fest',
+    'logo_img' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Video-Game-Controller-Icon-IDV-green.svg/2048px-Video-Game-Controller-Icon-IDV-green.svg.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => 'Admin Logo',
-
     /*
     |--------------------------------------------------------------------------
     | Authentication Logo
@@ -86,7 +85,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'public/images/gamer_fest.png',
+            'path' => 'http://localhost/Gamer-Fest/resources/views/image/logo.png',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -311,13 +310,13 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        [
-            'text'        => 'Dashboard',
-            'url'         => 'dash',
-            'icon'        => 'far fa-fw fa-user',
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
+        // [
+        //     'text'        => 'Dashboard',
+        //     'url'         => 'dash',
+        //     'icon'        => 'far fa-fw fa-user',
+        //     'label_color' => 'success',
+        // ],
+        ['header' => 'CRUD GAMER FEST'],
         [
             'text' => 'Categorias',
             'url'  => 'categorias',
