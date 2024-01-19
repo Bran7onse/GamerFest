@@ -38,26 +38,38 @@
 							</tr>
 						</thead>
 						<tbody>
-							@foreach($inscripcionInds as $row)
-							<tr>
-								<td>{{ $loop->iteration }}</td> 
-								<td>{{ $row->jugadors->nombre_jug }}</td>
-								<td>{{ $row->juegos->nombre_jue }}</td>
-								<td>{{ $row->precio_ins }}</td>
-								<td>{{ $row->pago_ins }}</td>
-								<td width="90">
+						@foreach($inscripcionInds as $row)
+						<tr>
+							<td>{{ $loop->iteration }}</td> 
+							<td>{{ $row->jugadors->nombre_jug }}</td>
+							<td>{{ $row->juegos->nombre_jue }}</td>
+							<td>{{ $row->precio_ins }}</td>
+							<!-- Muestra la imagen -->
+							<td>
+								@if($row->pago_ins)
+									@if($row->pago_ins instanceof \Livewire\TemporaryUploadedFile)
+										<img src="{{ $row->pago_ins->temporaryUrl() }}" alt="Pago Ins" style="max-width: 100px; height: auto;">
+									@else
+										<img src="{{ asset('storage/' . $row->pago_ins) }}" alt="Pago Ins" style="max-width: 100px; height: auto;">
+									@endif
+								@else
+									Sin imagen
+								@endif
+							</td>
+							<td width="90">
 								<div class="btn-group">
 									<button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Acciones
+										Acciones
 									</button>
 									<div class="dropdown-menu dropdown-menu-right">
-									<a data-toggle="modal" data-target="#updateModal" class="dropdown-item" style="color:white; background-color:blue;" wire:click="edit({{$row->id}})"><i class="fa fa-edit"></i> Editar </a>							 
-									<a class="dropdown-item " style="color:white; background-color:red;" onclick="confirm('Confirm Delete Inscripcion Equ id {{$row->id}}? \nDeleted Inscripcion Equs cannot be recovered!')||event.stopImmediatePropagation()" wire:click="destroy({{$row->id}})"><i class="fa fa-trash"></i> Eliminar </a>   
+										<a data-toggle="modal" data-target="#updateModal" class="dropdown-item" style="color:white; background-color:blue;" wire:click="edit({{$row->id}})"><i class="fa fa-edit"></i> Editar </a>                             
+										<a class="dropdown-item " style="color:white; background-color:red;" onclick="confirm('Confirm Delete Inscripcion Equ id {{$row->id}}? \nDeleted Inscripcion Equs cannot be recovered!')||event.stopImmediatePropagation()" wire:click="destroy({{$row->id}})"><i class="fa fa-trash"></i> Eliminar </a>   
 									</div>
 								</div>
-								</td>
-							@endforeach
-						</tbody>
+							</td>
+						</tr>
+						@endforeach
+					</tbody>
 					</table>						
 					
 					</div>

@@ -41,18 +41,27 @@
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-group">
-                        <label for="pago_ins"></label>
-                        <input wire:model="pago_ins" type="file" class="form-control" id="pago_ins"
-                            placeholder="Pago Ins">@error('pago_ins') <span
-                            class="error text-danger">{{ $message }}</span> @enderror
-                    </div>
+                        <label for="pago_ins">Pago Ins</label>
+                        <input wire:model="pago_ins" type="file" class="form-control" id="pago_ins" accept=".png, .jpg, .jpeg" onchange="previewImage(this)">
+                        @error('pago_ins') <span class="error text-danger">{{ $message }}</span> @enderror
 
+                        <!-- Vista previa de la imagen -->
+                        <div>
+                            @if($pago_ins instanceof \Livewire\TemporaryUploadedFile)
+                                <img src="{{ $pago_ins->temporaryUrl() }}" alt="Preview" style="max-width: 100%; height: auto;">
+                            @endif
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>
                 <button type="button" wire:click.prevent="store()" class="btn btn-primary close-modal">Save</button>
             </div>
+        </div>
+        <!-- Aquí está el código para remover la imagen, asegúrate de que esté fuera del formulario -->
+        <div class="modal-footer">
+            <button type="button" wire:click.prevent="removeImage()" class="btn btn-danger">Remove Image</button>
         </div>
     </div>
 </div>

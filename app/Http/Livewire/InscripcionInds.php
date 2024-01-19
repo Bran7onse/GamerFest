@@ -1,108 +1,134 @@
 <?php
 
 namespace App\Http\Livewire;
+
 use Livewire\WithFileUploads;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\InscripcionInd;
 use App\Models\Juego;
 use App\Models\Jugador;
+
 class InscripcionInds extends Component
 {
     use WithPagination;
     use WithFileUploads;
-	protected $paginationTheme = 'bootstrap';
+
+    protected $paginationTheme = 'bootstrap';
     public $selected_id, $keyWord, $id_jug, $id_jue, $precio_ins, $pago_ins;
     public $updateMode = false;
+    public $new_pago_ins;
 
     public function render()
     {
-		$keyWord = '%'.$this->keyWord .'%';
+        $keyWord = '%' . $this->keyWord . '%';
         $juegos = Juego::all();
         $jugadores = Jugador::all();
+
         return view('livewire.inscripcion-inds.view', [
             'inscripcionInds' => InscripcionInd::with('juegos')->with('jugadors')
-						->whereHas('jugadors', fn ($query) => 
-                        $query->where('nombre_jug', 'LIKE', $keyWord)
-                        )
-                        ->whereHas('juegos', fn ($query) => 
-                        $query->where('nombre_jue', 'LIKE', $keyWord)
-                        )
-						->orWhere('precio_ins', 'LIKE', $keyWord)
-						->orWhere('pago_ins', 'LIKE', $keyWord)
-						->get(),
-        ],compact('juegos','jugadores'));
+                ->whereHas('jugadors', fn ($query) => $query->where('nombre_jug', 'LIKE', $keyWord))
+                ->whereHas('juegos', fn ($query) => $query->where('nombre_jue', 'LIKE', $keyWord))
+                ->orWhere('precio_ins', 'LIKE', $keyWord)
+                ->orWhere('pago_ins', 'LIKE', $keyWord)
+                ->get(),
+        ], compact('juegos', 'jugadores'));
     }
-	
+
     public function cancel()
     {
         $this->resetInput();
         $this->updateMode = false;
     }
-	
+
     private function resetInput()
-    {		
-		$this->id_jug = null;
-		$this->id_jue = null;
-		$this->precio_ins = null;
-		$this->pago_ins = null;
+    {
+        $this->id_jug = null;
+        $this->id_jue = null;
+        $this->precio_ins = null;
+        $this->pago_ins = null;
+        $this->new_pago_ins = null;
     }
 
     public function store()
     {
         $this->validate([
-		'id_jug' => 'required',
-		'id_jue' => 'required',
-		'precio_ins' => 'required',
+            'id_jug' => 'required',
+            'id_jue' => 'required',
+            'precio_ins' => 'required',
+            'pago_ins' => 'image|max:1024', // Ajusta el tamaño máximo según tus necesidades
         ]);
-
-        InscripcionInd::create([ 
-			'id_jug' => $this-> id_jug,
-			'id_jue' => $this-> id_jue,
-			'precio_ins' => $this-> precio_ins,
-			'pago_ins' => $this-> pago_ins
+    
+        // Maneja la carga del archivo
+        if ($this->pago_ins) {
+            $path = $this->pago_ins->store('public/pagos');
+        }
+    
+        InscripcionInd::create([
+            'id_jug' => $this->id_jug,
+            'id_jue' => $this->id_jue,
+            'precio_ins' => $this->precio_ins,
+            'pago_ins' => isset($path) ? $path : null, // Asigna la ruta del archivo solo si se cargó un archivo
         ]);
-        
+    
         $this->resetInput();
-		$this->emit('closeModal');
-		session()->flash('message', 'InscripcionInd Successfully created.');
+        $this->emit('closeModal');
+        session()->flash('message', 'InscripcionInd Successfully created.');
     }
+    
 
     public function edit($id)
     {
         $record = InscripcionInd::findOrFail($id);
 
-        $this->selected_id = $id; 
-		$this->id_jug = $record-> id_jug;
-		$this->id_jue = $record-> id_jue;
-		$this->precio_ins = $record-> precio_ins;
-		$this->pago_ins = $record-> pago_ins;
-		
+        $this->selected_id = $id;
+        $this->id_jug = $record->id_jug;
+        $this->id_jue = $record->id_jue;
+        $this->precio_ins = $record->precio_ins;
+        $this->pago_ins = $record->pago_ins;
+
         $this->updateMode = true;
     }
 
     public function update()
     {
         $this->validate([
-		'id_jug' => 'required',
-		'id_jue' => 'required',
-		'precio_ins' => 'required',
+            'id_jug' => 'required',
+            'id_jue' => 'required',
+            'precio_ins' => 'required',
         ]);
-
+    
         if ($this->selected_id) {
-			$record = InscripcionInd::find($this->selected_id);
-            $record->update([ 
-			'id_jug' => $this-> id_jug,
-			'id_jue' => $this-> id_jue,
-			'precio_ins' => $this-> precio_ins,
-			'pago_ins' => $this-> pago_ins
+            $record = InscripcionInd::find($this->selected_id);
+    
+            $record->update([
+                'id_jug' => $this->id_jug,
+                'id_jue' => $this->id_jue,
+                'precio_ins' => $this->precio_ins,
             ]);
-
+    
+            // Maneja la nueva imagen
+            if ($this->new_pago_ins) {
+                // Elimina la imagen anterior si existe
+                if ($record->pago_ins) {
+                    $pathToDelete = public_path('storage/pagos/' . $record->pago_ins);
+                    if (file_exists($pathToDelete)) {
+                        unlink($pathToDelete);
+                    }
+                }
+    
+                // Guarda la nueva imagen y actualiza el campo
+                $path = $this->new_pago_ins->store('public/pagos');
+                $record->pago_ins = basename($path);
+                $record->save();
+            }
+    
             $this->resetInput();
             $this->updateMode = false;
-			session()->flash('message', 'InscripcionInd Successfully updated.');
+            session()->flash('message', 'InscripcionInd Successfully updated.');
         }
-    }
+    }    
+    
 
     public function destroy($id)
     {
