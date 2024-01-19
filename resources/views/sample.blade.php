@@ -1176,7 +1176,7 @@
 
 
         {{-- UBICACION --}}
-{{-- 
+
         <article class="postcard dark blue">
 
             <div class="postcard__text">
@@ -1232,12 +1232,11 @@
 
                 </ul>
             </div>
-        </article> --}}
+        </article> 
 
         {{-- REDES SOCIALES  --}}
 
-        {{-- <article class="postcard dark red">
-
+        <article class="postcard dark red">
             <div class="postcard__text">
                 <ul class="postcard__tagbox text-center">
                     <li class="tag__item"><i class="fas fa-tag mr-2"></i>GAMER FEST ESPE-L
@@ -1289,8 +1288,8 @@
                 
             </div>
             <a class="postcard__img_link" href="#"></a>
-        </article>
- --}}
+        </article> --}}
+
     <section class="dark">
         <div class="text-white">
             <div class="row" >

@@ -66,12 +66,12 @@ $data = $dashboard->ObtenerData();
                 <i class="fas fa-gamepad"></i>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     
-
-</div> --}}
-{{-- <section class="content">
+{{-- 
+</div> 
+<section class="content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
