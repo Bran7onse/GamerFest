@@ -58,24 +58,26 @@ class InscripcionInds extends Component
             'precio_ins' => 'required',
             'pago_ins' => 'image|max:1024', // Ajusta el tamaño máximo según tus necesidades
         ]);
-    
+
         // Maneja la carga del archivo
         if ($this->pago_ins) {
             $path = $this->pago_ins->store('public/pagos');
+            $filename = basename($path); // Obtiene solo el nombre del archivo
         }
-    
+
         InscripcionInd::create([
             'id_jug' => $this->id_jug,
             'id_jue' => $this->id_jue,
             'precio_ins' => $this->precio_ins,
-            'pago_ins' => isset($path) ? $path : null, // Asigna la ruta del archivo solo si se cargó un archivo
+            'pago_ins' => isset($filename) ? $filename : null, // Asigna el nombre del archivo solo si se cargó un archivo
         ]);
-    
+
         $this->resetInput();
         $this->emit('closeModal');
         session()->flash('message', 'InscripcionInd Successfully created.');
     }
-    
+
+
 
     public function edit($id)
     {
@@ -97,37 +99,29 @@ class InscripcionInds extends Component
             'id_jue' => 'required',
             'precio_ins' => 'required',
         ]);
-    
+
         if ($this->selected_id) {
             $record = InscripcionInd::find($this->selected_id);
-    
+
             $record->update([
                 'id_jug' => $this->id_jug,
                 'id_jue' => $this->id_jue,
                 'precio_ins' => $this->precio_ins,
             ]);
-    
+
             // Maneja la nueva imagen
             if ($this->new_pago_ins) {
-                // Elimina la imagen anterior si existe
-                if ($record->pago_ins) {
-                    $pathToDelete = public_path('storage/pagos/' . $record->pago_ins);
-                    if (file_exists($pathToDelete)) {
-                        unlink($pathToDelete);
-                    }
-                }
-    
-                // Guarda la nueva imagen y actualiza el campo
                 $path = $this->new_pago_ins->store('public/pagos');
-                $record->pago_ins = basename($path);
+                $filename = basename($path); // Obtiene solo el nombre del archivo
+                $record->pago_ins = $filename; // Asigna el nuevo nombre de archivo
                 $record->save();
             }
-    
+
             $this->resetInput();
             $this->updateMode = false;
             session()->flash('message', 'InscripcionInd Successfully updated.');
         }
-    }    
+    }
     
 
     public function destroy($id)
@@ -137,4 +131,13 @@ class InscripcionInds extends Component
             $record->delete();
         }
     }
+
+    public $selectedInscripcion = null;
+
+    public function show($id)
+    {
+        $this->selectedInscripcion = InscripcionInd::find($id);
+        $this->dispatchBrowserEvent('show-modal', 'viewModal');
+    }
+    
 }

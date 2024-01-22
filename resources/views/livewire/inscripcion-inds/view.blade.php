@@ -47,11 +47,7 @@
 							<!-- Muestra la imagen -->
 							<td>
 								@if($row->pago_ins)
-									@if($row->pago_ins instanceof \Livewire\TemporaryUploadedFile)
-										<img src="{{ $row->pago_ins->temporaryUrl() }}" alt="Pago Ins" style="max-width: 100px; height: auto;">
-									@else
-										<img src="{{ asset('storage/' . $row->pago_ins) }}" alt="Pago Ins" style="max-width: 100px; height: auto;">
-									@endif
+									<img src="{{ asset('storage/pagos/' . $row->pago_ins) }}" alt="Pago Ins" style="max-width: 100px; height: auto;">
 								@else
 									Sin imagen
 								@endif
@@ -63,8 +59,40 @@
 									</button>
 									<div class="dropdown-menu dropdown-menu-right">
 										<a data-toggle="modal" data-target="#updateModal" class="dropdown-item" style="color:white; background-color:blue;" wire:click="edit({{$row->id}})"><i class="fa fa-edit"></i> Editar </a>                             
-										<a class="dropdown-item " style="color:white; background-color:red;" onclick="confirm('Confirm Delete Inscripcion Equ id {{$row->id}}? \nDeleted Inscripcion Equs cannot be recovered!')||event.stopImmediatePropagation()" wire:click="destroy({{$row->id}})"><i class="fa fa-trash"></i> Eliminar </a>   
+										<a class="dropdown-item" style="color:white; background-color:green;" wire:click="show({{$row->id}})"><i class="fa fa-eye"></i> Visualizar </a>
+										<a class="dropdown-item " style="color:white; background-color:red;" onclick="confirm('Confirm Delete Inscripcion Equ id {{$row->id}}? \nDeleted Inscripcion Equs cannot be recovered!')||event.stopImmediatePropagation()" wire:click="destroy({{$row->id}})"><i class="fa fa-trash"></i> Eliminar </a>
 									</div>
+
+																		<!-- Modal para visualizar detalles -->
+									<div wire:ignore.self class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="viewModalLabel">Detalles de la Inscripción</h5>
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body">
+													@if($selectedInscripcion)
+														<!-- Mostrar la imagen -->
+														@if($selectedInscripcion->pago_ins)
+															<img src="{{ asset('storage/pagos/' . $selectedInscripcion->pago_ins) }}" alt="Pago Ins" style="max-width: 100%; height: auto;">
+														@else
+															<p>No hay imagen disponible.</p>
+														@endif
+														<!-- Aquí puedes añadir más detalles si lo deseas -->
+													@else
+														<p>Información no disponible.</p>
+													@endif
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
 								</div>
 							</td>
 						</tr>
@@ -78,3 +106,10 @@
 		</div>
 	</div>
 </div>
+
+<script>
+    window.addEventListener('show-modal', event => {
+        $('#' + event.detail).modal('show');
+    });
+</script>
+

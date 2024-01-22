@@ -59,9 +59,6 @@
                 <button type="button" wire:click.prevent="store()" class="btn btn-primary close-modal">Save</button>
             </div>
         </div>
-        <!-- Aquí está el código para remover la imagen, asegúrate de que esté fuera del formulario -->
-        <div class="modal-footer">
-            <button type="button" wire:click.prevent="removeImage()" class="btn btn-danger">Remove Image</button>
-        </div>
+
     </div>
 </div>
