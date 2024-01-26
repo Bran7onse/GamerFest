@@ -41,10 +41,14 @@
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-group">
-                        <label for="pago_ins_equ"></label>
-                        <input wire:model="pago_ins_equ" type="file" class="form-control" id="pago_ins_equ"
-                            placeholder="Pago Ins Equ">@error('pago_ins_equ') <span
-                            class="error text-danger">{{ $message }}</span> @enderror
+                        <label for="pago_ins_equ">Pago Ins Equ</label>
+                        <input wire:model="pago_ins_equ" type="file" class="form-control" id="pago_ins_equ" accept=".png, .jpg, .jpeg">
+                        @error('pago_ins_equ') <span class="error text-danger">{{ $message }}</span> @enderror
+
+                        <!-- Vista previa de la imagen -->
+                        @if($pago_ins_equ instanceof \Livewire\TemporaryUploadedFile)
+                            <img src="{{ $pago_ins_equ->temporaryUrl() }}" alt="Preview" style="max-width: 100%; height: auto;">
+                        @endif
                     </div>
 
                 </form>

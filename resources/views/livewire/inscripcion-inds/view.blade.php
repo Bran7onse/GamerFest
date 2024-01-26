@@ -45,7 +45,7 @@
 							<td>{{ $row->juegos->nombre_jue }}</td>
 							<td>{{ $row->precio_ins }}</td>
 							<!-- Muestra la imagen -->
-							<td>
+							<td class="center-image">
 								@if($row->pago_ins)
 									<img src="{{ asset('storage/pagos/' . $row->pago_ins) }}" alt="Pago Ins" style="max-width: 100px; height: auto;">
 								@else
@@ -106,6 +106,14 @@
 		</div>
 	</div>
 </div>
+
+<style>
+    .center-image img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
 
 <script>
     window.addEventListener('show-modal', event => {
