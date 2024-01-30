@@ -7,7 +7,7 @@
 					<div style="display: flex; justify-content: space-between; align-items: center;">
 						<div class="float-left .col-auto .me-auto">
 							<h4>
-							Aula  </h4>
+							AULA</h4>
 						</div>
 						
 						<div>
@@ -29,9 +29,9 @@
 						<thead class="thead">
 							<tr> 
 								<td>#</td> 
-								<th>Codigo Aul</th>
-								<th>Edificio Aul</th>
-								<th>Observacion Aul</th>
+								<th>Codigo Aula</th>
+								<th>Edificio Aula</th>
+								<th>Observacion Aula</th>
 								<td>Acciones</td>
 							</tr>
 						</thead>

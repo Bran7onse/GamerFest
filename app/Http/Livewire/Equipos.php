@@ -38,18 +38,21 @@ class Equipos extends Component
     }
 
     public function store()
-    {
-        
+{
+    $this->validate([
+        'nombre_equ' => 'required',
+        'descripcion_equ' => 'required',
+    ]);
 
-        Equipo::create([ 
-			'nombre_equ' => $this-> nombre_equ,
-			'descripcion_equ' => $this-> descripcion_equ
-        ]);
+    Equipo::create([ 
+        'nombre_equ' => $this-> nombre_equ,
+        'descripcion_equ' => $this-> descripcion_equ
+    ]);
         
-        $this->resetInput();
-		$this->emit('closeModal');
-		session()->flash('message', 'Equipo Successfully created.');
-    }
+    $this->resetInput();
+    $this->emit('closeModal');
+    session()->flash('message', 'Equipo Successfully created.');
+}
 
     public function edit($id)
     {
@@ -63,21 +66,24 @@ class Equipos extends Component
     }
 
     public function update()
-    {
-        
+{
+    $this->validate([
+        'nombre_equ' => 'required',
+        'descripcion_equ' => 'required',
+    ]);
 
-        if ($this->selected_id) {
-			$record = Equipo::find($this->selected_id);
-            $record->update([ 
-			'nombre_equ' => $this-> nombre_equ,
-			'descripcion_equ' => $this-> descripcion_equ
-            ]);
+    if ($this->selected_id) {
+        $record = Equipo::find($this->selected_id);
+        $record->update([ 
+            'nombre_equ' => $this-> nombre_equ,
+            'descripcion_equ' => $this-> descripcion_equ
+        ]);
 
-            $this->resetInput();
-            $this->updateMode = false;
-			session()->flash('message', 'Equipo Successfully updated.');
-        }
+        $this->resetInput();
+        $this->updateMode = false;
+        session()->flash('message', 'Equipo Successfully updated.');
     }
+}
 
     public function destroy($id)
     {
@@ -100,4 +106,4 @@ class Equipos extends Component
         return $pdf->download('Equipos.pdf');
     }
 }
-
+?>

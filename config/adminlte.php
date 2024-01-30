@@ -305,6 +305,13 @@ return [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
         ],
+        /**
+         * Este código define una entrada de menú para el blog en la configuración de AdminLTE.
+         * 
+         * - El texto del menú se establece como 'blog'.
+         * - La URL del menú se establece como 'admin/blog'.
+         * - La capacidad requerida para ver este menú se establece como 'manage-blog'.
+         */
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
