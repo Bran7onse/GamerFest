@@ -342,9 +342,21 @@ return [
         ],
 
         [
-            'text' => 'Jugadores',
-            'url'  => 'jugadors',
-            'icon' => 'fas fa-fw fa-user',
+            'text'    => 'Jugadores',
+            'icon'    => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text' => 'Jugadores Equipo',
+                    'url'  => 'jugadors',
+                    'icon' => 'fas fa-fw fa-user',
+                ],
+                [
+                    'text' => 'Jugadores Individuales',
+                    'url'  => 'individuales',
+                    'icon' => 'fas fa-fw fa-user',
+                ],
+                
+            ],
         ],
 
         [
@@ -370,6 +382,24 @@ return [
                 
             ],
         ],
+        [
+            'text'    => 'Validar Pagos',
+            'icon'    => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text' => 'Validar Equipo',
+                    'url'  => 'validargrupales',
+                    'icon' => 'fas fa-fw fa-user',
+                ],
+                [
+                    'text' => 'Validar Jugador',
+                    'url'  => 'validarindividuales',
+                    'icon' => 'fas fa-fw fa-user',
+                ],
+                
+            ],
+        ],
+
         [
             'text'    => 'Partidos',
             'icon'    => 'fas fa-fw fa-chess',

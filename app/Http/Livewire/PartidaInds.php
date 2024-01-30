@@ -18,7 +18,7 @@ class PartidaInds extends Component
     public function render()
     {
 		$keyWord = '%'.$this->keyWord .'%';
-        $inscritos = InscripcionInd::with('jugadors')->get();
+        $inscritos = InscripcionInd::with('individuales')->get();
         return view('livewire.partida-inds.view', [
             'partidaInds' => PartidaInd::with('jugadors1')->with('jugadors2')->with('jugadors3')
                         ->whereHas('jugadors1', fn ($query) => 
