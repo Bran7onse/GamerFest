@@ -38,6 +38,7 @@
 
     .fondo-transparente {
     background-color: rgba(255, 255, 255, 0); /* RGB blanco con 0 de opacidad */
+    background-image: url('/resources/views/image/fondo.jpg');
     }
 
 
@@ -76,8 +77,9 @@
    
 
     .bg-gray-100 {
-        --tw-bg-opacity: 1;
-        background-color: rgb(243 244 246 / var(--tw-bg-opacity))
+        --tw-bg-opacity: 5;
+        background-color: #e0b3ff; / var(--tw-bg-opacity)
+        
     }
 
     .border-gray-200 {
@@ -567,10 +569,11 @@
         color: #ffffff;
         text-rendering: optimizeLegibility;
         font-weight: initial;
+        
     }
 
     .dark {
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(0, 0, 0, 0.5);
 
     }
 
@@ -1046,16 +1049,42 @@
     <style>
     body {
         font-family: 'Nunito', sans-serif;
+        background-image: url('https://cdn5.vectorstock.com/i/1000x1000/27/14/retro-neon-color-game-controller-vector-33752714.jpg');
+        
+      
+      
     }
+
+    #logoContainer {
+            position: relative;
+            width: 100px; /* Puedes ajustar el tamaño del círculo según tus necesidades */
+            height: 100px;
+            border-radius: 50%; /* Hace que el contenedor tenga forma de círculo */
+            overflow: hidden;
+        }
+
+        #logoContainer img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Hace que la imagen se ajuste al contenedor manteniendo su proporción */
+        }
+
+        #logoText {
+            
+        }
     </style>
 </head>
 
-<body>
+<body >>
 
-    <div class="relative  items-top min-h-screen bg bg-gray-100 dark:bg-gray-900  py-4 sm:pt-0">
+    <div class="relative  items-top min-h-screen bg dark:bg-gray-900  py-4 sm:pt-0">
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-transparent  ">
-            <img src="{{ url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Video-Game-Controller-Icon-IDV-green.svg/2048px-Video-Game-Controller-Icon-IDV-green.svg.png') }}" width="100" height="100">
+        <div id="logoContainer">
+        <img src="https://cdn5.vectorstock.com/i/1000x1000/27/14/retro-neon-color-game-controller-vector-33752714.jpg" alt="GAMERFest">
+        
+    </div>
+    <div style="font-size: 1.5em; color: #ffffff;">GAMER<b>Fest</b></div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -1071,7 +1100,7 @@
                         @auth
                         <a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a>
                         @else
-                        <a class="nav-link" href="{{ route('login') }}">Iniciar Sesion</a>
+                        <a class="nav-link" href="{{ route('login') }}"><b> Iniciar Sesion</b></a>
                         @endif
                     </li>
                     <li class="nav-item">

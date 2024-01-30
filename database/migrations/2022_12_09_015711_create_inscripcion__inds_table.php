@@ -16,13 +16,13 @@ class CreateInscripcionIndsTable extends Migration
     {
         Schema::create('inscripcion__inds', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_jug')->unsigned();
+            $table->integer('id_ind')->unsigned();
             $table->integer('id_jue')->unsigned();
             $table->decimal('precio_ins');
             $table->binary('pago_ins');
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('id_jug')->references('id')->on('jugadors')->onDelete('cascade');
+            $table->foreign('id_ind')->references('id')->on('individuales')->onDelete('cascade');
             $table->foreign('id_jue')->references('id')->on('juegos')->onDelete('cascade');
         });
     }

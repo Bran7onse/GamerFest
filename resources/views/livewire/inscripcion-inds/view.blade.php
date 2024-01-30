@@ -41,7 +41,7 @@
 							@foreach($inscripcionInds as $row)
 							<tr>
 								<td>{{ $loop->iteration }}</td> 
-								<td>{{ $row->jugadors->nombre_jug }}</td>
+								<td>{{ $row->individuales->nombre_ind }}</td>
 								<td>{{ $row->juegos->nombre_jue }}</td>
 								<td>{{ $row->precio_ins }}</td>
 								<td>{{ $row->pago_ins }}</td>
