@@ -51,21 +51,30 @@ class Jugadors extends Component
 
     public function store()
     {
-        
-
+    
+        $this->validate([
+            'id_equ' => 'required',
+            'nombre_jug' => 'required',
+            'cedula_jug' => 'required',
+            'telefono_jug' => 'required',
+            'correo_jug' => 'required|email',
+            'descripcion_jug' => 'required',
+        ]);
+    
         Jugador::create([ 
-			'id_equ' => $this-> id_equ,
-			'nombre_jug' => $this-> nombre_jug,
-			'cedula_jug' => $this-> cedula_jug,
-			'telefono_jug' => $this-> telefono_jug,
-			'correo_jug' => $this-> correo_jug,
-			'descripcion_jug' => $this-> descripcion_jug
+            'id_equ' => $this-> id_equ,
+            'nombre_jug' => $this-> nombre_jug,
+            'cedula_jug' => $this-> cedula_jug,
+            'telefono_jug' => $this-> telefono_jug,
+            'correo_jug' => $this-> correo_jug,
+            'descripcion_jug' => $this-> descripcion_jug
         ]);
         
         $this->resetInput();
-		$this->emit('closeModal');
-		session()->flash('message', 'Jugador Successfully created.');
+        $this->emit('closeModal');
+        session()->flash('message', 'Jugador Successfully created.');
     }
+    
 
     public function edit($id)
     {
@@ -83,25 +92,32 @@ class Jugadors extends Component
     }
 
     public function update()
-    {
-        
+{
+    if ($this->selected_id) {
+        $this->validate([
+            'id_equ' => 'required',
+            'nombre_jug' => 'required',
+            'cedula_jug' => 'required',
+            'telefono_jug' => 'required',
+            'correo_jug' => 'required|email',
+            'descripcion_jug' => 'required',
+        ]);
 
-        if ($this->selected_id) {
-			$record = Jugador::find($this->selected_id);
-            $record->update([ 
-			'id_equ' => $this-> id_equ,
-			'nombre_jug' => $this-> nombre_jug,
-			'cedula_jug' => $this-> cedula_jug,
-			'telefono_jug' => $this-> telefono_jug,
-			'correo_jug' => $this-> correo_jug,
-			'descripcion_jug' => $this-> descripcion_jug
-            ]);
+        $record = Jugador::find($this->selected_id);
+        $record->update([ 
+            'id_equ' => $this-> id_equ,
+            'nombre_jug' => $this-> nombre_jug,
+            'cedula_jug' => $this-> cedula_jug,
+            'telefono_jug' => $this-> telefono_jug,
+            'correo_jug' => $this-> correo_jug,
+            'descripcion_jug' => $this-> descripcion_jug
+        ]);
 
-            $this->resetInput();
-            $this->updateMode = false;
-			session()->flash('message', 'Jugador Successfully updated.');
-        }
+        $this->resetInput();
+        $this->updateMode = false;
+        session()->flash('message', 'Jugador Successfully updated.');
     }
+}
 
     public function destroy($id)
     {

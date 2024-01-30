@@ -52,26 +52,27 @@ class PartidaEqus extends Component
     }
 
     public function store()
-    {
-        $this->validate([
-		'id_equ1' => 'required',
-		'id_equ2' => 'required',
-		'ganador_par_equ' => 'required',
-        ]);
+{
+    $this->validate([
+        'id_equ1' => 'required',
+        'id_equ2' => 'required',
+        'ganador_par_equ' => 'required',
+        'fecha_par_equ' => 'required|date',
+        'observacion_par_equ' => 'required',
+    ]);
 
-        PartidaEqu::create([ 
-			'id_equ1' => $this-> id_equ1,
-			'id_equ2' => $this-> id_equ2,
-			'ganador_par_equ' => $this-> ganador_par_equ,
-			'fecha_par_equ' => $this-> fecha_par_equ,
-			'observacion_par_equ' => $this-> observacion_par_equ
-        ]);
-        
-        $this->resetInput();
-		$this->emit('closeModal');
-		session()->flash('message', 'PartidaEqu Successfully created.');
-    }
-
+    PartidaEqu::create([ 
+        'id_equ1' => $this-> id_equ1,
+        'id_equ2' => $this-> id_equ2,
+        'ganador_par_equ' => $this-> ganador_par_equ,
+        'fecha_par_equ' => $this-> fecha_par_equ,
+        'observacion_par_equ' => $this-> observacion_par_equ
+    ]);
+    
+    $this->resetInput();
+    $this->emit('closeModal');
+    session()->flash('message', 'PartidaEqu Successfully created.');
+}
     public function edit($id)
     {
         $record = PartidaEqu::findOrFail($id);
@@ -87,28 +88,30 @@ class PartidaEqus extends Component
     }
 
     public function update()
-    {
-        $this->validate([
-		'id_equ1' => 'required',
-		'id_equ2' => 'required',
-		'ganador_par_equ' => 'required',
+{
+    $this->validate([
+        'id_equ1' => 'required',
+        'id_equ2' => 'required',
+        'ganador_par_equ' => 'required',
+        'fecha_par_equ' => 'required|date',
+        'observacion_par_equ' => 'required',
+    ]);
+
+    if ($this->selected_id) {
+        $record = PartidaEqu::find($this->selected_id);
+        $record->update([ 
+            'id_equ1' => $this-> id_equ1,
+            'id_equ2' => $this-> id_equ2,
+            'ganador_par_equ' => $this-> ganador_par_equ,
+            'fecha_par_equ' => $this-> fecha_par_equ,
+            'observacion_par_equ' => $this-> observacion_par_equ
         ]);
 
-        if ($this->selected_id) {
-			$record = PartidaEqu::find($this->selected_id);
-            $record->update([ 
-			'id_equ1' => $this-> id_equ1,
-			'id_equ2' => $this-> id_equ2,
-			'ganador_par_equ' => $this-> ganador_par_equ,
-			'fecha_par_equ' => $this-> fecha_par_equ,
-			'observacion_par_equ' => $this-> observacion_par_equ
-            ]);
-
-            $this->resetInput();
-            $this->updateMode = false;
-			session()->flash('message', 'PartidaEqu Successfully updated.');
-        }
+        $this->resetInput();
+        $this->updateMode = false;
+        session()->flash('message', 'PartidaEqu Successfully updated.');
     }
+}
 
     public function destroy($id)
     {

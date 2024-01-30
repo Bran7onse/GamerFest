@@ -40,18 +40,23 @@ class Categorias extends Component
     }
 
     public function store()
-    {
+{
+    $this->validate([
+        'tipo_cat' => 'required',
+        'num_jug_cat' => 'required|integer',
+        'descripcion_cat' => 'required',
+    ]);
 
-        Categoria::create([ 
-			'tipo_cat' => $this-> tipo_cat,
-			'num_jug_cat' => $this-> num_jug_cat,
-			'descripcion_cat' => $this-> descripcion_cat
-        ]);
-        
-        $this->resetInput();
-		$this->emit('closeModal');
-		session()->flash('message', 'Categoria Successfully created.');
-    }
+    Categoria::create([ 
+        'tipo_cat' => $this-> tipo_cat,
+        'num_jug_cat' => $this-> num_jug_cat,
+        'descripcion_cat' => $this-> descripcion_cat
+    ]);
+    
+    $this->resetInput();
+    $this->emit('closeModal');
+    session()->flash('message', 'Categoria Successfully created.');
+}
 
     public function edit($id)
     {
@@ -66,22 +71,26 @@ class Categorias extends Component
     }
 
     public function update()
-    {
+{
+    $this->validate([
+        'tipo_cat' => 'required',
+        'num_jug_cat' => 'required|integer',
+        'descripcion_cat' => 'required',
+    ]);
 
+    if ($this->selected_id) {
+        $record = Categoria::find($this->selected_id);
+        $record->update([ 
+            'tipo_cat' => $this-> tipo_cat,
+            'num_jug_cat' => $this-> num_jug_cat,
+            'descripcion_cat' => $this-> descripcion_cat
+        ]);
 
-        if ($this->selected_id) {
-			$record = Categoria::find($this->selected_id);
-            $record->update([ 
-			'tipo_cat' => $this-> tipo_cat,
-			'num_jug_cat' => $this-> num_jug_cat,
-			'descripcion_cat' => $this-> descripcion_cat
-            ]);
-
-            $this->resetInput();
-            $this->updateMode = false;
-			session()->flash('message', 'Categoria Successfully updated.');
-        }
+        $this->resetInput();
+        $this->updateMode = false;
+        session()->flash('message', 'Categoria Successfully updated.');
     }
+}
 
     public function destroy($id)
     {
