@@ -35,6 +35,9 @@ Route::middleware([
 });
 
 //Route Hooks - Do not delete//
+	Route::view('validarindividuales', 'livewire.validarindividuales.index')->middleware('auth');
+	Route::view('validargrupales', 'livewire.validargrupales.index')->middleware('auth');
+	Route::view('individuales', 'livewire.individuales.index')->middleware('auth');
 	Route::view('partida-inds', 'livewire.partida-inds.index');
 	Route::view('partida-equs', 'livewire.partida-equs.index');
 	Route::view('horarios', 'livewire.horarios.index');

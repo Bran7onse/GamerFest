@@ -13,7 +13,7 @@ class InscripcionIndFactory extends Factory
     public function definition()
     {
         return [
-			'id_jug' => $this->faker->name,
+			'id_ind' => $this->faker->name,
 			'id_jue' => $this->faker->name,
 			'precio_ins' => $this->faker->name,
 			'pago_ins' => $this->faker->name,

@@ -13,7 +13,7 @@ class InscripcionInd extends Model
 
     protected $table = 'inscripcion__inds';
 
-    protected $fillable = ['id_jug','id_jue','precio_ins','pago_ins'];
+    protected $fillable = ['id_ind','id_jue','precio_ins','pago_ins'];
 	
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
@@ -26,9 +26,9 @@ class InscripcionInd extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function jugadors()
+    public function individuales()
     {
-        return $this->hasOne('App\Models\Jugador', 'id', 'id_jug');
+        return $this->hasOne('App\Models\Individuale', 'id', 'id_ind');
     }
     
     /**
