@@ -64,7 +64,7 @@ return [
     */
 
     'logo' => '<b>GAMER</b>Fest',
-    'logo_img' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Video-Game-Controller-Icon-IDV-green.svg/2048px-Video-Game-Controller-Icon-IDV-green.svg.png',
+    'logo_img' => 'images/gamer-zone.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
