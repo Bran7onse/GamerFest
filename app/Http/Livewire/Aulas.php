@@ -41,18 +41,23 @@ class Aulas extends Component
     }
 
     public function store()
-    {
+{
+    $this->validate([
+        'codigo_aul' => 'required',
+        'edificio_aul' => 'required',
+        'observacion_aul' => 'required',
+    ]);
 
-        Aula::create([ 
-			'codigo_aul' => $this-> codigo_aul,
-			'edificio_aul' => $this-> edificio_aul,
-			'observacion_aul' => $this-> observacion_aul
-        ]);
-        
-        $this->resetInput();
-		$this->emit('closeModal');
-		session()->flash('message', 'Aula Successfully created.');
-    }
+    Aula::create([ 
+        'codigo_aul' => $this-> codigo_aul,
+        'edificio_aul' => $this-> edificio_aul,
+        'observacion_aul' => $this-> observacion_aul
+    ]);
+    
+    $this->resetInput();
+    $this->emit('closeModal');
+    session()->flash('message', 'Aula Successfully created.');
+}
 
     public function edit($id)
     {
@@ -68,18 +73,23 @@ class Aulas extends Component
 
     public function update()
     {
-
         if ($this->selected_id) {
-			$record = Aula::find($this->selected_id);
-            $record->update([ 
-			'codigo_aul' => $this-> codigo_aul,
-			'edificio_aul' => $this-> edificio_aul,
-			'observacion_aul' => $this-> observacion_aul
+            $this->validate([
+                'codigo_aul' => 'required',
+                'edificio_aul' => 'required',
+                'observacion_aul' => 'required',
             ]);
-
+    
+            $record = Aula::find($this->selected_id);
+            $record->update([ 
+            'codigo_aul' => $this-> codigo_aul,
+            'edificio_aul' => $this-> edificio_aul,
+            'observacion_aul' => $this-> observacion_aul
+            ]);
+    
             $this->resetInput();
             $this->updateMode = false;
-			session()->flash('message', 'Aula Successfully updated.');
+            session()->flash('message', 'Aula Successfully updated.');
         }
     }
 

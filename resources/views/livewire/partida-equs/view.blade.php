@@ -6,7 +6,7 @@
 				<div class="card-header">
 					<div style="display: flex; justify-content: space-between; align-items: center;">
 					<div class="col-3 col-sm-3">
-							<a href="{{route('viewPartidaEqu-pdf')}}"  >
+							{{-- <a href="{{route('viewPartidaEqu-pdf')}}"  >
 								<div class="btn btn-sm btn-primary" >
 								<i class="fa fa-eye"></i>  Ver PDF
 								</div>
@@ -15,11 +15,11 @@
 								<div class="btn btn-sm btn-info" >
 								<i class="fa fa-eye"></i>  Descargar PDF
 								</div>
-							</a>
+							</a> --}}
 						</div>
 						<div class="float-left">
 							<h4><i class="fab fa-laravel text-info"></i>
-							Partida de Equipo </h4>
+							PARTIDA DE EQUIPOS </h4>
 						</div>
 						
 						@if (session()->has('message'))
@@ -42,8 +42,8 @@
 						<thead class="thead">
 							<tr> 
 								<td>#</td> 
-								<th>Equ1</th>
-								<th>Equ2</th>
+								<th>Equipo 1</th>
+								<th>Equipo 2</th>
 								<th>Ganador </th>
 								<th>Fecha </th>
 								<th>Observacion </th>

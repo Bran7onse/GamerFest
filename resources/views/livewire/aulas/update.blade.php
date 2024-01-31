@@ -13,15 +13,15 @@
 					<input type="hidden" wire:model="selected_id">
             <div class="form-group">
                 <label for="codigo_aul"></label>
-                <input wire:model="codigo_aul" type="text" class="form-control" id="codigo_aul" placeholder="Codigo Aul">@error('codigo_aul') <span class="error text-danger">{{ $message }}</span> @enderror
+                <input wire:model="codigo_aul" type="text" class="form-control" id="codigo_aul" placeholder="Codigo Aula">@error('codigo_aul') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
                 <label for="edificio_aul"></label>
-                <input wire:model="edificio_aul" type="text" class="form-control" id="edificio_aul" placeholder="Edificio Aul">@error('edificio_aul') <span class="error text-danger">{{ $message }}</span> @enderror
+                <input wire:model="edificio_aul" type="text" class="form-control" id="edificio_aul" placeholder="Edificio Aula">@error('edificio_aul') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
                 <label for="observacion_aul"></label>
-                <input wire:model="observacion_aul" type="text" class="form-control" id="observacion_aul" placeholder="Observacion Aul">@error('observacion_aul') <span class="error text-danger">{{ $message }}</span> @enderror
+                <input wire:model="observacion_aul" type="text" class="form-control" id="observacion_aul" placeholder="Observacion Aula">@error('observacion_aul') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
 
                 </form>

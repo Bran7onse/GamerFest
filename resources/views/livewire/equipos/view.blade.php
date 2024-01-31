@@ -7,7 +7,7 @@
 					<div style="display: flex; justify-content: space-between; align-items: center;">
 						<div class="float-left">
 							<h4>
-							Equipo </h4>
+							EQUIPO </h4>
 						</div>
 					
 						<div>
@@ -27,8 +27,8 @@
 						<thead class="thead">
 							<tr> 
 								<td>#</td> 
-								<th>Nombre Equ</th>
-								<th>Descripcion Equ</th>
+								<th>Nombre Equipo</th>
+								<th>Descripcion Equipo</th>
 								<td>Acciones</td>
 							</tr>
 						</thead>

@@ -305,17 +305,24 @@ return [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
         ],
+        /**
+         * Este código define una entrada de menú para el blog en la configuración de AdminLTE.
+         * 
+         * - El texto del menú se establece como 'blog'.
+         * - La URL del menú se establece como 'admin/blog'.
+         * - La capacidad requerida para ver este menú se establece como 'manage-blog'.
+         */
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        // [
-        //     'text'        => 'Dashboard',
-        //     'url'         => 'dash',
-        //     'icon'        => 'far fa-fw fa-user',
-        //     'label_color' => 'success',
-        // ],
+        [
+            'text'        => 'Dashboard',
+            'url'         => 'dash',
+            'icon'        => 'far fa-fw fa-user',
+            'label_color' => 'success',
+        ],
         ['header' => 'CRUD GAMER FEST'],
         [
             'text' => 'Categorias',
@@ -417,38 +424,38 @@ return [
                 
             ],
         ],
-        [
-            'text'    => 'Reportes',
-            'icon'    => 'fas fa-fw fa-chess',
-            'submenu' => [
-                [
-                    'text' => 'Juegos',
-                    'url'  => 'juegos-rep',
-                    'icon' => 'fas fa-chess',
-                ],
-                [
-                    'text' => 'Jugadores Inscritos',
-                    'url'  => 'jugadores-ins',//Alex
-                    'icon' => '	fas fa-chess-knight',
-                ],
-                [
-                    'text' => 'Equipos Inscritos',
-                    'url'  => 'equipos-ins',//Kenneth
-                    'icon' => '	fas fa-chess-knight',
-                ],
-                [
-                    'text' => 'Recaudacion',
-                    'url'  => 'recaudacion',
-                    'icon' => '	fas fa-chess-knight',
-                ],
-                [
-                    'text' => 'Partidos',
-                    'url'  => 'partidos',
-                    'icon' => '	fas fa-chess-knight',
-                ],
+        // [
+        //     'text'    => 'Reportes',
+        //     'icon'    => 'fas fa-fw fa-chess',
+        //     'submenu' => [
+        //         [
+        //             'text' => 'Juegos',
+        //             'url'  => 'juegos-rep',
+        //             'icon' => 'fas fa-chess',
+        //         ],
+        //         [
+        //             'text' => 'Jugadores Inscritos',
+        //             'url'  => 'jugadores-ins',//Alex
+        //             'icon' => '	fas fa-chess-knight',
+        //         ],
+        //         [
+        //             'text' => 'Equipos Inscritos',
+        //             'url'  => 'equipos-ins',//Kenneth
+        //             'icon' => '	fas fa-chess-knight',
+        //         ],
+        //         [
+        //             'text' => 'Recaudacion',
+        //             'url'  => 'recaudacion',
+        //             'icon' => '	fas fa-chess-knight',
+        //         ],
+        //         [
+        //             'text' => 'Partidos',
+        //             'url'  => 'partidos',
+        //             'icon' => '	fas fa-chess-knight',
+        //         ],
                 
-            ],
-        ],
+        //     ],
+        // ],
         
     ],
 

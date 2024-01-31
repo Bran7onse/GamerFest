@@ -40,18 +40,18 @@ class Validarindividuales extends Component
     public function store()
     {
         $this->validate([
-		'id_inscripcion__inds' => 'required',
-		'validarpago' => 'required',
+            'id_inscripcion__inds' => 'required',
+            'validarpago' => 'required',
         ]);
-
+    
         Validarindividuale::create([ 
-			'id_inscripcion__inds' => $this-> id_inscripcion__inds,
-			'validarpago' => $this-> validarpago
+            'id_inscripcion__inds' => $this-> id_inscripcion__inds,
+            'validarpago' => $this-> validarpago
         ]);
-        
+            
         $this->resetInput();
-		$this->emit('closeModal');
-		session()->flash('message', 'Validarindividuale Successfully created.');
+        $this->emit('closeModal');
+        session()->flash('message', 'Validarindividuale Successfully created.');
     }
 
     public function edit($id)
@@ -68,20 +68,20 @@ class Validarindividuales extends Component
     public function update()
     {
         $this->validate([
-		'id_inscripcion__inds' => 'required',
-		'validarpago' => 'required',
+            'id_inscripcion__inds' => 'required',
+            'validarpago' => 'required',
         ]);
-
+    
         if ($this->selected_id) {
-			$record = Validarindividuale::find($this->selected_id);
+            $record = Validarindividuale::find($this->selected_id);
             $record->update([ 
-			'id_inscripcion__inds' => $this-> id_inscripcion__inds,
-			'validarpago' => $this-> validarpago
+            'id_inscripcion__inds' => $this-> id_inscripcion__inds,
+            'validarpago' => $this-> validarpago
             ]);
-
+    
             $this->resetInput();
             $this->updateMode = false;
-			session()->flash('message', 'Validarindividuale Successfully updated.');
+            session()->flash('message', 'Validarindividuale Successfully updated.');
         }
     }
 
