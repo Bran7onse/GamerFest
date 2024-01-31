@@ -66,9 +66,11 @@ $data = $dashboard->ObtenerData();
                 <i class="fas fa-gamepad"></i>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     
+
+
 
 </div> 
 <section class="content">
