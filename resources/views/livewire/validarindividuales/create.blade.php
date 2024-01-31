@@ -11,12 +11,12 @@
            <div class="modal-body">
 				<form>
             <div class="form-group">
-                <label for="id_inscripcion__inds"></label>
+                <label for="id_inscripcion__inds">ID INSCRIPCIONES INDIVIDUALES</label>
                 <input wire:model="validarpago" type="text" class="form-control" id="validarpago" placeholder="Validarpago">@error('validarpago') <span class="error text-danger">{{ $message }}</span> @enderror
             
             </div>
             <div class="form-group">
-                <label for="validarpago"></label>
+                <label for="validarpago">VALIDAR PAGO</label>
                 <input wire:model="validarpago" type="text" class="form-control" id="validarpago" placeholder="Validarpago">@error('validarpago') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
 

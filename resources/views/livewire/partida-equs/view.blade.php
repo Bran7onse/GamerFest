@@ -19,7 +19,7 @@
 						</div>
 						<div class="float-left">
 							<h4><i class="fab fa-laravel text-info"></i>
-							Partida de Equipo </h4>
+							PARTIDA DE EQUIPOS </h4>
 						</div>
 						
 						@if (session()->has('message'))
@@ -42,8 +42,8 @@
 						<thead class="thead">
 							<tr> 
 								<td>#</td> 
-								<th>Equ1</th>
-								<th>Equ2</th>
+								<th>Equipo 1</th>
+								<th>Equipo 2</th>
 								<th>Ganador </th>
 								<th>Fecha </th>
 								<th>Observacion </th>

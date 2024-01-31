@@ -12,7 +12,7 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <label for="id_equ"></label>
+                        <label for="id_equ">SELECCIONE EQUIPO</label>
                         <select wire:model="id_equ" type="text" class="form-control" id="id_equ"
                             placeholder="Equipo">@error('id_equ') <span class="error text-danger">{{ $message }}</span>
                             @enderror
@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="id_jue"></label>
+                        <label for="id_jue">SELECCIONEJUEGO</label>
                         <select wire:model="id_jue" type="text" class="form-control" id="id_jue"
                             placeholder="Juego">@error('id_jue') <span class="error text-danger">{{ $message }}</span>
                             @enderror
@@ -35,15 +35,15 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="precio_ins_equ"></label>
+                        <label for="precio_ins_equ">PRECIO DE INSCRIPCION</label>
                         <input wire:model="precio_ins_equ" type="text" class="form-control" id="precio_ins_equ"
-                            placeholder="Precio Ins Equ">@error('precio_ins_equ') <span
+                            placeholder="Precio Inscripcion Equ">@error('precio_ins_equ') <span
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-group">
-                        <label for="pago_ins_equ"></label>
+                        <label for="pago_ins_equ">PAGO INSCRIPCION</label>
                         <input wire:model="pago_ins_equ" type="file" class="form-control" id="pago_ins_equ"
-                            placeholder="Pago Ins Equ">@error('pago_ins_equ') <span
+                            placeholder="Pago Inscripcion Equ">@error('pago_ins_equ') <span
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
 

@@ -7,7 +7,7 @@
 					<div style="display: flex; justify-content: space-between; align-items: center;">
 						<div class="float-left .col-auto .me-auto">
 							<h4>
-							Partida Individual </h4>
+							PARTIDAS INDIVIDUALES </h4>
 						</div>
 						
 						@if (session()->has('message'))
@@ -30,8 +30,8 @@
 						<thead class="thead">
 							<tr> 
 								<td>#</td> 
-								<th>Jug1</th>
-								<th>Jug2</th>
+								<th>Jugador 1</th>
+								<th>Jugador 2</th>
 								<th>Ganador </th>
 								<th>Fecha </th>
 								<th>Observacion </th>

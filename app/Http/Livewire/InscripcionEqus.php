@@ -59,14 +59,14 @@ class InscripcionEqus extends Component
             'id_equ' => 'required',
             'id_jue' => 'required',
             'precio_ins_equ' => 'required|numeric',
-            'pago_ins_equ' => 'required|numeric',
+          
         ]);
 
         InscripcionEqu::create([
             'id_equ' => $this->id_equ,
             'id_jue' => $this->id_jue,
             'precio_ins_equ' => $this->precio_ins_equ,
-            'pago_ins_equ' => $this->pago_ins_equ
+            
         ]);
 
         $this->resetInput();
@@ -93,7 +93,7 @@ class InscripcionEqus extends Component
             'id_equ' => 'required',
             'id_jue' => 'required',
             'precio_ins_equ' => 'required|numeric',
-            'pago_ins_equ' => 'required|numeric',
+
         ]);
 
         if ($this->selected_id) {
@@ -102,7 +102,6 @@ class InscripcionEqus extends Component
                 'id_equ' => $this->id_equ,
                 'id_jue' => $this->id_jue,
                 'precio_ins_equ' => $this->precio_ins_equ,
-                'pago_ins_equ' => $this->pago_ins_equ
             ]);
 
             $this->resetInput();

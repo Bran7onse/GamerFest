@@ -71,7 +71,7 @@
                                         <th>Descripcion </th>
                                         <th>Juego </th>
                                         <th>Precio </th>
-                                        <th>Precio </th>
+                                        <th>Pago </th>
                                     </tr>
                             </thead>
                             <tbody>

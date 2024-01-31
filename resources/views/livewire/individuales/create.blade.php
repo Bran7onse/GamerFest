@@ -11,24 +11,24 @@
            <div class="modal-body">
 				<form>
             <div class="form-group">
-                <label for="nombre_ind"></label>
-                <input wire:model="nombre_ind" type="text" class="form-control" id="nombre_ind" placeholder="Nombre Ind">@error('nombre_ind') <span class="error text-danger">{{ $message }}</span> @enderror
+                <label for="nombre_ind">NOMBRE</label>
+                <input wire:model="nombre_ind" type="text" class="form-control" id="nombre_ind" placeholder="Nombre ">@error('nombre_ind') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="cedula_ind"></label>
-                <input wire:model="cedula_ind" type="text" class="form-control" id="cedula_ind" placeholder="Cedula Ind">@error('cedula_ind') <span class="error text-danger">{{ $message }}</span> @enderror
+                <label for="cedula_ind">CEDULA</label>
+                <input wire:model="cedula_ind" type="text" class="form-control" id="cedula_ind" placeholder="Cedula ">@error('cedula_ind') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="telefono_ind"></label>
-                <input wire:model="telefono_ind" type="text" class="form-control" id="telefono_ind" placeholder="Telefono Ind">@error('telefono_ind') <span class="error text-danger">{{ $message }}</span> @enderror
+                <label for="telefono_ind">TELEFONO</label>
+                <input wire:model="telefono_ind" type="text" class="form-control" id="telefono_ind" placeholder="Telefono ">@error('telefono_ind') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="correo_ind"></label>
-                <input wire:model="correo_ind" type="text" class="form-control" id="correo_ind" placeholder="Correo Ind">@error('correo_ind') <span class="error text-danger">{{ $message }}</span> @enderror
+                <label for="correo_ind">CORREO</label>
+                <input wire:model="correo_ind" type="text" class="form-control" id="correo_ind" placeholder="Correo ">@error('correo_ind') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="descripcion_ind"></label>
-                <input wire:model="descripcion_ind" type="text" class="form-control" id="descripcion_ind" placeholder="Descripcion Ind">@error('descripcion_ind') <span class="error text-danger">{{ $message }}</span> @enderror
+                <label for="descripcion_ind">DESCRIPCION</label>
+                <input wire:model="descripcion_ind" type="text" class="form-control" id="descripcion_ind" placeholder="Descripcion">@error('descripcion_ind') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
 
                 </form>
