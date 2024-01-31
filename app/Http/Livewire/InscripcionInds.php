@@ -78,7 +78,7 @@ class InscripcionInds extends Component
     }
 
 
-
+    
     public function edit($id)
     {
         $record = InscripcionInd::findOrFail($id);
