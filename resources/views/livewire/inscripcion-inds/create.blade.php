@@ -12,7 +12,7 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <label for="id_ind">ID INDIVIDUAL</label>
+                        <label for="id_ind">JUGADOR</label>
                         <select wire:model="id_ind" type="text" class="form-control" id="id_ind"
                             placeholder="Jugador">@error('id_ind') <span class="error text-daner">{{ $message }}</span>
                             @enderror
@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="id_jue">ID JUEGO</label>
+                        <label for="id_jue">JUEGO</label>
                         <select wire:model="id_jue" type="text" class="form-control" id="id_jue"
                             placeholder="Juego">@error('id_ind') <span class="error text-danger">{{ $message }}</span>
                             @enderror

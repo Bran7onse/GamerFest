@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="id_jue">SELECCIONEJUEGO</label>
+                        <label for="id_jue">SELECCIONE JUEGO</label>
                         <select wire:model="id_jue" type="text" class="form-control" id="id_jue"
                             placeholder="Juego">@error('id_jue') <span class="error text-danger">{{ $message }}</span>
                             @enderror
