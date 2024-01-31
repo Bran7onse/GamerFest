@@ -40,8 +40,8 @@ class Validarindividuales extends Component
     public function store()
     {
         $this->validate([
-            'id_inscripcion__inds' => 'required|numeric',
-            'validarpago' => 'required|boolean',
+            'id_inscripcion__inds' => 'required',
+            'validarpago' => 'required',
         ]);
     
         Validarindividuale::create([ 
@@ -68,8 +68,8 @@ class Validarindividuales extends Component
     public function update()
     {
         $this->validate([
-            'id_inscripcion__inds' => 'required|numeric',
-            'validarpago' => 'required|boolean',
+            'id_inscripcion__inds' => 'required',
+            'validarpago' => 'required',
         ]);
     
         if ($this->selected_id) {
