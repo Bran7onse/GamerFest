@@ -40,11 +40,16 @@
                             placeholder="Precio Inscripcion">@error('precio_ins') <span
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
+
                     <div class="form-group">
-                        <label for="pago_ins">PAGO INSCRIPCION</label>
-                        <input wire:model="pago_ins" type="file" class="form-control" id="pago_ins"
-                            placeholder="Pago Inscripcion">@error('pago_ins') <span
-                            class="error text-danger">{{ $message }}</span> @enderror
+                        <label for="pago_ins">Pago Inscripción (Imagen):</label>
+                        <input type="file" wire:model="pago_ins" class="form-control-file" id="pago_ins">
+                        @error('pago_ins') <span class="error">{{ $message }}</span> @enderror
+
+                        {{-- Muestra la imagen después de cargarla --}}
+                        @if ($pago_ins)
+                            <img src="{{ $pago_ins->temporaryUrl() }}" alt="Pago Inscripción Previo" style="max-width: 100%; max-height: 200px;>
+                        @endif
                     </div>
 
                 </form>
