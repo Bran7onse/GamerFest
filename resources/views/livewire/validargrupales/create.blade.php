@@ -10,10 +10,23 @@
             </div>
            <div class="modal-body">
 				<form>
-            <div class="form-group">
-                <label for="id_inscripcion__equs">ID INSCRIPCIONES POR EQUIPO</label>
-                <input wire:model="id_inscripcion__equs" type="text" class="form-control" id="id_inscripcion__equs" placeholder="Id Inscripcion  Equs">@error('id_inscripcion__equs') <span class="error text-danger">{{ $message }}</span> @enderror
-            </div>
+                <div class="form-group">
+                    <label for="id_inscripcion__equs">Inscripcion Equipo</label>
+                    <select wire:model="id_inscripcion__equs" class="form-control" id="id_inscripcion__equs">
+                        <option value="">Seleccione</option>
+                        @foreach($equiposInscritos as $equipo)
+                            <option value="{{ $equipo->id }}">{{ $equipo->nombre_equ }}</option>
+                        @endforeach
+                    </select>
+                    @error('id_inscripcion__equs')
+                        <span class="error text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                
+
+
+
             <div class="form-group">
                 <label for="validarpago">VALIDAR PAGO</label>
                 <input wire:model="validarpago" type="text" class="form-control" id="validarpago" placeholder="Validarpago">@error('validarpago') <span class="error text-danger">{{ $message }}</span> @enderror
