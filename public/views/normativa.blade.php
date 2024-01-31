@@ -1,664 +1,386 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Laravel</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- Styles -->
-    <style>
-    /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-    html {
-        line-height: 1.15;
-        -webkit-text-size-adjust: 100%
-    }
-
-    body {
-        margin: 0
-    }
-
-    a {
-        background-color: transparent
-    }
-
-    [hidden] {
-        display: none
-    }
-
-    html {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-        line-height: 1.5
-    }
-
-    *,
-    :after,
-    :before {
-        box-sizing: border-box;
-        border: 0 solid #e2e8f0
-    }
-
-    a {
-        color: inherit;
-        text-decoration: inherit
-    }
-
-    svg,
-    video {
-        display: block;
-        vertical-align: middle
-    }
-
-    video {
-        max-width: 100%;
-        height: auto
-    }
-
-    .bg-white {
-        --tw-bg-opacity: 1;
-        background-color: rgb(255 255 255 / var(--tw-bg-opacity))
-    }
-
-    .bg-gray-100 {
-        --tw-bg-opacity: 1;
-        background-color: rgb(243 244 246 / var(--tw-bg-opacity))
-    }
-
-    .border-gray-200 {
-        --tw-border-opacity: 1;
-        border-color: rgb(229 231 235 / var(--tw-border-opacity))
-    }
-
-    .border-t {
-        border-top-width: 1px
-    }
-
-    .flex {
-        display: flex
-    }
-
-    .grid {
-        display: grid
-    }
-
-    .hidden {
-        display: none
-    }
-
-    .items-center {
-        align-items: center
-    }
-
-    .justify-center {
-        justify-content: center
-    }
-
-    .font-semibold {
-        font-weight: 600
-    }
-
-    .h-5 {
-        height: 1.25rem
-    }
-
-    .h-8 {
-        height: 2rem
-    }
-
-    .h-16 {
-        height: 4rem
-    }
-
-    .text-sm {
-        font-size: .875rem
-    }
-
-    .text-lg {
-        font-size: 1.125rem
-    }
-
-    .leading-7 {
-        line-height: 1.75rem
-    }
-
-    .mx-auto {
-        margin-left: auto;
-        margin-right: auto
-    }
-
-    .ml-1 {
-        margin-left: .25rem
-    }
-
-    .mt-2 {
-        margin-top: .5rem
-    }
-
-    .mr-2 {
-        margin-right: .5rem
-    }
-
-    .ml-2 {
-        margin-left: .5rem
-    }
-
-    .mt-4 {
-        margin-top: 1rem
-    }
-
-    .ml-4 {
-        margin-left: 1rem
-    }
-
-    .mt-8 {
-        margin-top: 2rem
-    }
-
-    .ml-12 {
-        margin-left: 3rem
-    }
-
-    .-mt-px {
-        margin-top: -1px
-    }
-
-    .max-w-6xl {
-        max-width: 72rem
-    }
-
-    .min-h-screen {
-        min-height: 100vh
-    }
-
-    .overflow-hidden {
-        overflow: hidden
-    }
-
-    .p-6 {
-        padding: 1.5rem
-    }
-
-    .py-4 {
-        padding-top: 1rem;
-        padding-bottom: 1rem
-    }
-
-    .px-6 {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem
-    }
-
-    .pt-8 {
-        padding-top: 2rem
-    }
-
-    .fixed {
-        position: fixed
-    }
-
-    .relative {
-        position: relative
-    }
-
-    .top-0 {
-        top: 0
-    }
-
-    .right-0 {
-        right: 0
-    }
-
-    .shadow {
-        --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1);
-        --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
-    }
-
-    .text-center {
-        text-align: center
-    }
-
-    .text-gray-200 {
-        --tw-text-opacity: 1;
-        color: rgb(229 231 235 / var(--tw-text-opacity))
-    }
-
-    .text-gray-300 {
-        --tw-text-opacity: 1;
-        color: rgb(209 213 219 / var(--tw-text-opacity))
-    }
-
-    .text-gray-400 {
-        --tw-text-opacity: 1;
-        color: rgb(156 163 175 / var(--tw-text-opacity))
-    }
-
-    .text-gray-500 {
-        --tw-text-opacity: 1;
-        color: rgb(107 114 128 / var(--tw-text-opacity))
-    }
-
-    .text-gray-600 {
-        --tw-text-opacity: 1;
-        color: rgb(75 85 99 / var(--tw-text-opacity))
-    }
-
-    .text-gray-700 {
-        --tw-text-opacity: 1;
-        color: rgb(55 65 81 / var(--tw-text-opacity))
-    }
-
-    .text-gray-900 {
-        --tw-text-opacity: 1;
-        color: rgb(17 24 39 / var(--tw-text-opacity))
-    }
-
-    .underline {
-        text-decoration: underline
-    }
-
-    .antialiased {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale
-    }
-
-    .w-5 {
-        width: 1.25rem
-    }
-
-    .w-8 {
-        width: 2rem
-    }
-
-    .w-auto {
-        width: auto
-    }
-
-    .grid-cols-1 {
-        grid-template-columns: repeat(1, minmax(0, 1fr))
-    }
-
-    .btn-neon {
-        position: relative;
-        display: inline-block;
-        padding: 15px 30px;
-        color: #fff;
-        letter-spacing: 4px;
-        text-decoration: none;
-        font-size: 24px;
-        overflow: hidden;
-        transition: 0.2s;
-    }
-
-    .btn-neon:hover {
-        background: #a945c7;
-        box-shadow: 0 0 10px #a945c7, 0 0 40px #a945c7, 0 0 80px #a945c7;
-        transition-delay: 1s;
-    }
-
-    .btn-neon span {
-        position: absolute;
-        display: block;
-    }
-
-    #span1 {
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, #a945c7);
-    }
-
-    .btn-neon:hover #span1 {
-        left: 100%;
-        transition: 1s;
-    }
-
-    #span3 {
-        bottom: 0;
-        right: -100%;
-        width: 100%;
-        height: 2px;
-        background: linear-gradient(270deg, transparent, #a945c7);
-    }
-
-    .btn-neon:hover #span3 {
-        right: 100%;
-        transition: 1s;
-        transition-delay: 0.5s;
-    }
-
-    #span2 {
-        top: -100%;
-        right: 0;
-        width: 2px;
-        height: 100%;
-        background: linear-gradient(180deg, transparent, #a945c7);
-    }
-
-    .btn-neon:hover #span2 {
-        top: 100%;
-        transition: 1s;
-        transition-delay: 0.25s;
-    }
-
-    #span4 {
-        bottom: -100%;
-        left: 0;
-        width: 2px;
-        height: 100%;
-        background: linear-gradient(360deg, transparent, #a945c7);
-    }
-
-    .btn-neon:hover #span4 {
-        bottom: 100%;
-        transition: 1s;
-        transition-delay: 0.75s;
-    }
-
-    @media (min-width:640px) {
-        .sm\:rounded-lg {
-            border-radius: .5rem
-        }
-
-        .sm\:block {
-            display: block
-        }
-
-        .sm\:items-center {
-            align-items: center
-        }
-
-        .sm\:justify-start {
-            justify-content: flex-start
-        }
-
-        .sm\:justify-between {
-            justify-content: space-between
-        }
-
-        .sm\:h-20 {
-            height: 5rem
-        }
-
-        .sm\:ml-0 {
-            margin-left: 0
-        }
-
-        .sm\:px-6 {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem
-        }
-
-        .sm\:pt-0 {
-            padding-top: 0
-        }
-
-        .sm\:text-left {
-            text-align: left
-        }
-
-        .sm\:text-right {
-            text-align: right
-        }
-    }
-
-    @media (min-width:768px) {
-        .md\:border-t-0 {
-            border-top-width: 0
-        }
-
-        .md\:border-l {
-            border-left-width: 1px
-        }
-
-        .md\:grid-cols-2 {
-            grid-template-columns: repeat(2, minmax(0, 1fr))
-        }
-    }
-
-    @media (min-width:1024px) {
-        .lg\:px-8 {
-            padding-left: 2rem;
-            padding-right: 2rem
-        }
-    }
-
-    @media (prefers-color-scheme:dark) {
-        .dark\:bg-gray-800 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(31 41 55 / var(--tw-bg-opacity))
-        }
-
-        .dark\:bg-gray-900 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(17 24 39 / var(--tw-bg-opacity))
-        }
-
-        .dark\:border-gray-700 {
-            --tw-border-opacity: 1;
-            border-color: rgb(55 65 81 / var(--tw-border-opacity))
-        }
-
-        .dark\:text-white {
-            --tw-text-opacity: 1;
-            color: rgb(255 255 255 / var(--tw-text-opacity))
-        }
-
-        .dark\:text-gray-400 {
-            --tw-text-opacity: 1;
-            color: rgb(156 163 175 / var(--tw-text-opacity))
-        }
-
-        .dark\:text-gray-500 {
-            --tw-text-opacity: 1;
-            color: rgb(107 114 128 / var(--tw-text-opacity))
-        }
-
-        .bg {
-            /* The image used */
-            background-image: url("../images/fondo.png");
-
-            /* Full height */
-            height: 100%;
-
-            /* Center and scale the image nicely */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    }
-    </style>
-
-    <style>
-    body {
-        font-family: 'Nunito', sans-serif;
-    }
-    </style>
-</head>
-
-<body>
-
-    <div class="relative  items-top min-h-screen bg bg-gray-100 dark:bg-gray-900  py-4 sm:pt-0">
-
-        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent  ">
-            <img src="../images/gamer_fest.png" width="100" height="100">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="javascript:history.back()">Home <span
-                                class="sr-only">(current)</span></a>
-                    </li>
-
-
-                </ul>
-            </div>
-        </nav>
-
-        <div class="container">
-            <div class="card-group ">
-                <div class="card bg-info mb">
-                    <img class="card-img-top" src="../images/call_of_duty.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <center>
-                            <h5 class="card-title" style="font-weight: bold;">Warzone</h5></b>
-                        </center>
-
-                        <ol>
-                            <li style="color:rgba(255, 255, 255,100);">El equipo debera tener 4 jugadores y
-                                un
-                                suplente como maximo</li>
-                            <li style="color:rgba(255, 255, 255,100);">Las partidas se disputaran en los
-                                computadores del aula/laboratorio indicado</li>
-                            <li style="color:rgba(255, 255, 255,100);">Cualquier intento de trampa sera
-                                sancionado
-                                con la descalificacion inmediata del equipo</li>
-                            <li style="color:rgba(255, 255, 255,100);">La puntuacion del equipo sera segun
-                                el numero
-                                de kills y posicion</li>
-                            <li style="color:rgba(255, 255, 255,100);">Todas las partidas se jugaran en la
-                                modalidad
-                                de trios</li>
-                        </ol>
-                    </div>
-                </div>
-                <div class="card bg-danger">
-                    <img class="card-img-top" src="../images/fall_guys.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <center>
-                            <h5 class="card-title" style="font-weight: bold;">Fall Guys</h5>
-                        </center>
-                        <ol>
-                            <li style="color:rgba(255, 255, 255,100);">La modalidad a jugar sera en
-                                individual</li>
-                            <li style="color:rgba(255, 255, 255,100);">Las partidas se disputaran en los
-                                computadores del aula/laboratorio indicado</li>
-                            <li style="color:rgba(255, 255, 255,100);">Cualquier intento de trampa sera
-                                sancionado
-                                con la descalificacion inmediata</li>
-                            <li style="color:rgba(255, 255, 255,100);">La puntuacion sera segun la ronda
-                                clasificada
-                            </li>
-
-                        </ol>
-                    </div>
-                </div>
-                <div class="card bg-success">
-                    <img class="card-img-top" src="../images/lol.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <center>
-                            <h5 class="card-title" style="font-weight: bold;">League of Legends</h5>
-                        </center>
-                        <ol>
-                            <li style="color:rgba(255, 255, 255,100);">El equipo debera tener 5 jugadores y
-                                un
-                                suplente como maximo</li>
-                            <li style="color:rgba(255, 255, 255,100);">Las partidas se disputaran en los
-                                computadores del aula/laboratorio indicado</li>
-                            <li style="color:rgba(255, 255, 255,100);">Cualquier intento de trampa sera
-                                sancionado
-                                con la descalificacion inmediata del equipo</li>
-                            <li style="color:rgba(255, 255, 255,100);">Todas las partidas se apegaran al
-                                reglamento
-                                y normativas impuestas por Riot Games</li>
-                            <li style="color:rgba(255, 255, 255,100);">La partida iniciara con un maximo de
-                                15
-                                minutos de atraso</li>
-
-                        </ol>
+@extends('layouts.app')
+@section('title', __('Bienvenidos'))
+@section('content')
+
+
+    <head>
+        <meta http-equiv="Expires" content="0">
+<meta http-equiv="Last-Modified" content="0">
+<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+<meta http-equiv="Pragma" content="no-cache">
+        <script
+        defer
+        src = "https://app.embed.im/snow.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"&amp;gt;>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+
+        <!-- Bootstrap core CSS -->
+        <link href="template/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+        <!-- Additional CSS Files -->
+        <link rel="stylesheet" href="template/assets/css/fontawesome.css">
+        <link rel="stylesheet" href="template/assets/css/templatemo-cyborg-gaming.css">
+        <link rel="stylesheet" href="template/assets/css/owl.css">
+        <link rel="stylesheet" href="template/assets/css/animate.css">
+        <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    </head>
+
+
+    <body>
+
+
+        <header class="header-area header-sticky">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="main-nav">
+                            <!-- ***** Logo Start ***** -->
+                            <img src="img/gamerfest.png" alt="GamerFest" style="width:auto; height:120px;margin-right:250px;">
+                            <ul class="nav">
+                                <li><a href="/" class="active" style="font-size: 20px;">Inicio</a></li>
+                                <li><a href="http://127.0.0.1:8000/login" style="font-size: 20px;">Login</a></li>
+                                <li><a href="http://127.0.0.1:8000/register" style="font-size: 20px;">Registrarse</a></li>
+                                <li><a href="/"></a></li>
+                            </ul>
+                            <a class='menu-trigger'>
+                                <span>Menu</span>
+                            </a>
+                            <!-- ***** Menu End ***** -->
+                        </nav>
                     </div>
                 </div>
             </div>
-            <div class="card-group ">
-                <div class="card bg-danger mb">
-                    <img class="card-img-top" src="../images/valo.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <center>
-                            <h5 class="card-title" style="font-weight: bold;">Valorant</h5></b>
-                        </center>
+        </header>
+        <!-- ***** Header Area End ***** -->
 
-                        <ol>
-                            <li style="color:rgba(255, 255, 255,100);">El equipo debera tener 5 jugadores y
-                                un
-                                suplente como maximo</li>
-                            <li style="color:rgba(255, 255, 255,100);">Las partidas se disputaran en los
-                                computadores del aula/laboratorio indicado</li>
-                            <li style="color:rgba(255, 255, 255,100);">Cualquier intento de trampa sera
-                                sancionado
-                                con la descalificacion inmediata del equipo</li>
-                            <li style="color:rgba(255, 255, 255,100);">Todas las partidas se apegaran al
-                                reglamento
-                                y normativas impuestas por Riot Games</li>
-                            <li style="color:rgba(255, 255, 255,100);">La partida iniciara con un maximo de
-                                15
-                                minutos de atraso</li>
+        <div class="container my-4">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-content">
 
-                        </ol>
-                    </div>
-                </div>
-                <div class="card bg-success">
-                    <img class="card-img-top" src="../images/mario.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <center>
-                            <h5 class="card-title" style="font-weight: bold;">Mario Kart</h5>
-                        </center>
-                        <ol>
-                            <li style="color:rgba(255, 255, 255,100);">La modalidad a jugar sera en
-                                individual</li>
-                            <li style="color:rgba(255, 255, 255,100);">Las partidas se disputaran en los
-                                computadores del aula/laboratorio indicado</li>
-                            <li style="color:rgba(255, 255, 255,100);">Cualquier intento de trampa sera
-                                sancionado
-                                con la descalificacion inmediata</li>
-                            <li style="color:rgba(255, 255, 255,100);">La puntuacion sera segun la posicion final despues de 3 carreras</li>
-                            <li style="color:rgba(255, 255, 255,100);">Las carreras se realizaran 1 vs 1</li>
-                        </ol>
-                    </div>
-                </div>
-                <div class="card bg-info">
-                    <img class="card-img-top" src="../images/guitar.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <center>
-                            <h5 class="card-title" style="font-weight: bold;">Guitar Hero</h5>
-                        </center>
-                        <ol>
-                        <li style="color:rgba(255, 255, 255,100);">La modalidad a jugar sera en
-                                individual</li>
-                            <li style="color:rgba(255, 255, 255,100);">Las partidas se disputaran en los
-                                computadores del aula/laboratorio indicado</li>
-                            <li style="color:rgba(255, 255, 255,100);">Cualquier intento de trampa sera
-                                sancionado
-                                con la descalificacion inmediata</li>
-                            <li style="color:rgba(255, 255, 255,100);">La puntuacion sera segun la posicion final se vera al final de cada cancion</li>
-                            <li style="color:rgba(255, 255, 255,100);">Se tocaran 3 canciones, una elejida por el jugador 1, otra elejida por el jugador 2 y la ultima por el ordanizador</li>
-                            <li style="color:rgba(255, 255, 255,100);">Las carreras se realizaran 1 vs 1</li>
+                        <div class="main-banner">
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <div class="header-text">
+                                        <h6>Bienvenido a</h6>
+                                        <h4><em>Gamer Fest</em> el evento esports mas grande del centro del pais </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ***** Banner End ***** -->
 
-                        </ol>
+                        <!-- ***** Most Popular Start ***** -->
+                        <div class="most-popular">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="heading-section" style="text-align:center;">
+                                        <h4><em>Juegos más populares</em> Ahora Mismo </h4>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="item">
+                                                <img src="template/assets/images/popular-01.png" alt="">
+                                                <h4>Valorant<br><span>Shooter</span></h4>
+                                                <ul>
+                                                    <li><i class="fa fa-star"></i> 4.8</li>
+                                                    <li><i class="fa fa-download"></i> 2.3M</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="item">
+                                                <img src="template/assets/images/popular-02.png" alt="">
+                                                <h4>Clash Royale<br><span>Estrategia</span></h4>
+                                                <ul>
+                                                    <li><i class="fa fa-star"></i> 4.8</li>
+                                                    <li><i class="fa fa-download"></i> 2.3M</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="item">
+                                                <img src="template/assets/images/popular-03.png" alt="">
+                                                <h4>Dota2<br><span>Steam</span></h4>
+                                                <ul>
+                                                    <li><i class="fa fa-star"></i> 4.8</li>
+                                                    <li><i class="fa fa-download"></i> 2.3M</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="item">
+                                                <img src="template/assets/images/popular-04.png" alt="">
+                                                <h4>Super Smash Bros<br><span>Crossover</span></h4>
+                                                <ul>
+                                                    <li><i class="fa fa-star"></i> 4.8</li>
+                                                    <li><i class="fa fa-download"></i> 2.3M</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="item">
+                                                <div class="item inner-item">
+                                                    <img src="template/assets/images/popular-05.png" alt="">
+                                                    <h4>Free Fire<br><span>Acción</span></h4>
+                                                    <ul>
+                                                        <li><i class="fa fa-star"></i> 4.8</li>
+                                                        <li><i class="fa fa-download"></i> 2.3M</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="item">
+                                                <img src="template/assets/images/popular-06.png" alt="">
+                                                <h4>Call of Duty<br><span>Acción</span></h4>
+                                                <ul>
+                                                    <li><i class="fa fa-star"></i> 4.8</li>
+                                                    <li><i class="fa fa-download"></i> 2.3M</li>
+                                                </ul>
+                                                </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="item">
+                                                <img src="template/assets/images/popular-07.png" alt="">
+                                                <h4>Fifa 23<br><span>Deportes</span></h4>
+                                                <ul>
+                                                    <li><i class="fa fa-star"></i> 4.8</li>
+                                                    <li><i class="fa fa-download"></i> 2.3M</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="item">
+                                                <img src="template/assets/images/popular-08.png" alt="">
+                                                <h4>Crash Team Racing <br><span>Carreras</span></h4>
+                                                <ul>
+                                                    <li><i class="fa fa-star"></i> 4.8</li>
+                                                    <li><i class="fa fa-download"></i> 2.3M</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ***** Most Popular End ***** -->
+                        <div class="most-popular" style="text-align:center;margin-left: auto">
+                            <div class="row">
+                                <!-- Aquí va la columna con la información del evento -->
+                                <div class="col-md-6">
+                                    <div class="heading-section">
+                                        <h4><em>ERES UN APASIONADO DE LOS VIDEOJUEGOS</em></h4>
+                                    </div>
+                                    <p>¡Entonces no puedes perderte el GAMER FEST!</p>
+                                    <p><strong>Lugar:</strong> El evento "Gamer Fest" se realizará en el campus Gral. Guillermo Rodríguez Lara ubicado en la parroquia Belisario Quevedo. Para una mejor referencia de cómo llegar, dejamos un mapa.</p>
+                                    <h5><em>VIVE UNA EXPERIENCIA AL MÁXIMO</em></h5>
+                        
+                                    <p><strong>Torneos:</strong> Participa o anima a tus equipos favoritos en emocionantes torneos de League of Legends, Dota 2, Clash Royale, FIFA 21, Fortnite, Free Fire, Call of Duty, entre otros.</p>
+                                    <p><strong>Zona Arcade:</strong> Revive la nostalgia con juegos clásicos y descubre nuevas aventuras.</p>
+                                    <p><strong>Stands de Merchandising:</strong> Encuentra esa camiseta, figura coleccionable o accesorio gamer que siempre has querido.</p>
+                                    <p><strong>Paneles y Talleres:</strong> Aprende de expertos en desarrollo de juegos, estrategias competitivas y más.</p>
+                                    <p><strong>Zona de Descanso y Proyecciones:</strong> Relájate viendo partidas en vivo y conoce a otros.</p>
+                                </div>
+                                <!-- Aquí va la columna con la ubicación del evento -->
+                                <div class="col-md-6">
+                                    <div class="heading-section">
+                                        <h4><em>Ubicación</em> del evento </h4>
+                                    </div>
+                                    <div class="item" style="text-align:center;margin-left: auto; margin-right: auto;">
+                                        <div class="row" style="text-align:center;margin-left: auto; margin-right: auto;">
+                                            <div class="col-sm-12" style="text-align:center; margin-left: auto; margin-right: auto;">
+                                                <div class="" style="text-align:center;margin-left: auto; margin-right: auto;">
+                                                    <iframe
+                                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127654.8192505818!2d-78.73597710273435!3d-0.9979820999999969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d4639e7c398d3f%3A0xc4999bdc40abfc48!2sUniversidad%20De%20Las%20Fuerzas%20Armadas%20ESPE%20Extensi%C3%B3n%20Belisario%20Quevedo!5e0!3m2!1ses-419!2sec!4v1705439834075!5m2!1ses-419!2sec"
+                                                        width="500" height="500" style="border:0;"
+                                                        allowfullscreen="" loading="lazy"
+                                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                {{-- LIBRERIA GAMING --}}
+                        <div class="gaming-library">
+                            <div class="col-lg-12">
+                                <div class="heading-section">
+                                    <h4><em>Biblioteca</em> de Juegos</h4>
+                                </div>
+                                <div class="item">
+                                    <ul>
+                                        <li><img src="template/assets/images/popular-03.png" alt="" class="templatemo-item">
+                                        </li>
+                                        <li>
+                                            <h4>Dota 2</h4><span>MOBA</span>
+                                        </li>
+                                        <li>
+                                            <h4>Tipo de juego</h4><span>Enfrentamiento multijugador</span>
+                                        </li>
+                                        <li>
+                                            <h4>Jugadores</h4><span>5v5</span>
+                                        </li>
+                                        <li>
+                                            <h4>Actualmente</h4><span>Disponible</span>
+                                        </li>
+                                        <li>
+                                            <div class="main-border-button"><a
+                                                    href="https://www.dota2.com/home" target="_blank">Información</a></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="item">
+                                    <ul>
+                                        <li><img src="template/assets/images/fornite.jpg" alt="" class="templatemo-item">
+                                        </li>
+                                        <li>
+                                            <h4>Fortnite</h4><span>Battle Royal</span>
+                                        </li>
+                                        <li>
+
+                                            <h4>Tipo de juego</h4><span>Enfrentamiento Royale</span>
+                                        </li>
+                                        <li>
+                                            <h4>Jugadores</h4><span>5v5</span>
+                                        </li>
+                                        <li>
+                                            <h4>Actualmente</h4><span>Disponible</span>
+                                        </li>
+                                        <li>
+                                            <div class="main-border-button"><a href="https://www.epicgames.com/fortnite/es-ES/home" 
+                                            target="_blank">Información</a></div>
+
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="item last-item">
+                                    <ul>
+                                        <li><img src="template/assets/images/csgo.jpg" alt="" class="templatemo-item">
+                                        </li>
+                                        <li>
+                                            <h4>CS-GO</h4><span>MOBA</span>
+                                        </li>
+                                        <li>
+                                            <h4>Tipo de juego</h4><span>Shooter primera persona</span>
+                                        </li>
+                                        <li>
+                                            <h4>Jugadores</h4><span>5v5</span>
+                                        </li>
+                                        <li>
+                                            <h4>Actualmente</h4><span>Disponible</span>
+                                        </li>
+                                        <li>
+                                            <div class="main-border-button"><a
+                                                    href="https://blog.counter-strike.net" target="_blank">Información</a></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            
         </div>
+            <section class="">
+        <!-- Footer -->
+        <footer class="text-white text-center" style="background-color: rgba(60,60,60, 0.2);">
+            <!-- Grid container -->
+            <div class="container p-4">
+                <!--Grid row-->
+                <div class="row">
+                    <!--Grid column-->
+                    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">A cerca de la página</h5>
 
-    </div>
-     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
-</body>
+                        <p>
+                            Esta página web fue creada como proyecto de parcial para la materia de
+                            programación web avanzada, y tiene como finalidad, brindar a la Universidad un sistema
+                            capaz de administrar el evento GamerFest producido por la carrera de Software.
+                        </p>
+                    </div>
+                    <!--Grid column-->
 
-</html>
+
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Reglamento</h5>
+                        <br>
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="pdf/Clash_Royale.pdf" class="text-white" target="_blank" title="Juego para Móviles">Clash Royale</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="pdf/Dota2.pdf" class="text-white" target="_blank" title="Juego para Computadoras">Dota 2</a>
+                            </li>
+                            <br>
+                            <li>
+                                <a href="pdf/Drabon_ball.pdf" class="text-white" target="_blank" title="Juego de Play Station">Dragon Ball Z</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-2">Contactos</h6>
+                        <a>
+                            <i class="fas fa-envelope "></i>
+                            Brandon Fonseca bafonseca@espe.edu.ec
+                        </a>
+                        <br>
+                        
+                        <a>
+                            <i class="fas fa-envelope "></i>
+                            Jhony Wolker jmtoapanta12@espe.edu.ec
+                        </a>
+                        <br>
+                        <a>
+                            <i class="fas fa-envelope "></i>
+                            Tonato Tonato tonato@espe.edu.ec
+                        </a>
+                        <br>
+                        <a>
+                            <i class="fas fa-envelope "></i>
+                            Gualpa Gualpa bagualpa@espe.edu.ec
+                        </a>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: black;">
+                © 2023 Copyright:
+                <a class="text-white">Ultimate Developers</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+    </section>
+        <!-- Scripts -->
+        <!-- Bootstrap core JavaScript -->
+        <script src="template/vendor/jquery/jquery.min.js"></script>
+        <script src="template/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+        <script src="template/assets/js/isotope.min.js"></script>
+        <script src="template/assets/js/owl-carousel.js"></script>
+        <script src="template/assets/js/tabs.js"></script>
+        <script src="template/assets/js/popup.js"></script>
+        <script src="template/assets/js/custom.js"></script>
+
+
+    </body>
+
+@endsection

@@ -18,7 +18,7 @@ class PartidaInds extends Component
     public function render()
     {
 		$keyWord = '%'.$this->keyWord .'%';
-        $inscritos = InscripcionInd::with('jugadors')->get();
+        $inscritos = InscripcionInd::with('individuales')->get();
         return view('livewire.partida-inds.view', [
             'partidaInds' => PartidaInd::with('jugadors1')->with('jugadors2')->with('jugadors3')
                         ->whereHas('jugadors1', fn ($query) => 
@@ -54,22 +54,24 @@ class PartidaInds extends Component
     public function store()
     {
         $this->validate([
-		'id_jug1' => 'required',
-		'id_jug2' => 'required',
-		'ganador_par_ind' => 'required',
+            'id_jug1' => 'required',
+            'id_jug2' => 'required',
+            'ganador_par_ind' => 'required',
+            'fecha_par_ind' => 'nullable|date',
+            'observacion_par_ind' => 'nullable|string'
         ]);
 
-        PartidaInd::create([ 
-			'id_jug1' => $this-> id_jug1,
-			'id_jug2' => $this-> id_jug2,
-			'ganador_par_ind' => $this-> ganador_par_ind,
-			'fecha_par_ind' => $this-> fecha_par_ind,
-			'observacion_par_ind' => $this-> observacion_par_ind
+        PartidaInd::create([
+            'id_jug1' => $this->id_jug1,
+            'id_jug2' => $this->id_jug2,
+            'ganador_par_ind' => $this->ganador_par_ind,
+            'fecha_par_ind' => $this->fecha_par_ind,
+            'observacion_par_ind' => $this->observacion_par_ind
         ]);
-        
+
         $this->resetInput();
-		$this->emit('closeModal');
-		session()->flash('message', 'PartidaInd Successfully created.');
+        $this->emit('closeModal');
+        session()->flash('message', 'PartidaInd Successfully created.');
     }
 
     public function edit($id)
@@ -89,24 +91,25 @@ class PartidaInds extends Component
     public function update()
     {
         $this->validate([
-		'id_jug1' => 'required',
-		'id_jug2' => 'required',
-		'ganador_par_ind' => 'required',
+            'selected_id' => 'required|numeric',
+            'id_jug1' => 'required',
+            'id_jug2' => 'required',
+            'ganador_par_ind' => 'required',
         ]);
 
         if ($this->selected_id) {
-			$record = PartidaInd::find($this->selected_id);
-            $record->update([ 
-			'id_jug1' => $this-> id_jug1,
-			'id_jug2' => $this-> id_jug2,
-			'ganador_par_ind' => $this-> ganador_par_ind,
-			'fecha_par_ind' => $this-> fecha_par_ind,
-			'observacion_par_ind' => $this-> observacion_par_ind
+            $record = PartidaInd::find($this->selected_id);
+            $record->update([
+                'id_jug1' => $this->id_jug1,
+                'id_jug2' => $this->id_jug2,
+                'ganador_par_ind' => $this->ganador_par_ind,
+                'fecha_par_ind' => $this->fecha_par_ind,
+                'observacion_par_ind' => $this->observacion_par_ind
             ]);
 
             $this->resetInput();
             $this->updateMode = false;
-			session()->flash('message', 'PartidaInd Successfully updated.');
+            session()->flash('message', 'PartidaInd Successfully updated.');
         }
     }
 

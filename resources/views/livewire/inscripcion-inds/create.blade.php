@@ -12,21 +12,21 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <label for="id_jug"></label>
-                        <select wire:model="id_jug" type="text" class="form-control" id="id_jug"
-                            placeholder="Jugador">@error('id_jug') <span class="error text-danger">{{ $message }}</span>
+                        <label for="id_ind">ID INDIVIDUAL</label>
+                        <select wire:model="id_ind" type="text" class="form-control" id="id_ind"
+                            placeholder="Jugador">@error('id_ind') <span class="error text-daner">{{ $message }}</span>
                             @enderror
                             <option>Seleccione</option>
-                            @foreach($jugadores as $jugador)
-                            <option value="{{$jugador->id}}">{{$jugador->nombre_jug}}</option>
+                            @foreach($individuales as $individual)
+                            <option value="{{$individual->id}}">{{$individual->nombre_ind}}</option>
                             @endforeach
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="id_jue"></label>
+                        <label for="id_jue">ID JUEGO</label>
                         <select wire:model="id_jue" type="text" class="form-control" id="id_jue"
-                            placeholder="Juego">@error('id_jue') <span class="error text-danger">{{ $message }}</span>
+                            placeholder="Juego">@error('id_ind') <span class="error text-danger">{{ $message }}</span>
                             @enderror
                             <option>Seleccione</option>
                             @foreach($juegos as $juego)
@@ -35,15 +35,15 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="precio_ins"></label>
+                        <label for="precio_ins">PRECIO INSCRIPCION</label>
                         <input wire:model="precio_ins" type="text" class="form-control" id="precio_ins"
-                            placeholder="Precio Ins">@error('precio_ins') <span
+                            placeholder="Precio Inscripcion">@error('precio_ins') <span
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-group">
-                        <label for="pago_ins"></label>
+                        <label for="pago_ins">PAGO INSCRIPCION</label>
                         <input wire:model="pago_ins" type="file" class="form-control" id="pago_ins"
-                            placeholder="Pago Ins">@error('pago_ins') <span
+                            placeholder="Pago Inscripcion">@error('pago_ins') <span
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
 

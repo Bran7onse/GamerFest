@@ -47,20 +47,26 @@ class Horarios extends Component
     public function store()
     {
         $this->validate([
-		'id_jue' => 'required',
+            'id_jue' => 'required',
+
+            'hora_ini_hor' => 'required|date_format:H:i',
+            'hora_fin_hor' => 'required|date_format:H:i',
+
+            'observacion_hor' => 'required',
         ]);
 
-        Horario::create([ 
-			'id_jue' => $this-> id_jue,
-			'hora_ini_hor' => $this-> hora_ini_hor,
-			'hora_fin_hor' => $this-> hora_fin_hor,
-			'observacion_hor' => $this-> observacion_hor
+        Horario::create([
+            'id_jue' => $this->id_jue,
+            'hora_ini_hor' => $this->hora_ini_hor,
+            'hora_fin_hor' => $this->hora_fin_hor,
+            'observacion_hor' => $this->observacion_hor
         ]);
-        
+
         $this->resetInput();
-		$this->emit('closeModal');
-		session()->flash('message', 'Horario Successfully created.');
+        $this->emit('closeModal');
+        session()->flash('message', 'Horario Successfully created.');
     }
+
 
     public function edit($id)
     {
@@ -78,21 +84,25 @@ class Horarios extends Component
     public function update()
     {
         $this->validate([
-		'id_jue' => 'required',
+            'id_jue' => 'required',
+
+            'hora_ini_hor' => 'required|date_format:H:i',
+            'hora_fin_hor' => 'required|date_format:H:i',
+            'observacion_hor' => 'required',
         ]);
-
+    
         if ($this->selected_id) {
-			$record = Horario::find($this->selected_id);
+            $record = Horario::find($this->selected_id);
             $record->update([ 
-			'id_jue' => $this-> id_jue,
-			'hora_ini_hor' => $this-> hora_ini_hor,
-			'hora_fin_hor' => $this-> hora_fin_hor,
-			'observacion_hor' => $this-> observacion_hor
+                'id_jue' => $this-> id_jue,
+                'hora_ini_hor' => $this-> hora_ini_hor,
+                'hora_fin_hor' => $this-> hora_fin_hor,
+                'observacion_hor' => $this-> observacion_hor
             ]);
-
+    
             $this->resetInput();
             $this->updateMode = false;
-			session()->flash('message', 'Horario Successfully updated.');
+            session()->flash('message', 'Horario Successfully updated.');
         }
     }
 

@@ -14,7 +14,7 @@
                     <div class="form-group">
 
 
-                        <label for="id_aul"></label>
+                        <label for="id_aul">SELECCIONE EL AULA</label>
 
 
                         <select wire:model="id_aul" type="text" class="form-control" id="id_aul"
@@ -28,9 +28,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="id_cat"></label>
+                        <label for="id_cat">SELEECIONE ID CATEGORIA</label>
                         <select wire:model="id_cat" type="text" class="form-control" id="id_cat"
-                            placeholder="Id Cat">@error('id_cat') <span class="error text-danger">{{ $message }}</span>
+                            placeholder="Id Categoria">@error('id_cat') <span class="error text-danger">{{ $message }}</span>
                             @enderror
                             <option>Seleccione</option>
                             @foreach($categorias as $categoria)
@@ -39,27 +39,27 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="nombre_jue"></label>
+                        <label for="nombre_jue">NOMBRE DEL JUEGO</label>
                         <input wire:model="nombre_jue" type="text" class="form-control" id="nombre_jue"
-                            placeholder="Nombre Jue">@error('nombre_jue') <span
+                            placeholder="Nombre Juego">@error('nombre_jue') <span
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-group">
-                        <label for="compania_jue"></label>
+                        <label for="compania_jue">COMPANIA DEL JUEGO</label>
                         <input wire:model="compania_jue" type="text" class="form-control" id="compania_jue"
-                            placeholder="Compania Jue">@error('compania_jue') <span
+                            placeholder="Compania Juego">@error('compania_jue') <span
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-group">
-                        <label for="precio_jue"></label>
+                        <label for="precio_jue">PRECIO DEL JUEGO</label>
                         <input wire:model="precio_jue" type="text" class="form-control" id="precio_jue"
-                            placeholder="Precio Jue">@error('precio_jue') <span
+                            placeholder="Precio Juego">@error('precio_jue') <span
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-group">
-                        <label for="descripcion_jue"></label>
+                        <label for="descripcion_jue">DESCRIPCION</label>
                         <input wire:model="descripcion_jue" type="text" class="form-control" id="descripcion_jue"
-                            placeholder="Descripcion Jue">@error('descripcion_jue') <span
+                            placeholder="Descripcion Juego">@error('descripcion_jue') <span
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
 

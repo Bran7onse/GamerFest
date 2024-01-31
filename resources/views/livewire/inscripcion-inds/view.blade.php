@@ -7,7 +7,7 @@
 					<div style="display: flex; justify-content: space-between; align-items: center;">
 						<div class="float-left">
 							<h4><i class="fab fa-laravel text-info"></i>
-							Inscripcion Individual </h4>
+							INSCRIPCION INDIVIDUAL </h4>
 						</div>
 						
 						@if (session()->has('message'))
@@ -41,7 +41,7 @@
 							@foreach($inscripcionInds as $row)
 							<tr>
 								<td>{{ $loop->iteration }}</td> 
-								<td>{{ $row->jugadors->nombre_jug }}</td>
+								<td>{{ $row->individuales->nombre_ind }}</td>
 								<td>{{ $row->juegos->nombre_jue }}</td>
 								<td>{{ $row->precio_ins }}</td>
 								<td>{{ $row->pago_ins }}</td>

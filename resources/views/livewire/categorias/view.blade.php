@@ -1,5 +1,5 @@
 @section('title', __('Categorias'))
-<div class="container-fluid">
+<div class="container-fluid" style="background-image: url('images/image-euMt9PuWV-transformed.png'); background-size: cover; background-position: center center;">
 	<div class="row justify-content-center">
 		<div class="col-md-12">
 			<div class="card">
@@ -8,7 +8,7 @@
 					
 						<div class="float-left .col-auto .me-auto">
 							<h4>
-							Categoria </h4>
+							CATEGORIA </h4>
 						</div>
 						
 						<div>
@@ -28,9 +28,9 @@
 						<thead class="thead">
 							<tr> 
 								<td>#</td> 
-								<th>Tipo Cat</th>
-								<th>Num Jug Cat</th>
-								<th>Descripcion Cat</th>
+								<th>Tipo Categoria</th>
+								<th>Numero Jugadores Categoria</th>
+								<th>Descripcion Categoria</th>
 								<td>Acciones</td>
 							</tr>
 						</thead>
