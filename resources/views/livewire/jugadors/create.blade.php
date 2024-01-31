@@ -11,7 +11,7 @@
            <div class="modal-body">
 				<form>
                 <div class="form-group">
-                         <label for="">SELECCIONE</label>
+                         <label for="">SELECCIONE EQUIPO</label>
                         <select wire:model="id_equ" type="text" class="form-control" id="id_equ"
                             placeholder="Equipo">@error('id_equ') <span class="error text-danger">{{ $message }}</span>
                             @enderror
