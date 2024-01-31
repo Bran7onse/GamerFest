@@ -14,15 +14,63 @@
     <!-- Styles -->
     <style>
     /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-    html {
-        line-height: 1.15;
-        -webkit-text-size-adjust: 100%
-    }
-
+    
+    /* ESTILOS PARA LAS MINUATURAS  */
     body {
-        margin: 0
+        font-family: 'Nunito', sans-serif;
+        background-color: #121212; /* Color de fondo para la sección oscura */
+        color: #ffffff; /* Color del texto */
+    }
+    .card-img-top {
+        width: 100%;
+        height: 15vw; /* Ajusta la altura de las imágenes */
+        object-fit: cover; /* Asegura que las imágenes cubran el área sin perder su aspecto */
+    }
+    .card-title {
+        color: #ffffff; /* Color del título de la tarjeta */
+     }
+    .card {
+        background-color: #333333; /* Color de fondo de la tarjeta */
+        border: none; /* Sin bordes */
+    }
+    .card-body {
+        padding: 0.5rem; /* Espaciado interno */
+    }
+    #pageHeaderTitle {
+        margin-bottom: 2rem; /* Espaciado después del título de la página */
     }
 
+    .card:hover {
+    transform: scale(1.05); /* Aumenta el tamaño de la tarjeta */
+    transition: transform 0.3s ease-in-out; /* Hace la transición suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Agrega sombra para resaltar */
+    }
+
+    .card-img-top:hover {
+        opacity: 0.9; /* Hace la imagen ligeramente transparente al pasar el mouse */
+    }
+
+    .card {
+        cursor: pointer; /* Cambia el cursor a un puntero */
+        transition: transform 0.3s ease; /* Agrega una transición para la animación */
+    }
+        
+    .card:hover {
+        transform: scale(1.05); /* Aumenta el tamaño de la tarjeta ligeramente cuando se pasa el ratón por encima */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: agrega una sombra para un efecto de elevación */
+    }
+
+    .card {
+            cursor: pointer; /* Cambia el cursor a un puntero al pasar sobre la tarjeta */
+            transition: transform 0.2s ease-in-out; /* Transición suave para la transformación */
+        }
+        
+        .card:hover {
+            transform: translateY(-5px); /* Mueve la tarjeta hacia arriba al pasar el cursor */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Sombra para dar un efecto "elevado" */
+        }
+
+       
     a {
         background-color: transparent
     }
@@ -37,8 +85,16 @@
     }
 
     .fondo-transparente {
-    background-color: rgba(255, 255, 255, 0); /* RGB blanco con 0 de opacidad */
-    background-image: url('/resources/views/image/fondo.jpg');
+        background-color: rgba(255, 255, 255, 0); /* RGB blanco con 0 de opacidad */
+        background-image: url('/resources/views/image/fondo.jpg');
+    }
+
+    .imagen_fondo {
+        background-image: url('/resources/views/image/fondo.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        height: 28em;
     }
 
 
@@ -64,7 +120,7 @@
         max-width: 100%;
         height: auto
     }
-
+/* 
     .bg-white {
         --tw-bg-opacity: 1;
         background-color: rgb(255 255 255 / var(--tw-bg-opacity))
@@ -80,7 +136,7 @@
         --tw-bg-opacity: 5;
         background-color: #e0b3ff; / var(--tw-bg-opacity)
         
-    }
+    } */
 
     .border-gray-200 {
         --tw-border-opacity: 1;
@@ -1031,28 +1087,23 @@
             color: rgb(107 114 128 / var(--tw-text-opacity))
         }
          /* FONDO DE PANTALLA */
-        .bg {
-            /* The image used */
-            background-image: url("{{ url('https://img.freepik.com/vector-premium/plantilla-banner-juego-simple-unica_92741-92.jpg?w=1380') }}");
-
-            /* Full height */
-            height: 100%;
-
-            /* Center and scale the image nicely */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+         .bg {
+            background-image: url('images/WELCOME.jpg'); /* Asegúrate de que la ruta de la imagen es correcta */
+            background-position: center center; /* Centra la imagen de fondo */
+            background-size: cover; /* Asegúrate de que la imagen cubra todo el espacio posible */
+            background-repeat: no-repeat; /* No se repetirá la imagen */
+            background-attachment: fixed; /* La imagen de fondo no se desplaza con el contenido */
+            min-height: 100vh; /* Minimo de altura al 100% de la altura de la pantalla */
+            width: 100%; /* Asegúrate de que el div ocupe todo el ancho de la pantalla */
         }
+
     }
     </style>
 
     <style>
     body {
-        font-family: 'Nunito', sans-serif;
-        background-image: url('https://cdn5.vectorstock.com/i/1000x1000/27/14/retro-neon-color-game-controller-vector-33752714.jpg');
-        
-      
-      
+        background-image: url("images/game-OVER.jpg");        
+       
     }
 
     #logoContainer {
@@ -1075,16 +1126,18 @@
     </style>
 </head>
 
-<body >>
+<body >
 
+    {{-- LOGO DEL GAMER FEST --}}
     <div class="relative  items-top min-h-screen bg dark:bg-gray-900  py-4 sm:pt-0">
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-transparent  ">
         <div id="logoContainer">
-        <img src="https://cdn5.vectorstock.com/i/1000x1000/27/14/retro-neon-color-game-controller-vector-33752714.jpg" alt="GAMERFest">
+        <img src="{{ asset('images/gamer-zone.png') }}" alt="GAMER FEST">
         
     </div>
-    <div style="font-size: 1.5em; color: #ffffff;">GAMER<b>Fest</b></div>
+
+    <div style="font-size: 1.5em; color: #ffffff;"><b>GAMER FEST</b></div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -1098,7 +1151,7 @@
                     <li class="nav-item align-self-end">
                         @if (Route::has('login'))
                         @auth
-                        <a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a>
+                        <a class="nav-link" href="{{ url('/dash') }}">Dashboard</a>
                         @else
                         <a class="nav-link" href="{{ route('login') }}"><b> Iniciar Sesion</b></a>
                         @endif
@@ -1123,6 +1176,9 @@
                 </ul>
             </div>
         </nav>
+
+        {{-- CARRUCEL --}}
+
         <section class="dark">
             <div class="container py-4">
                 <h1 class="postcard__title blue" style="color:rgba(255, 255, 255,100);" id="pageHeaderTitle"><strong>Gamer Fest</strong>
@@ -1204,174 +1260,220 @@
         <br><br><br>
 
 
+        {{-- MINIATURAS --}}
+
+        <section class="dark">
+            <div class="container py-4">
+                <h1 class="postcard__title blue text-center" id="pageHeaderTitle"><strong>JUEGOS MAS POPULARES</strong></h1>
+                <div class="row">
+                    <!-- Miniatura para Call of Duty -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="card">
+                            <img src="{{ url('images/call_of_duty.jpg') }}" class="card-img-top" alt="Call of Duty">
+                            <div class="card-body">
+                                <h5 class="card-title">Call of Duty</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Miniatura para Fall Guys -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="card">
+                            <img src="{{ url('images/fall_guys.jpg') }}" class="card-img-top" alt="Fall Guys">
+                            <div class="card-body">
+                                <h5 class="card-title">Fall Guys</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Miniatura para League of Legends -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="card">
+                            <img src="{{ url('images/lol.jpg') }}" class="card-img-top" alt="League of Legends">
+                            <div class="card-body">
+                                <h5 class="card-title">League of Legends</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Agrega más miniaturas según sea necesario -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="card">
+                            <img src="{{ url('images/mario.jpg') }}" class="card-img-top" alt="League of Legends">
+                            <div class="card-body">
+                                <h5 class="card-title">Mario Karts</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Otras miniaturas siguiendo el mismo patrón -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="card">
+                            <img src="{{ url('images/valo.jpg') }}" class="card-img-top" alt="League of Legends">
+                            <div class="card-body">
+                                <h5 class="card-title">Valorant</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Otras miniaturas siguiendo el mismo patrón -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="card">
+                            <img src="{{ url('images/guitar.jpg') }}" class="card-img-top" alt="League of Legends">
+                            <div class="card-body">
+                                <h5 class="card-title">Guitar Hero</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Otras miniaturas siguiendo el mismo patrón -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="card">
+                            <img src="{{ url('images/FREEFIRE.jpg') }}" class="card-img-top" alt="League of Legends">
+                            <div class="card-body">
+                                <h5 class="card-title">Free Fire</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Otras miniaturas siguiendo el mismo patrón -->
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="card">
+                            <img src="{{ url('images/CLASHROYAL.jpg') }}" class="card-img-top" alt="League of Legends">
+                            <div class="card-body">
+                                <h5 class="card-title">Clash Royal</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br><br><br>
+        
+
+
         {{-- UBICACION --}}
 
-        <article class="postcard dark blue">
-
-            <div class="postcard__text">
-            <ul class="postcard__tagbox text-center">
-                <li class="tag__item"><i class="fas fa-tag mr-2"></i>UNIVERSIDAD DE LAS FUERZAS ARMADAS ESEPE-L
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255320.8492452357!2d-78.82275426580185!3d-0.841249646455157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d4610819e1d63b%3A0x7843aaaabafcc6cf!2sUniversidad%20de%20las%20Fuerzas%20Armadas%20ESPE%20Centro%20de%20Apoyo%20N%C2%BA%209%20Latacunga!5e0!3m2!1ses-419!2sec!4v1705428958715!5m2!1ses-419!2sec"
-                     width="600" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </li>
-            </ul>
+        <section class="dark">
+            <div class="container py-4 text-white">
+                <!-- Título eliminado ya que estaba vacío -->
+                <div class="row">
+                    <!-- Indicaciones al lado izquierdo -->
+                    <div class="col-md-6">
+                        <div class="postcard__text">
+                            <h1 class="postcard__title blue"><strong>Ubicación del evento</strong></h1>
+                            <div class="postcard__bar"></div>
+                            <div class="postcard__preview-txt">
+                                <strong>¡Entonces no puedes perderte el GAMER FEST!</strong>
+                                <br>
+                                Lugar: El evento "Gamer Fest" se realizará en el campus Gral.
+                                Guillermo Rodríguez Lara ubicado en la parroquia Belisario Quevedo, para una mejor
+                                referencia de cómo llegar dejamos un mapa.
+                            </div>
+                            <div class="postcard__preview-txt">
+                                <strong>Torneos:</strong> Participa o anima a tus equipos favoritos en emocionantes torneos de
+                                League of Legends, Dota 2, Clash Royale, FIFA 21, Fortnite, Free Fire, Call of Duty, entre otros.    
+                                <br> 
+                                <strong>Zona Arcade:</strong> Revive la nostalgia con juegos clásicos y descubre nuevas aventuras.
+                                <br>
+                                <strong>Stands de Merchandising:</strong> Encuentra esa camiseta, figura coleccionable o accesorio gamer que siempre has querido.
+                                <br>
+                                <strong>Paneles y Talleres:</strong> Aprende de expertos en desarrollo de juegos, estrategias competitivas y más.
+                                <br>
+                                <strong>Zona de Descanso y Proyecciones:</strong> Relájate viendo partidas en vivo y conoce a otros aficionados.
+                                <br>
+                                <strong>INICIO DEL EVENTO: 8:00 am</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Ubicación al lado derecho -->
+                    <div class="col-md-6">
+                        <div class="postcard__text text-center">
+                            <i class="fas fa-tag mr-2"></i>UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE-L
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255320.8492452357!2d-78.82275426580185!3d-0.841249646455157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d4610819e1d63b%3A0x7843aaaabafcc6cf!2sUniversidad%20de%20las%20Fuerzas%20Armadas%20ESPE%20Centro%20de%20Apoyo%20N%C2%BA%209%20Latacunga!5e0!3m2!1ses-419!2sec!4v1705428958715!5m2!1ses-419!2sec"
+                            width="500" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                         </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="postcard__text">
-                <h1 class="postcard__title blue"><strong>Ubicacion del evento</strong></h1>
-                <div class="postcard__subtitle small">
-                    <time datetime="2020-05-25 12:00:00">
-                        <i class="fas fa-calendar-alt mr-2"></i>
-                    </time>
-                </div>
-                <div class="postcard__bar"></div>
-                <div class="postcard__preview-txt">
-                    <center>
-                       <strong> ERES UN APACIONADO DE LOS VIDEOJUEGOS</strong>
-                    </center>
-                    <br>
-                   <strong> ¡Entonces no puedes perderte el GAMER FEST! </strong>
-                    <br>
-                    Lugar: El evento "Gamer Fest" se realizara en el campus Gral.
-                    Guillermo Rodríguez Lara ubicado en la parroquia Belisario Quevedo, para una mejor
-                    referencia de como llegar dejamos un mapa.
-                    <br>
-                    <center>
-                        <strong>VIVE UNA EXPERIENCIA AL MAXIMO</strong>
-                    </center>
-                      
-                </div>
-                
-                <div class="postcard__preview-txt">
-                    <strong>Torneos:</strong>Participa o anima a tus equipos favoritos en emocionantes torneos de
-                     League of Legends,Dota 2, Clash Royale,FIFA 21,Fortnite, Free Fire, Call of Duty, entre otros.    
-                    <br> 
-                    <strong>Zona Arcade:</strong> Revive la nostalgia con juegos clásicos y descubre nuevas aventuras.
-                    <br>
-                    <strong>Stands de Merchandising:</strong> Encuentra esa camiseta, figura coleccionable o accesorio gamer que siempre has querido.
-                    <br>
-                    <strong>Paneles y Talleres:</strong> Aprende de expertos en desarrollo de juegos, estrategias competitivas y más.
-                    <br>
-                    <strong>Zona de Descanso y Proyecciones:</strong> Relájate viendo partidas en vivo y conoce a otros aficionados.
-                </div>
-                
-                <br>
-                <ul class="postcard__tagbox">
-                    <li class="tag__item"><i class="fas fa-tag mr-2"></i>INICIO DEL EVENTO: 8:00 am</li>
-
-                </ul>
-            </div>
-        </article> 
+        </section>
+        <br><br><br>
+        
+        
+        
 
         {{-- REDES SOCIALES  --}}
 
-        <article class="postcard dark red">
-            <div class="postcard__text">
-                <ul class="postcard__tagbox text-center">
-                    <li class="tag__item"><i class="fas fa-tag mr-2"></i>GAMER FEST ESPE-L
-                        <iframe width="600" height="600" src="https://www.youtube.com/embed/FGmVQJEGfrY?si=5mBhKHf53pRW_6Ei" 
-                        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </li>
-                </ul>
+        <section class="dark">
+            <div class="container py-4 text-white">
+                <h1 class="postcard__title blue" id="pageHeaderTitle"><strong>Gamer Fest</strong></h1>
+        
+                <div class="row">
+                    <!-- Indicaciones al lado izquierdo -->
+                    <div class="col-lg-6">
+                     
+                            <div class="postcard__text">
+                                <h1 class="postcard__title red text-center"><strong>Nuestras redes sociales</strong></h1>
+                                <div class="postcard__bar"></div>
+                                <div class="text-center">Para mantenerte informado con noticias, actualizaciones y resultados del Gamer Fest te recomendamos acceder a nuestras redes sociales en las cuales se actualizará el contenido antes, durante y después del evento.</div>
+                                <div class="postcard__preview-txt text-center">¡Síguenos en nuestras redes sociales!</div>
+                                <br>
+                                <div class="text-center">
+                                    <strong>🎮 Facebook: GAMER FEST ESPE-L</strong>
+                                    <p>Únete a nuestra comunidad en Facebook. ¡No te pierdas nuestras actualizaciones, fotos del evento, y mucho más!</p>
+                                    <strong>📸 Instagram: gamerfest_espel</strong>
+                                    <p>Mira nuestras historias y publicaciones para ver las mejores fotos y videos del GAMER FEST.</p>
+                                    <strong>🎮 Discord: GAMER FEST ESPE-L</strong>
+                                    <p>Únete a nuestra comunidad en Discord para hablar con otros asistentes, jugadores y personal del evento.</p>
+                                </div>
+                                <ul class="postcard__tagbox">
+                                    <li class="tag__item"><i class="fas fa-tag mr-2"></i>INICIO DEL EVENTO: 8:00 am</li>
+                                </ul>
+                            </div>
+                     
+                    </div>
+        
+                    <!-- Video al lado derecho -->
+                    <div class="col-lg-6">
+                        <div class="postcard__text text-center">
+                            <i class="fas fa-tag mr-2"></i>GAMER FEST ESPE-L
+                            <iframe width="500" height="500" src="https://www.youtube.com/embed/FGmVQJEGfrY?si=5mBhKHf53pRW_6Ei" 
+                            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <br>
+        </section>
+        <br><br><br>
+        
 
-            <div class="postcard__text">
-                <h1 class="postcard__title red"><strong><center>Nuestras redes sociales</center></strong></h1>
-                <div class="postcard__subtitle small">
-                    <time datetime="2020-05-25 12:00:00">
-                        <i class="fas fa-calendar-alt mr-2"></i>
-                    </time>
-                </div>
+        {{-- CONTACTOS  --}}    
 
-                <div class="postcard__bar"></div>
-                <div>
-                    <center>  Para mantenerte informado con noticias, actualizaciones y resultados del Gamer 
-                        Fest te recomendamos acceder a nuestras redes sociales en las cuales se actualizará el contenido 
-                        antes, durante y después del evento.
-                    </center>
+        <section class="dark">
+            <div class="text-white">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <!-- Columna vacía para centrar el contenido -->
+                    </div>
+                    <div class="col-sm-10">
+                        <h6 class="text-uppercase fw-bold mb-2 text-center">Contactos</h6>
+                        <div class="d-flex justify-content-center">
+                            <a href="https://discord.gg/NjFM2dDr" class="btn btn-primary btn-lg" role="button" aria-disabled="true" style="border: 0px; background-color: transparent">
+                                <img src="{{ url('images/discord.png') }}" width="50" height="50" alt="Discord">
+                            </a>
+                            <a href="https://www.instagram.com/gamerfest.ec/?hl=es-la" class="btn btn-primary btn-lg" role="button" aria-disabled="true" style="border: 0px; background-color: transparent">
+                                <img src="{{ url('images/instagram.png') }}" width="50" height="50" alt="Instagram">
+                            </a>
+                            <a href="https://www.facebook.com/gamerfest.ec" class="btn btn-primary btn-lg" role="button" aria-disabled="true" style="border: 0px; background-color: transparent">
+                                <img src="{{ url('images/facebook.png') }}" width="50" height="50" alt="Facebook">
+                            </a>
+                        </div>
+                        <ul class="list-unstyled text-center">
+                            <li><i class="fas fa-envelope"></i> <span>Brandon Fonseca</span> - bafonseca@espe.edu.ec</li>
+                            <li><i class="fas fa-envelope"></i> <span>Jhony Wolker</span> - jmtoapanta12@espe.edu.ec</li>
+                            <li><i class="fas fa-envelope"></i> <span>Tonato</span> - tonato@espe.edu.ec</li>
+                            <li><i class="fas fa-envelope"></i> <span>Gualpa</span> - bagualpa@espe.edu.ec</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-1">
+                        <!-- Columna vacía para centrar el contenido -->
+                    </div>
                 </div>
-                <div class="postcard__preview-txt">¡Síguenos en nuestras redes sociales!</div>
-                <br>
-                <strong>🎮 Facebook: GAMER FEST ESPE-L</strong>
-                <div class="postcard__preview-txt">Únete a nuestra comunidad en Facebook. ¡No te pierdas nuestras actualizaciones, fotos del evento, y mucho más!</div>
-            
-                <li class="tag__item">
-                    <i class="fas fa-clock mr-2"></i>Facebook:
-                    
-                </li>
-                <strong>📸 Instagram: gamerfest_espel</strong>
-                <div class="postcard__preview-txt">Mira nuestras historias y publicaciones para ver las mejores fotos y videos del GAMER FEST.</div>
-                
-                <li class="tag__item">
-                    <i class="fas fa-clock mr-2"></i>Instagram:
-                    
-                </li>
-                <strong>🎮 Discord: GAMER FEST ESPE-L</strong>
-                <div class="postcard__preview-txt">Únete a nuestra comunidad en Discord para hablar con otros asistentes, jugadores y personal del evento.</div>
-                
-                <li class="tag__item">
-                    <i class="fas fa-tag mr-2"></i>Discord:
-                    
-                </li>   
-                
             </div>
-            <a class="postcard__img_link" href="#"></a>
-        </article> --}}
-
-    <section class="dark">
-        <div class="text-white">
-            <div class="row" >
-                <div class="col-sm-1">
-                </div>
-                <div class="col-sm-3">
-                    <br>
-
-                </div>
-                <div class="col-sm-4">
-                    <br>
-                    <center>
-                            <!-- Links -->
-                            <h6 class="text-uppercase fw-bold mb-2">Contactos</h6>
-                            <ul class="list-unstyled">
-                                {{-- REDES SOCIALES  --}}
-                                <a href="https://discord.gg/NjFM2dDr" class="btn btn-primary btn-lg" role="button" aria-disabled="true" style="border: 0px; background-color: transparent">
-                                    <img class="card-img-top" src="{{ url('images/discord.png') }}" width="50" height="50" alt="Discord">
-                                </a>
-                                <a href="https://www.instagram.com/gamerfest.ec/?hl=es-la" class="btn btn-primary btn-lg" role="button" aria-disabled="true" style="border: 0px; background-color: transparent">
-                                    <img class="card-img-top" src="{{ url('images/instagram.png') }}" width="50" height="50" alt="Instagram">
-                                </a>
-                                <a href="https://www.facebook.com/gamerfest.ec" class="btn btn-primary btn-lg" role="button" aria-disabled="true" style="border: 0px; background-color: transparent">
-                                    <img class="card-img-top" src="{{ url('images/facebook.png') }}" width="50" height="50" alt="Facebook">
-                                </a>
-                                <li>
-                                    <i class="fas fa-envelope"></i>
-                                    <span>Brandon Fonseca</span> - bafonseca"espe.edu.ec
-                                </li>
-                                <li>
-                                    <i class="fas fa-envelope"></i>
-                                    <span>Jhony Wolker</span> - jmtoapanta12@espe.edu.ec
-                                </li>
-                                <li>
-                                    <i class="fas fa-envelope"></i>
-                                    <span>Tonato</span> - tonato@espe.edu.ec
-                                </li>
-                                <li>
-                                    <i class="fas fa-envelope"></i>
-                                    <span>Gualpa</span> - bagualpa@espe.edu.ec
-                                </li>
-                            </ul>
-                            <br>
-                    </center>
-                </div>
-                <div class="col-sm-1">
-                </div>
-                <div class="col-sm-2">
-
-                </div>
-
-            </div>
-    </section>
+        </section>
         </div>
     
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

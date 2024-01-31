@@ -12,7 +12,7 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <label for="id_jug1"></label>
+                        <label for="id_jug1">ID JUGADOR 1</label>
                         <select wire:model="id_jug1" type="text" class="form-control" id="id_jug1"
                             placeholder="Jugador 1">@error('id_jug1') <span class="error text-danger">{{ $message }}</span>
                             @enderror
@@ -23,7 +23,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="id_jug2"></label>
+                        <label for="id_jug2">ID JUGADOR 2</label>
                         <select wire:model="id_jug2" type="text" class="form-control" id="id_jug2"
                             placeholder="Jugador 2">@error('id_jug2') <span class="error text-danger">{{ $message }}</span>
                             @enderror
@@ -34,7 +34,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="ganador_par_ind"></label>
+                        <label for="ganador_par_ind">GANADOR DE LA PARTIDA</label>
                         <select wire:model="ganador_par_ind" type="text" class="form-control" id="ganador_par_ind"
                             placeholder="Ganador">@error('ganador_par_ind') <span class="error text-danger">{{ $message }}</span>
                             @enderror
@@ -45,7 +45,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="fecha_par_ind"></label>
+                        <label for="fecha_par_ind">FECHA DE LA PARTIDA</label>
                         <input wire:model="fecha_par_ind" type="datetime-local" class="form-control" id="fecha_par_ind"
                             placeholder="Fecha de la partida">@error('fecha_par_ind') <span
                             class="error text-danger">{{ $message }}</span> @enderror

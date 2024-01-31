@@ -60,6 +60,7 @@ class InscripcionEqus extends Component
             'id_jue' => 'required',
             'precio_ins_equ' => 'required|numeric',
             'pago_ins_equ' => 'required|numeric',
+
         ]);
 
         InscripcionEqu::create([
@@ -103,6 +104,7 @@ class InscripcionEqus extends Component
                 'id_jue' => $this->id_jue,
                 'precio_ins_equ' => $this->precio_ins_equ,
                 'pago_ins_equ' => $this->pago_ins_equ
+
             ]);
 
             $this->resetInput();

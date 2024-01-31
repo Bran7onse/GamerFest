@@ -317,12 +317,12 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        // [
-        //     'text'        => 'Dashboard',
-        //     'url'         => 'dash',
-        //     'icon'        => 'far fa-fw fa-user',
-        //     'label_color' => 'success',
-        // ],
+        [
+            'text'        => 'Dashboard',
+            'url'         => 'dash',
+            'icon'        => 'far fa-fw fa-user',
+            'label_color' => 'success',
+        ],
         ['header' => 'CRUD GAMER FEST'],
         [
             'text' => 'Categorias',

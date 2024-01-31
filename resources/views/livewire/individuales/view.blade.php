@@ -7,7 +7,7 @@
 					<div style="display: flex; justify-content: space-between; align-items: center;">
 						<div class="float-left">
 							<h4><i class="fab fa-laravel text-info"></i>
-							Individuale Listing </h4>
+							LISTA INDIVIDUAL </h4>
 						</div>
 						<div wire:poll.60s>
 							<code><h5>{{ now()->format('H:i:s') }} UTC</h5></code>
@@ -32,11 +32,11 @@
 						<thead class="thead">
 							<tr> 
 								<td>#</td> 
-								<th>Nombre Ind</th>
-								<th>Cedula Ind</th>
-								<th>Telefono Ind</th>
-								<th>Correo Ind</th>
-								<th>Descripcion Ind</th>
+								<th>Nombre</th>
+								<th>Cedula</th>
+								<th>Telefono</th>
+								<th>Correo</th>
+								<th>Descripcion</th>
 								<td>ACTIONS</td>
 							</tr>
 						</thead>

@@ -48,8 +48,10 @@ class Horarios extends Component
     {
         $this->validate([
             'id_jue' => 'required',
+
             'hora_ini_hor' => 'required|date_format:H:i',
             'hora_fin_hor' => 'required|date_format:H:i',
+
             'observacion_hor' => 'required',
         ]);
 
@@ -83,6 +85,7 @@ class Horarios extends Component
     {
         $this->validate([
             'id_jue' => 'required',
+
             'hora_ini_hor' => 'required|date_format:H:i',
             'hora_fin_hor' => 'required|date_format:H:i',
             'observacion_hor' => 'required',

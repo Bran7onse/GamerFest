@@ -11,7 +11,7 @@
            <div class="modal-body">
 				<form>
                 <div class="form-group">
-                        <label for="id_jue"></label>
+                        <label for="id_jue">SELECCIONE UN JUEGO</label>
                         <select wire:model="id_jue" type="text" class="form-control" id="id_jue"
                             placeholder="Juego">@error('id_jue') <span class="error text-danger">{{ $message }}</span>
                             @enderror
@@ -22,16 +22,16 @@
                         </select>
                     </div>
             <div class="form-group">
-                <label for="hora_ini_hor"></label>
-                <input wire:model="hora_ini_hor" type="datetime-local" class="form-control" id="hora_ini_hor" placeholder="Hora Ini Hor">@error('hora_ini_hor') <span class="error text-danger">{{ $message }}</span> @enderror
+                <label for="hora_ini_hor">HORA INICIO</label>
+                <input wire:model="hora_ini_hor" type="datetime-local" class="form-control" id="hora_ini_hor" placeholder="Hora Inicio">@error('hora_ini_hor') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="hora_fin_hor"></label>
-                <input wire:model="hora_fin_hor" type="datetime-local" class="form-control" id="hora_fin_hor" placeholder="Hora Fin Hor">@error('hora_fin_hor') <span class="error text-danger">{{ $message }}</span> @enderror
+                <label for="hora_fin_hor">HORA FIN</label>
+                <input wire:model="hora_fin_hor" type="datetime-local" class="form-control" id="hora_fin_hor" placeholder="Hora Fin">@error('hora_fin_hor') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="observacion_hor"></label>
-                <input wire:model="observacion_hor" type="text" class="form-control" id="observacion_hor" placeholder="Observacion Hor">@error('observacion_hor') <span class="error text-danger">{{ $message }}</span> @enderror
+                <label for="observacion_hor">OBSERVACION</label>
+                <input wire:model="observacion_hor" type="text" class="form-control" id="observacion_hor" placeholder="Observacion">@error('observacion_hor') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
 
                 </form>

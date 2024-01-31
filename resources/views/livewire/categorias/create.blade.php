@@ -11,16 +11,16 @@
            <div class="modal-body">
 				<form>
             <div class="form-group">
-                <label for="tipo_cat"></label>
-                <input wire:model="tipo_cat" type="text" class="form-control" id="tipo_cat" placeholder="Tipo Cat">@error('tipo_cat') <span class="error text-danger">{{ $message }}</span> @enderror
+                <label for="tipo_cat">TIPO CATEGORIA</label>
+                <input wire:model="tipo_cat" type="text" class="form-control" id="tipo_cat" placeholder="Tipo Categoria">@error('tipo_cat') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="num_jug_cat"></label>
-                <input wire:model="num_jug_cat" type="text" class="form-control" id="num_jug_cat" placeholder="Num Jug Cat">@error('num_jug_cat') <span class="error text-danger">{{ $message }}</span> @enderror
+                <label for="num_jug_cat">NUMERO DE JUGADORES</label>
+                <input wire:model="num_jug_cat" type="text" class="form-control" id="num_jug_cat" placeholder="Numero Jugador Categoria">@error('num_jug_cat') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="descripcion_cat"></label>
-                <input wire:model="descripcion_cat" type="text" class="form-control" id="descripcion_cat" placeholder="Descripcion Cat">@error('descripcion_cat') <span class="error text-danger">{{ $message }}</span> @enderror
+                <label for="descripcion_cat">DESCRIPCION</label>
+                <input wire:model="descripcion_cat" type="text" class="form-control" id="descripcion_cat" placeholder="Descripcion Categoria">@error('descripcion_cat') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
 
                 </form>

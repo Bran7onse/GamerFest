@@ -11,12 +11,12 @@
            <div class="modal-body">
 				<form>
             <div class="form-group">
-                <label for="nombre_equ"></label>
-                <input wire:model="nombre_equ" type="text" class="form-control" id="nombre_equ" placeholder="Nombre Equ">@error('nombre_equ') <span class="error text-danger">{{ $message }}</span> @enderror
+                <label for="nombre_equ">NOMBRE EQUIPO</label>
+                <input wire:model="nombre_equ" type="text" class="form-control" id="nombre_equ" placeholder="Nombre Equipo">@error('nombre_equ') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="descripcion_equ"></label>
-                <input wire:model="descripcion_equ" type="text" class="form-control" id="descripcion_equ" placeholder="Descripcion Equ">@error('descripcion_equ') <span class="error text-danger">{{ $message }}</span> @enderror
+                <label for="descripcion_equ">DESCRIPCION</label>
+                <input wire:model="descripcion_equ" type="text" class="form-control" id="descripcion_equ" placeholder="Descripcion Equipo">@error('descripcion_equ') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
 
                 </form>
