@@ -1,5 +1,5 @@
 @section('title', __('Categorias'))
-<div class="container-fluid">
+<div class="container-fluid" style="background-image: url('https://media.kasperskydaily.com/wp-content/uploads/sites/87/2017/08/29111118/Gamers-1.jpg');>
 	<div class="row justify-content-center">
 		<div class="col-md-12">
 			<div class="card">

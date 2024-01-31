@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Validargrupale;
+use App\Models\InscripcionEqu;
 
 class Validargrupales extends Component
 {
@@ -16,13 +17,20 @@ class Validargrupales extends Component
 
     public function render()
     {
-		$keyWord = '%'.$this->keyWord .'%';
-        return view('livewire.validargrupales.view', [
-            'validargrupales' => Validargrupale::latest()
-						->orWhere('id_inscripcion__equs', 'LIKE', $keyWord)
-						->orWhere('validarpago', 'LIKE', $keyWord)
-						->paginate(10),
-        ]);
+        $keyWord = '%' . $this->keyWord . '%';
+    $equiposInscritos = InscripcionEqu::with('equipos')->get();
+
+    return view('livewire.validargrupales.view', [
+        'validargrupales' => Validargrupale::latest()
+            ->orWhereHas('inscripcionequ', function ($query) use ($keyWord) {
+                $query->whereHas('equipos', function ($query) use ($keyWord) {
+                    $query->where('nombre_equ', 'LIKE', $keyWord);
+                });
+            })
+            ->orWhere('validarpago', 'LIKE', $keyWord)
+            ->paginate(10),
+        'equiposInscritos' => $equiposInscritos,
+    ]);
     }
 	
     public function cancel()
