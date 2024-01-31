@@ -18,8 +18,8 @@
 							</a> --}}
 						</div>
 						<div class="float-left">
-							<h4><i class="fab fa-laravel text-info"></i>
-							PARTIDA DE EQUIPOS </h4>
+							<h4><i class=""></i>
+						<h4>PARTIDA DE EQUIPOS</h4>
 						</div>
 						
 						@if (session()->has('message'))

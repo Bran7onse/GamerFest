@@ -1,5 +1,5 @@
 @section('title', __('Categorias'))
-<div class="container-fluid" style="background-image: url('images/image-euMt9PuWV-transformed.png'); background-size: cover; background-position: center center;">
+<div class="container-fluid" style="background-image: ">
 	<div class="row justify-content-center">
 		<div class="col-md-12">
 			<div class="card">
