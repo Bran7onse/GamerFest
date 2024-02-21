@@ -17,7 +17,7 @@
             </div>
             <div class="form-group">
                 <label for="validarpago">VALIDAR PAGO</label>
-                <input wire:model="validarpago" type="text" class="form-control" id="validarpago" placeholder="Validar pago">@error('validarpago') <span class="error text-danger">{{ $message }}</span> @enderror
+                <input wire:model="validarpago" type="text" class="form-control" id="validarpago" placeholder="Validar  pago">@error('validarpago') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
 
                 </form>

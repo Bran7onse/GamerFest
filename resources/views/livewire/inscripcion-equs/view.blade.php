@@ -14,7 +14,7 @@
 						<div wire:poll.4s class="btn btn-sm btn-success" style="margin-top:0px; margin-bottom:0px;"> {{ session('message') }} </div>
 						@endif
 						<div>
-							<input wire:model='keyWord' type="text" class="form-control" name="search" id="search" placeholder="Search Inscripcion Equs">
+							<input wire:model='keyWord' type="text" class="form-control" name="search" id="search" placeholder="Inscripcion Equipos">
 						</div>
 						<div class="btn btn-success " data-toggle="modal" data-target="#createDataModal">
 						<i class="fa fa-plus"></i> Crear Inscripcion de Equipo
