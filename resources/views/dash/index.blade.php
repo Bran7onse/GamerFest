@@ -66,7 +66,7 @@ $data = $dashboard->ObtenerData();
                 <i class="fas fa-gamepad"></i>
             </div>
         </div>
-    </div> --}}
+    </div> 
 
     
 
@@ -313,23 +313,34 @@ $data = $dashboard->ObtenerData();
 @stop
 
 @section('css')
-<link rel="stylesheet" href="/css/admin_custom.css">
+    <style>
+        .custom-background {
+            background-image: url('https://i.ibb.co/5TcytjZ/172279346-afiche-de-videojuegos-joystick-de-control-dise-o-de-videojuegos-de-controlador.jpg');
+            background-size: cover;
+        }
+
+        /* Mantén la definición original para otros estilos si es necesario */
+        .chartjs-size-monitor-expand,
+        .chartjs-size-monitor-shrink {
+            background-size: cover;
+        }
+    </style>
 @stop
 
 @section('js')
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
 <script>
-var userCheckinChart = new Chart(document.getElementById('categoriaChart').getContext('2d'), @json($data[
-    'chartCategoria']));
-var userCheckinChart = new Chart(document.getElementById('inscripcionChart').getContext('2d'), @json($data[
-    'chartInscripcion']));
-var userCheckinChart = new Chart(document.getElementById('partidasChart').getContext('2d'), @json($data[
-    'chartPartida']));
-var userCheckinChart = new Chart(document.getElementById('preciosChart').getContext('2d'), @json($data[
-    'chartPrecios']));
-var userCheckinChart = new Chart(document.getElementById('juegosChart').getContext('2d'), @json($data['chartJuegos']));
-var userCheckinChart = new Chart(document.getElementById('inscripcionJuegoChart').getContext('2d'), @json($data['charInscipcionJuego']));
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('.chartjs-size-monitor-expand').classList.add('custom-background');
+        document.querySelector('.chartjs-size-monitor-shrink').classList.add('custom-background');
+    });
 
-var userCheckinChart = new Chart(document.getElementById('inscripcionEquipoChart').getContext('2d'), @json($data['charInscipcionEquipo']));
+    var userCheckinChart = new Chart(document.getElementById('categoriaChart').getContext('2d'), @json($data['chartCategoria']));
+    var userCheckinChart = new Chart(document.getElementById('inscripcionChart').getContext('2d'), @json($data['chartInscripcion']));
+    var userCheckinChart = new Chart(document.getElementById('partidasChart').getContext('2d'), @json($data['chartPartida']));
+    var userCheckinChart = new Chart(document.getElementById('preciosChart').getContext('2d'), @json($data['chartPrecios']));
+    var userCheckinChart = new Chart(document.getElementById('juegosChart').getContext('2d'), @json($data['chartJuegos']));
+    var userCheckinChart = new Chart(document.getElementById('inscripcionJuegoChart').getContext('2d'), @json($data['charInscipcionJuego']));
+    var userCheckinChart = new Chart(document.getElementById('inscripcionEquipoChart').getContext('2d'), @json($data['charInscipcionEquipo']));
 </script>
 @stop

@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+        <img src="http://127.0.0.1:8000/images/gamer-zone.png" alt="Nuevo Logo" class="block mx-auto w-12 h-12" />
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
