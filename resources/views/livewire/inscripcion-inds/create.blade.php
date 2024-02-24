@@ -48,7 +48,7 @@
 
                         {{-- Muestra la imagen después de cargarla --}}
                         @if ($pago_ins)
-                            <img src="{{ $pago_ins->temporaryUrl() }}" alt="Pago Inscripción Previo" style="max-width: 100%; max-height: 200px;>
+                            <img src="{{ $pago_ins->temporaryUrl() }}" alt="Pago Inscripción Previo" style="max-width: 100%; max-height: 200px";>
                         @endif
                     </div>
 
@@ -60,4 +60,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>
