@@ -12,7 +12,7 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <label for="id_equ">SELECCIONE EQUIPO</label>
+                        <label for="id_equ"></label>
                         <select wire:model="id_equ" type="text" class="form-control" id="id_equ"
                             placeholder="Equipo">@error('id_equ') <span class="error text-danger">{{ $message }}</span>
                             @enderror
@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="id_jue">SELECCIONEJUEGO</label>
+                        <label for="id_jue"></label>
                         <select wire:model="id_jue" type="text" class="form-control" id="id_jue"
                             placeholder="Juego">@error('id_jue') <span class="error text-danger">{{ $message }}</span>
                             @enderror
@@ -35,16 +35,20 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="precio_ins_equ">PRECIO DE INSCRIPCION</label>
+                        <label for="precio_ins_equ"></label>
                         <input wire:model="precio_ins_equ" type="text" class="form-control" id="precio_ins_equ"
-                            placeholder="Precio Inscripcion Equ">@error('precio_ins_equ') <span
+                            placeholder="Precio Ins Equ">@error('precio_ins_equ') <span
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-group">
-                        <label for="pago_ins_equ">PAGO INSCRIPCION</label>
-                        <input wire:model="pago_ins_equ" type="file" class="form-control" id="pago_ins_equ"
-                            placeholder="Pago Inscripcion Equ">@error('pago_ins_equ') <span
-                            class="error text-danger">{{ $message }}</span> @enderror
+                        <label for="pago_ins_equ">Pago Ins Equ</label>
+                        <input wire:model="pago_ins_equ" type="file" class="form-control" id="pago_ins_equ" accept=".png, .jpg, .jpeg">
+                        @error('pago_ins_equ') <span class="error text-danger">{{ $message }}</span> @enderror
+
+                        <!-- Vista previa de la imagen -->
+                        @if($pago_ins_equ instanceof \Livewire\TemporaryUploadedFile)
+                            <img src="{{ $pago_ins_equ->temporaryUrl() }}" alt="Preview" style="max-width: 100%; height: auto;">
+                        @endif
                     </div>
 
                 </form>

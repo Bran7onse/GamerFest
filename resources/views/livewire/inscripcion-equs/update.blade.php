@@ -40,12 +40,23 @@
                             placeholder="Precio Ins Equ">@error('precio_ins_equ') <span
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
+                    
+                    <!-- Vista previa de la imagen cargada -->
                     <div class="form-group">
-                        <label for="pago_ins_equ"></label>
-                        <input wire:model="pago_ins_equ" type="text" class="form-control" id="pago_ins_equ"
-                            placeholder="Pago Ins Equ">@error('pago_ins_equ') <span
-                            class="error text-danger">{{ $message }}</span> @enderror
+                        <label for="newPagoInsEqu">Nueva Imagen de Pago</label>
+                        <input wire:model="newPagoInsEqu" type="file" class="form-control" id="newPagoInsEqu" accept=".png, .jpg, .jpeg">
+                        @error('newPagoInsEqu') <span class="error text-danger">{{ $message }}</span> @enderror
+
+                        <!-- Vista previa de la imagen temporal o almacenada -->
+                        @if($this->newPagoInsEqu instanceof \Livewire\TemporaryUploadedFile)
+                            <!-- Mostrar la imagen temporal -->
+                            <img src="{{ $this->newPagoInsEqu->temporaryUrl() }}" style="max-width: 100px; height: auto;">
+                        @elseif($this->getStoredImageUrl())
+                            <!-- Mostrar la imagen almacenada -->
+                            <img src="{{ $this->getStoredImageUrl() }}" style="max-width: 100px; height: auto;">
+                        @endif
                     </div>
+
 
                 </form>
             </div>

@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form wire:submit.prevent="store" enctype="multipart/form-data">
                     <div class="form-group">
 
 
@@ -63,6 +63,10 @@
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
 
+                    <div class="form-group">
+                        <label for="image">Imagen del Juego</label>
+                        <input wire:model="image" type="file" class="form-control" id="image" placeholder="Cargar imagen">
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
