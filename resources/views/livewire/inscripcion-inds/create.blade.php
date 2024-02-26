@@ -12,7 +12,7 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <label for="id_ind">ID INDIVIDUAL</label>
+                        <label for="id_ind">JUGADOR</label>
                         <select wire:model="id_ind" type="text" class="form-control" id="id_ind"
                             placeholder="Jugador">@error('id_ind') <span class="error text-daner">{{ $message }}</span>
                             @enderror
@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="id_jue">ID JUEGO</label>
+                        <label for="id_jue">JUEGO</label>
                         <select wire:model="id_jue" type="text" class="form-control" id="id_jue"
                             placeholder="Juego">@error('id_ind') <span class="error text-danger">{{ $message }}</span>
                             @enderror
@@ -40,19 +40,25 @@
                             placeholder="Precio Inscripcion">@error('precio_ins') <span
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
+
                     <div class="form-group">
-                        <label for="pago_ins">PAGO INSCRIPCION</label>
-                        <input wire:model="pago_ins" type="file" class="form-control" id="pago_ins"
-                            placeholder="Pago Inscripcion">@error('pago_ins') <span
-                            class="error text-danger">{{ $message }}</span> @enderror
+                        <label for="pago_ins">Pago Inscripción (Imagen):</label>
+                        <input type="file" wire:model="pago_ins" class="form-control-file" id="pago_ins">
+                        @error('pago_ins') <span class="error">{{ $message }}</span> @enderror
+
+                        {{-- Muestra la imagen después de cargarla --}}
+                        @if ($pago_ins)
+                            <img src="{{ $pago_ins->temporaryUrl() }}" alt="Pago Inscripción Previo" style="max-width: 100%; max-height: 200px";>
+                        @endif
                     </div>
 
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>
-                <button type="button" wire:click.prevent="store()" class="btn btn-primary close-modal">Save</button>
+                <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Cerrar</button>
+                <button type="button" wire:click.prevent="store()" class="btn btn-primary close-modal">Subir</button>
             </div>
         </div>
     </div>
+</div>
 </div>
