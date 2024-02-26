@@ -85,4 +85,5 @@ Route::middleware([
 	Route::get('equipos-ins/excel', [EquiposIns::class, 'exportExcel'])->name('excelEquipos');
 	Route::get('recaudacion/excel', [Recaudacion::class, 'exportExcel'])->name('excelRecaudacion');
 	Route::get('partidos/excel', [Partidos::class, 'exportExcel'])->name('excelPartidos');
-	//Route::get('/two-factor-challenge', 'Controlador@metodo')->name('two-factor-challenge');
+	Route::post('/inscripciones/store', [InscripcionEquController::class, 'store'])->name('inscripciones.store');
+

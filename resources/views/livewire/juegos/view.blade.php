@@ -32,10 +32,11 @@
 								<td>#</td> 
 								<th>Aula</th>
 								<th>Categoria</th>
-								<th>Nombre </th>
-								<th>Compania </th>
-								<th>Precio </th>
-								<th>Descripcion </th>
+								<th>Nombre</th>
+								<th>Compania</th>
+								<th>Precio</th>
+								<th>Descripcion</th>
+								<th>Imagen</th> <!-- Nueva columna para la imagen -->
 								<td>Acciones</td>
 							</tr>
 						</thead>
@@ -49,6 +50,13 @@
 								<td>{{ $row->compania_jue }}</td>
 								<td>{{ $row->precio_jue }}</td>
 								<td>{{ $row->descripcion_jue }}</td>
+								<td>
+								@if($row->image_path) <!-- Asegúrate de que el campo se llame así -->
+								<img src="{{ asset('storage/' . $row->image_path) }}" width="100" alt="Imagen del juego">
+								@else
+									Sin imagen
+								@endif
+								</td>
 								<td width="90">
 								<div class="btn-group">
 									<button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -60,8 +68,10 @@
 									</div>
 								</div>
 								</td>
+							</tr>
 							@endforeach
 						</tbody>
+
 					</table>						
 					
 					</div>
