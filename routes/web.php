@@ -86,4 +86,3 @@ Route::middleware([
 	Route::get('recaudacion/excel', [Recaudacion::class, 'exportExcel'])->name('excelRecaudacion');
 	Route::get('partidos/excel', [Partidos::class, 'exportExcel'])->name('excelPartidos');
 	Route::post('/inscripciones/store', [InscripcionEquController::class, 'store'])->name('inscripciones.store');
-

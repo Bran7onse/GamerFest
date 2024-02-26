@@ -1137,7 +1137,7 @@
         
     </div>
 
-    <div style="font-size: 1.5em; color: #ffffff;"><b>GAMER</b>Fest</div>
+    <div style="font-size: 1.5em; color: #ffffff;"><b>GAMER FEST</b></div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -1153,7 +1153,7 @@
                         @auth
                         <a class="nav-link" href="{{ url('/dash') }}">Dashboard</a>
                         @else
-                        <a class="nav-link" href="{{ route('two-factor.login') }}"><b> Iniciar Sesion</b></a>
+                        <a class="nav-link" href="{{ route('login') }}"><b> Iniciar Sesion</b></a>
                         @endif
                     </li>
                     <li class="nav-item">

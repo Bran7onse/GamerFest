@@ -6,7 +6,7 @@
 
         <div x-data="{ recovery: false }">
             <div class="mb-4 text-sm text-gray-600" x-show="! recovery">
-                {{ __('Confirme el acceso a su cuenta ingresando el código de autenticación proporcionado por su aplicación de autenticación.') }}
+                {{ __('Please confirm access to your account by entering the authentication code provided by your authenticator application.') }}
             </div>
 
             <div class="mb-4 text-sm text-gray-600" x-show="recovery">
@@ -35,7 +35,7 @@
                                         recovery = true;
                                         $nextTick(() => { $refs.recovery_code.focus() })
                                     ">
-                        {{ __('Utilice un código de recuperación') }}
+                        {{ __('Use a recovery code') }}
                     </button>
 
                     <button type="button" class="text-sm text-gray-600 hover:text-gray-900 underline cursor-pointer"
@@ -44,11 +44,11 @@
                                         recovery = false;
                                         $nextTick(() => { $refs.code.focus() })
                                     ">
-                        {{ __('Use un codigo de autenticación') }}
+                        {{ __('Use an authentication code') }}
                     </button>
 
                     <x-jet-button class="ml-4">
-                        {{ __('Acceder') }}
+                        {{ __('Log in') }}
                     </x-jet-button>
                 </div>
             </form>

@@ -29,14 +29,14 @@
 
             <div class="form-group">
                 <label for="validarpago">VALIDAR PAGO</label>
-                <input wire:model="validarpago" type="text" class="form-control" id="validarpago" placeholder="Validar pago">@error('validarpago') <span class="error text-danger">{{ $message }}</span> @enderror
+                <input wire:model="validarpago" type="text" class="form-control" id="validarpago" placeholder="Validarpago">@error('validarpago') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
 
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Cerrar</button>
-                <button type="button" wire:click.prevent="store()" class="btn btn-primary close-modal">Subir</button>
+                <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>
+                <button type="button" wire:click.prevent="store()" class="btn btn-primary close-modal">Save</button>
             </div>
         </div>
     </div>

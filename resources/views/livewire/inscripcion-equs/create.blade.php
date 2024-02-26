@@ -24,9 +24,7 @@
                     </div>
 
                     <div class="form-group">
-
-                        <label for="id_jue">SELECCIONE JUEGO</label>
-
+                        <label for="id_jue"></label>
                         <select wire:model="id_jue" type="text" class="form-control" id="id_jue"
                             placeholder="Juego">@error('id_jue') <span class="error text-danger">{{ $message }}</span>
                             @enderror
@@ -56,8 +54,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Cerrar</button>
-                <button type="button" wire:click.prevent="store()" class="btn btn-primary close-modal">Subir</button>
+                <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>
+                <button type="button" wire:click.prevent="store()" class="btn btn-primary close-modal">Save</button>
             </div>
         </div>
     </div>

@@ -11,10 +11,10 @@
                                 Recaudacion </h4>
                         </div>
                         <div class="dropdown show .col-auto .me-auto">
-                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            {{-- <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Acciones
-                            </a>
+                            </a> --}}
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="{{route('viewRecaudacion-pdf')}}">
                                     <i class="fa fa-eye"></i> Ver PDF

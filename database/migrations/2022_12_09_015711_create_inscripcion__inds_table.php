@@ -19,7 +19,7 @@ class CreateInscripcionIndsTable extends Migration
             $table->integer('id_ind')->unsigned();
             $table->integer('id_jue')->unsigned();
             $table->decimal('precio_ins');
-            $table->longblob('pago_ins');
+            $table->binary('pago_ins');
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('id_ind')->references('id')->on('individuales')->onDelete('cascade');

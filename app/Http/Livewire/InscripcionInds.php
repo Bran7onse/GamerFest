@@ -60,16 +60,12 @@ class InscripcionInds extends Component
             'id_ind' => 'required',
             'id_jue' => 'required',
             'precio_ins' => 'required|numeric',
-            'pago_ins' => 'required|image|max:1024',
-
         ]);
-        $imagePath = $this->pago_ins->store('public/pagos');
 
         InscripcionInd::create([
             'id_ind' => $this->id_ind,
             'id_jue' => $this->id_jue,
             'precio_ins' => $this->precio_ins,
-            'pago_ins' => $imagePath,
 
         ]);
 
