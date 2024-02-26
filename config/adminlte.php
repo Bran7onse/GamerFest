@@ -85,7 +85,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'http://localhost/Gamer-Fest/resources/views/image/logo.png',
+            'path' => 'http://127.0.0.1:8000/images/gamer-zone.png',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
