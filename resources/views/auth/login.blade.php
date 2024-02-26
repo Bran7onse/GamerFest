@@ -2,7 +2,7 @@
     <div style="background-image: url('http://127.0.0.1:8000/images/WELCOME.jpg'); background-size: cover; background-position: center; height: 100vh; display: flex; justify-content: center; align-items: center;">
         <x-jet-authentication-card>
             <x-slot name="logo">
-                <img src="http://127.0.0.1:8000/images/gamer-zone.png" alt="Nuevo Logo" class="block mx-auto w-12 h-12" />
+                <img src="http://127.0.0.1:8000/images/gamer-zone.png" alt="Nuevo Logo" class="block mx-auto w-20 h-20" />
                 <span class="ml-2 text-lg font-semibold">GAMER fest ♠♣♦</span>
             </x-slot>
 
