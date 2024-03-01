@@ -111,8 +111,8 @@ return [
             'path' => 'images/game-OVER.png',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
-            'width' => 800,
-            'height' => 800,
+            'width' => 500,
+            'height' => 500,
         ],
     ],
 
