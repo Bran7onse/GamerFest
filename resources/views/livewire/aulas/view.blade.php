@@ -11,7 +11,7 @@
 						</div>
 						
 						<div>
-							<input wire:model='keyWord' type="text" class="form-control .col-auto .me-auto" name="search" id="search" placeholder="Search Aulas">
+							<input wire:model='keyWord' type="text" class="form-control .col-auto .me-auto" name="search" id="search" placeholder="Aulas">
 						</div>
 						<div class="btn btn-sm btn-success .col-auto .me-auto" data-toggle="modal" data-target="#createDataModal">
 						<i class="fa fa-plus"></i>  Crear Aula

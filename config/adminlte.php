@@ -85,7 +85,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'http://localhost/Gamer-Fest/resources/views/image/logo.png',
+            'path' => 'http://127.0.0.1:8000/images/gamer-zone.png',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -108,12 +108,11 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            
-            'path' => 'https://i.pinimg.com/736x/72/3d/0a/723d0af616b1fe7d5c7e56a3532be3cd.jpg',
-            'alt' => 'logo',
+            'path' => 'images/game-OVER.png',
+            'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
-            'width' => 150,
-            'height' => 150,
+            'width' => 500,
+            'height' => 500,
         ],
     ],
 
