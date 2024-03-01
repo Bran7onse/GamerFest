@@ -64,6 +64,11 @@
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
 
+                    <div class="form-group">
+                        <label for="newImage">Nueva Imagen</label>
+                        <input wire:model="newImage" type="file" class="form-control" id="newImage">
+                    </div>
+
                 </form>
             </div>
             <div class="modal-footer">

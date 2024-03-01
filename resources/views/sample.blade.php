@@ -1153,7 +1153,7 @@
                         @auth
                         <a class="nav-link" href="{{ url('/dash') }}">Dashboard</a>
                         @else
-                        <a class="nav-link" href="{{ route('login') }}"><b> Iniciar Sesion</b></a>
+                        <a class="nav-link" href="{{ route('two-factor.login') }}"><b> Iniciar Sesion</b></a>
                         @endif
                     </li>
                     <li class="nav-item">
