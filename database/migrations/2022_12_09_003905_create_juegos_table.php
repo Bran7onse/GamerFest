@@ -19,7 +19,7 @@ class CreateJuegosTable extends Migration
             $table->integer('id_aul')->unsigned();
             $table->integer('id_cat')->unsigned();
             $table->string('nombre_jue')->nullable();
-            $table->string('compania_jue')->nullable();
+            $table->string('imagen',100);
             $table->decimal('precio_jue')->nullable();
             $table->string('descripcion_jue')->nullable();
             $table->timestamps();

@@ -1,9 +1,23 @@
 <x-guest-layout>
-    <div style="background-image: url('http://127.0.0.1:8000/images/WELCOME.jpg'); background-size: cover; background-position: center; height: 100vh; display: flex; justify-content: center; align-items: center;">
+<style>
+        body {
+            background-image: url('http://127.0.0.1:8000/images/WELCOME.jpg');
+            background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+            background-position: center; /* Centra la imagen en el fondo */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            height: 100vh; /* Establece la altura del cuerpo al 100% de la ventana del navegador */
+            margin: 0; /* Elimina los márgenes por defecto */
+            display: flex; /* Utiliza el modelo de caja flexible para centrar contenido verticalmente */
+            justify-content: center; /* Centra el contenido horizontalmente */
+            align-items: center; /* Centra el contenido verticalmente */
+        }
+    </style>
+
+   
         <x-jet-authentication-card>
             <x-slot name="logo">
-                <img src="http://127.0.0.1:8000/images/gamer-zone.png" alt="Nuevo Logo" class="block mx-auto w-20 h-20" />
-                <span class="ml-2 text-lg font-semibold">GAMER fest ♠♣♦</span>
+                <img src="http://127.0.0.1:8000/images/gamer-zone.png" alt="Nuevo Logo" class=" w-20 h-20 mb-4 mx-auto " />
+                <span class="ml-4 text-lg font-semi"><b>GAMER</b>fest</span>
             </x-slot>
 
             <x-jet-validation-errors class="mb-4" />
@@ -36,7 +50,7 @@
 
                 <div class="flex items-center justify-end mt-4">
                     @if (Route::has('password.request'))
-                        <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                        <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
                             {{ __('Forgot your password?') }}
                         </a>
                     @endif

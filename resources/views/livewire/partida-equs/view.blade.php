@@ -18,15 +18,15 @@
 							</a> --}}
 						</div>
 						<div class="float-left">
-							<h4><i class=""></i>
-						<h4>PARTIDA DE EQUIPOS</h4>
+							<h4><i class="fab fa-laravel text-info"></i>
+							Partida de Equipo </h4>
 						</div>
 						
 						@if (session()->has('message'))
 						<div wire:poll.4s class="btn btn-sm btn-success" style="margin-top:0px; margin-bottom:0px;"> {{ session('message') }} </div>
 						@endif
 						<div>
-							<input wire:model='keyWord' type="text" class="form-control" name="search" id="search" placeholder="Partida Equipos">
+							<input wire:model='keyWord' type="text" class="form-control" name="search" id="search" placeholder="Search Partida Equs">
 						</div>
 						<div class="btn btn-sm btn-success" data-toggle="modal" data-target="#createDataModal">
 						<i class="fa fa-plus"></i>  Crear Partida Equipo
@@ -42,8 +42,8 @@
 						<thead class="thead">
 							<tr> 
 								<td>#</td> 
-								<th>Equipo 1</th>
-								<th>Equipo 2</th>
+								<th>Equ1</th>
+								<th>Equ2</th>
 								<th>Ganador </th>
 								<th>Fecha </th>
 								<th>Observacion </th>

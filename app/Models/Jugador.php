@@ -26,9 +26,9 @@ class Jugador extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function inscripcionInds()
-    {
-        return $this->hasMany('App\Models\InscripcionInd', 'id_jug', 'id');
-    }
+    //public function inscripcionInds()
+    //{
+        //return $this->hasMany('App\Models\InscripcionInd', 'id_jug', 'id');
+   // }
     
 }
