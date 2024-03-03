@@ -64,7 +64,7 @@ return [
     */
 
     'logo' => '<b>GAMER</b>Fest',
-    'logo_img' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Video-Game-Controller-Icon-IDV-green.svg/2048px-Video-Game-Controller-Icon-IDV-green.svg.png',
+    'logo_img' => url('https://cdn.pixabay.com/photo/2018/09/05/06/19/gamer-zone-3655575_960_720.png'),
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -85,7 +85,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'http://localhost/Gamer-Fest/resources/views/image/logo.png',
+            'path' => url('https://cdn.pixabay.com/photo/2018/09/05/06/19/gamer-zone-3655575_960_720.png'),
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -108,11 +108,12 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-            'alt' => 'AdminLTE Preloader Image',
+            
+            'path' => url('https://cdn.pixabay.com/photo/2018/09/05/06/19/gamer-zone-3655575_960_720.png'),
+            'alt' => 'logo',
             'effect' => 'animation__shake',
-            'width' => 60,
-            'height' => 60,
+            'width' => 150,
+            'height' => 150,
         ],
     ],
 
@@ -305,17 +306,24 @@ return [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
         ],
+        /**
+         * Este código define una entrada de menú para el blog en la configuración de AdminLTE.
+         * 
+         * - El texto del menú se establece como 'blog'.
+         * - La URL del menú se establece como 'admin/blog'.
+         * - La capacidad requerida para ver este menú se establece como 'manage-blog'.
+         */
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        // [
-        //     'text'        => 'Dashboard',
-        //     'url'         => 'dash',
-        //     'icon'        => 'far fa-fw fa-user',
-        //     'label_color' => 'success',
-        // ],
+        [
+            'text'        => 'Dashboard',
+            'url'         => 'dash',
+            'icon'        => 'far fa-fw fa-user',
+            'label_color' => 'success',
+        ],
         ['header' => 'CRUD GAMER FEST'],
         [
             'text' => 'Categorias',
@@ -342,9 +350,21 @@ return [
         ],
 
         [
-            'text' => 'Jugadores',
-            'url'  => 'jugadors',
-            'icon' => 'fas fa-fw fa-user',
+            'text'    => 'Jugadores',
+            'icon'    => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text' => 'Jugadores Equipo',
+                    'url'  => 'jugadors',
+                    'icon' => 'fas fa-fw fa-user',
+                ],
+                [
+                    'text' => 'Jugadores Individuales',
+                    'url'  => 'individuales',
+                    'icon' => 'fas fa-fw fa-user',
+                ],
+                
+            ],
         ],
 
         [
@@ -371,6 +391,24 @@ return [
             ],
         ],
         [
+            'text'    => 'Validar Pagos',
+            'icon'    => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text' => 'Validar Equipo',
+                    'url'  => 'validargrupales',
+                    'icon' => 'fas fa-fw fa-user',
+                ],
+                [
+                    'text' => 'Validar Jugador',
+                    'url'  => 'validarindividuales',
+                    'icon' => 'fas fa-fw fa-user',
+                ],
+                
+            ],
+        ],
+
+        [
             'text'    => 'Partidos',
             'icon'    => 'fas fa-fw fa-chess',
             'submenu' => [
@@ -387,38 +425,38 @@ return [
                 
             ],
         ],
-        // [
-        //     'text'    => 'Reportes',
-        //     'icon'    => 'fas fa-fw fa-chess',
-        //     'submenu' => [
-        //         [
-        //             'text' => 'Juegos',
-        //             'url'  => 'juegos-rep',
-        //             'icon' => 'fas fa-chess',
-        //         ],
-        //         [
-        //             'text' => 'Jugadores Inscritos',
-        //             'url'  => 'jugadores-ins',//Alex
-        //             'icon' => '	fas fa-chess-knight',
-        //         ],
-        //         [
-        //             'text' => 'Equipos Inscritos',
-        //             'url'  => 'equipos-ins',//Kenneth
-        //             'icon' => '	fas fa-chess-knight',
-        //         ],
-        //         [
-        //             'text' => 'Recaudacion',
-        //             'url'  => 'recaudacion',
-        //             'icon' => '	fas fa-chess-knight',
-        //         ],
-        //         [
-        //             'text' => 'Partidos',
-        //             'url'  => 'partidos',
-        //             'icon' => '	fas fa-chess-knight',
-        //         ],
+         [
+             'text'    => 'Reportes',
+             'icon'    => 'fas fa-fw fa-chess',
+             'submenu' => [
+                 [
+                     'text' => 'Juegos',
+                     'url'  => 'juegos-rep',
+                     'icon' => 'fas fa-chess',
+                 ],
+                 [
+                     'text' => 'Jugadores Inscritos',
+                     'url'  => 'jugadores-ins',//Alex
+                     'icon' => '	fas fa-chess-knight',
+                 ],
+                 [
+                     'text' => 'Equipos Inscritos',
+                     'url'  => 'equipos-ins',//Kenneth
+                     'icon' => '	fas fa-chess-knight',
+                 ],
+                 [
+                     'text' => 'Recaudacion',
+                     'url'  => 'recaudacion',
+                     'icon' => '	fas fa-chess-knight',
+                 ],
+                 [
+                     'text' => 'Partidos',
+                     'url'  => 'partidos',
+                 'icon' => '	fas fa-chess-knight',
+                 ],
                 
-        //     ],
-        // ],
+         ],
+         ],
         
     ],
 

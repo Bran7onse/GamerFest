@@ -44,12 +44,27 @@
                             placeholder="Nombre Jue">@error('nombre_jue') <span
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
-                    <div class="form-group">
-                        <label for="compania_jue"></label>
-                        <input wire:model="compania_jue" type="text" class="form-control" id="compania_jue"
-                            placeholder="Compania Jue">@error('compania_jue') <span
-                            class="error text-danger">{{ $message }}</span> @enderror
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="imagen">Foto principal</label>
+                                <input wire:model="imagen" type="file" class="form-control"
+                                    id="imagen">
+                                @error('imagen')
+                                <span class="error text-danger">{{ $message }}</span>
+                                @enderror
+                                <div class="w-100 m-2 text-center" wire:loading wire:target="imagen">
+                                    <button class="btn btn-outline-dark" disabled>
+                                        <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                                        <span role="status">Cargando...</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+
                     <div class="form-group">
                         <label for="precio_jue"></label>
                         <input wire:model="precio_jue" type="text" class="form-control" id="precio_jue"

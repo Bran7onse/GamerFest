@@ -7,7 +7,7 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\InscripcionInd;
 use App\Models\Juego;
-use App\Models\Jugador;
+use App\Models\Individuale;
 
 class InscripcionInds extends Component
 {
@@ -15,7 +15,7 @@ class InscripcionInds extends Component
     use WithFileUploads;
 
     protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $id_jug, $id_jue, $precio_ins, $pago_ins;
+    public $selected_id, $keyWord, $id_ind, $id_jue, $precio_ins, $pago_ins;
     public $updateMode = false;
     public $new_pago_ins;
 
@@ -23,16 +23,16 @@ class InscripcionInds extends Component
     {
         $keyWord = '%' . $this->keyWord . '%';
         $juegos = Juego::all();
-        $jugadores = Jugador::all();
+        $individuales = Individuale::all();
 
         return view('livewire.inscripcion-inds.view', [
-            'inscripcionInds' => InscripcionInd::with('juegos')->with('jugadors')
-                ->whereHas('jugadors', fn ($query) => $query->where('nombre_jug', 'LIKE', $keyWord))
+            'inscripcionInds' => InscripcionInd::with('juegos')->with('individuales')
+                ->whereHas('individuales', fn ($query) => $query->where('nombre_ind', 'LIKE', $keyWord))
                 ->whereHas('juegos', fn ($query) => $query->where('nombre_jue', 'LIKE', $keyWord))
                 ->orWhere('precio_ins', 'LIKE', $keyWord)
                 ->orWhere('pago_ins', 'LIKE', $keyWord)
                 ->get(),
-        ], compact('juegos', 'jugadores'));
+        ], compact('juegos', 'individuales'));
     }
 
     public function cancel()
@@ -43,7 +43,7 @@ class InscripcionInds extends Component
 
     private function resetInput()
     {
-        $this->id_jug = null;
+        $this->id_ind = null;
         $this->id_jue = null;
         $this->precio_ins = null;
         $this->pago_ins = null;
@@ -53,7 +53,7 @@ class InscripcionInds extends Component
     public function store()
     {
         $this->validate([
-            'id_jug' => 'required',
+            'id_ind' => 'required',
             'id_jue' => 'required',
             'precio_ins' => 'required',
             'pago_ins' => 'image|max:1024', // Ajusta el tamaño máximo según tus necesidades
@@ -66,7 +66,7 @@ class InscripcionInds extends Component
         }
 
         InscripcionInd::create([
-            'id_jug' => $this->id_jug,
+            'id_ind' => $this->id_ind,
             'id_jue' => $this->id_jue,
             'precio_ins' => $this->precio_ins,
             'pago_ins' => isset($filename) ? $filename : null, // Asigna el nombre del archivo solo si se cargó un archivo
@@ -84,7 +84,7 @@ class InscripcionInds extends Component
         $record = InscripcionInd::findOrFail($id);
 
         $this->selected_id = $id;
-        $this->id_jug = $record->id_jug;
+        $this->id_ind = $record->id_ind;
         $this->id_jue = $record->id_jue;
         $this->precio_ins = $record->precio_ins;
         $this->pago_ins = $record->pago_ins;
@@ -95,7 +95,7 @@ class InscripcionInds extends Component
     public function update()
     {
         $this->validate([
-            'id_jug' => 'required',
+            'id_ind' => 'required',
             'id_jue' => 'required',
             'precio_ins' => 'required',
         ]);
@@ -104,7 +104,7 @@ class InscripcionInds extends Component
             $record = InscripcionInd::find($this->selected_id);
 
             $record->update([
-                'id_jug' => $this->id_jug,
+                'id_ind' => $this->id_jug,
                 'id_jue' => $this->id_jue,
                 'precio_ins' => $this->precio_ins,
             ]);

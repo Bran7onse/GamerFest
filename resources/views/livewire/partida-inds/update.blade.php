@@ -19,7 +19,7 @@
                             @enderror
                             <option>Seleccione</option>
                             @foreach($inscritos as $inscrito)
-                            <option value="{{$inscrito->jugadors->id}}">{{$inscrito->jugadors->nombre_jug}}</option>
+                            <option value="{{$inscrito->jugadors->id}}">{{$inscrito->individuales->nombre_ind}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -31,7 +31,7 @@
                             @enderror
                             <option>Seleccione</option>
                             @foreach($inscritos as $inscrito)
-                            <option value="{{$inscrito->jugadors->id}}">{{$inscrito->jugadors->nombre_jug}}</option>
+                            <option value="{{$inscrito->individuales->id}}">{{$inscrito->individuales->nombre_ind}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -43,7 +43,7 @@
                             @enderror
                             <option>Seleccione</option>
                             @foreach($inscritos as $inscrito)
-                            <option value="{{$inscrito->jugadors->id}}">{{$inscrito->jugadors->nombre_jug}}</option>
+                            <option value="{{$inscrito->individuales->id}}">{{$inscrito->individuales->nombre_ind}}</option>
                             @endforeach
                         </select>
                     </div>

@@ -23,12 +23,13 @@ class Jugador extends Model
         return $this->hasOne('App\Models\Equipo', 'id', 'id_equ');
     }
     
+    /** */
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function inscripcionInds()
-    {
-        return $this->hasMany('App\Models\InscripcionInd', 'id_jug', 'id');
-    }
+    //public function inscripcionInds()
+    //{
+       // return $this->hasMany('App\Models\InscripcionInd', 'id_jug', 'id');
+    //}
     
 }

@@ -18,17 +18,17 @@ class PartidaInds extends Component
     public function render()
     {
 		$keyWord = '%'.$this->keyWord .'%';
-        $inscritos = InscripcionInd::with('jugadors')->get();
+        $inscritos = InscripcionInd::with('individuales')->get();
         return view('livewire.partida-inds.view', [
             'partidaInds' => PartidaInd::with('jugadors1')->with('jugadors2')->with('jugadors3')
                         ->whereHas('jugadors1', fn ($query) => 
-                        $query->where('nombre_jug', 'LIKE', $keyWord)
+                        $query->where('nombre_ind', 'LIKE', $keyWord)
                         )
 						->whereHas('jugadors2', fn ($query) => 
-                        $query->where('nombre_jug', 'LIKE', $keyWord)
+                        $query->where('nombre_ind', 'LIKE', $keyWord)
                         )
 						->whereHas('jugadors3', fn ($query) => 
-                        $query->where('nombre_jug', 'LIKE', $keyWord)
+                        $query->where('nombre_ind', 'LIKE', $keyWord)
                         )
 						->orWhere('fecha_par_ind', 'LIKE', $keyWord)
 						->orWhere('observacion_par_ind', 'LIKE', $keyWord)

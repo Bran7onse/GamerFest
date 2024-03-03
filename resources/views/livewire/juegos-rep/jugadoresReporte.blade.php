@@ -11,6 +11,12 @@
 </head>
 
 <body>
+<div class="text-center">
+            <img src="https://srvcas.espe.edu.ec/authenticationendpoint/images/Espe-Angular-Logo.png" alt="" width="650" height="150">
+            <br>
+            <br>
+            <img src="https://cdn.pixabay.com/photo/2018/09/05/06/19/gamer-zone-3655575_960_720.png" alt="" width="110" height="110">       
+        </div>
     <div class="container-md">
         <div class="row justify-content-center">
             <div class="col">
@@ -22,7 +28,7 @@
 								<th class="table-info border border-dark">Aula</th>
 								<th class="table-primary border border-dark">Categoria</th>
 								<th class="table-info border border-dark">Nombre </th>
-								<th class="table-primary border border-dark">Compania </th>
+								<th class="table-primary border border-dark">Imagen </th>
 								<th class="table-info border border-dark">Precio </th>
 								<th class="table-primary border border-dark">Descripcion </th>
 							</tr>
@@ -34,7 +40,7 @@
 								<td class="table-info border border-dark">{{ $row->aulas->codigo_aul }}</td>
 								<td class="table-primary border border-dark">{{ $row->categorias->tipo_cat }}</td>
 								<td  class="table-info border border-dark">{{ $row->nombre_jue }}</td>
-								<td class="table-primary border border-dark">{{ $row->compania_jue }}</td>
+								<td class="table-primary border border-dark">{{ $row->imagen }}</td>
 								<td  class="table-info border border-dark">{{ $row->precio_jue }}</td>
 								<td class="table-primary border border-dark">{{ $row->descripcion_jue }}</td>
 								

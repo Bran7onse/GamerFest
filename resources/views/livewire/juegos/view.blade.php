@@ -33,7 +33,7 @@
 								<th>Aula</th>
 								<th>Categoria</th>
 								<th>Nombre </th>
-								<th>Compania </th>
+								<th>Imagen </th>
 								<th>Precio </th>
 								<th>Descripcion </th>
 								<td>Acciones</td>
@@ -46,7 +46,19 @@
 								<td>{{ $row->aulas->codigo_aul }}</td>
 								<td>{{ $row->categorias->tipo_cat }}</td>
 								<td>{{ $row->nombre_jue }}</td>
-								<td>{{ $row->compania_jue }}</td>
+
+								<td class="align-middle text-center">
+                                        @if ($row->imagen && file_exists('storage/' .
+                                        str_replace('public/', '', $row->imagen)))
+                                        <img class="img-thumbnail img-fluid"
+                                            src="{{ asset('storage/' . str_replace('public/', '', $row->imagen)) }}"
+                                            alt="Foto principal" width="100">
+                                        @else
+                                        <span class="text-muted">Sin foto</span>
+                                        @endif
+                                    </td>
+
+
 								<td>{{ $row->precio_jue }}</td>
 								<td>{{ $row->descripcion_jue }}</td>
 								<td width="90">

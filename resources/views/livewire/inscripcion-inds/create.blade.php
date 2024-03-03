@@ -12,13 +12,13 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <label for="id_jug"></label>
-                        <select wire:model="id_jug" type="text" class="form-control" id="id_jug"
-                            placeholder="Jugador">@error('id_jug') <span class="error text-danger">{{ $message }}</span>
+                        <label for="id_ind"></label>
+                        <select wire:model="id_ind" type="text" class="form-control" id="id_ind"
+                            placeholder="Jugador">@error('id_ind') <span class="error text-danger">{{ $message }}</span>
                             @enderror
                             <option>Seleccione</option>
-                            @foreach($jugadores as $jugador)
-                            <option value="{{$jugador->id}}">{{$jugador->nombre_jug}}</option>
+                            @foreach($individuales as $individual)
+                            <option value="{{$individual->id}}">{{$individual->nombre_ind}}</option>
                             @endforeach
                         </select>
                     </div>

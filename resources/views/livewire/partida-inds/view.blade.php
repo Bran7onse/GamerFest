@@ -42,9 +42,9 @@
 							@foreach($partidaInds as $row)
 							<tr>
 								<td>{{ $loop->iteration }}</td> 
-								<td>{{ $row->jugadors1->nombre_jug }}</td>
-								<td>{{ $row->jugadors2->nombre_jug }}</td>
-								<td>{{ $row->jugadors3->nombre_jug }}</td>
+								<td>{{ $row->jugadors1->nombre_ind }}</td>
+								<td>{{ $row->jugadors2->nombre_ind }}</td>
+								<td>{{ $row->jugadors3->nombre_ind }}</td>
 								<td>{{ $row->fecha_par_ind }}</td>
 								<td>{{ $row->observacion_par_ind }}</td>
 								<td width="90">
