@@ -13,29 +13,27 @@ class Individuales extends Component
     protected $paginationTheme = 'bootstrap';
     public $selected_id, $keyWord, $nombre_ind, $cedula_ind, $telefono_ind, $correo_ind, $descripcion_ind;
     public $updateMode = false;
+    protected $individuales; // Cambiado a protected
 
     public function render()
     {
         $keyWord = '%'.$this->keyWord .'%';
+
+        $this->individuales = Individuale::latest()
+            ->orWhere('nombre_ind', 'LIKE', $keyWord)
+            ->orWhere('cedula_ind', 'LIKE', $keyWord)
+            ->orWhere('telefono_ind', 'LIKE', $keyWord)
+            ->orWhere('correo_ind', 'LIKE', $keyWord)
+            ->orWhere('descripcion_ind', 'LIKE', $keyWord)
+            ->paginate(10);
+
         return view('livewire.individuales.view', [
-            'individuales' => Individuale::latest()
-                        ->orWhere('nombre_ind', 'LIKE', $keyWord)
-                        ->orWhere('cedula_ind', 'LIKE', $keyWord)
-                        ->orWhere('telefono_ind', 'LIKE', $keyWord)
-                        ->orWhere('correo_ind', 'LIKE', $keyWord)
-                        ->orWhere('descripcion_ind', 'LIKE', $keyWord)
-                        ->paginate(10),
+            'individuales' => $this->individuales,
         ]);
     }
-    
-    public function cancel()
+
+    public function resetInput()
     {
-        $this->resetInput();
-        $this->updateMode = false;
-    }
-    
-    private function resetInput()
-    {       
         $this->nombre_ind = null;
         $this->cedula_ind = null;
         $this->telefono_ind = null;
@@ -54,13 +52,13 @@ class Individuales extends Component
         ]);
 
         Individuale::create([ 
-            'nombre_ind' => $this-> nombre_ind,
-            'cedula_ind' => $this-> cedula_ind,
-            'telefono_ind' => $this-> telefono_ind,
-            'correo_ind' => $this-> correo_ind,
-            'descripcion_ind' => $this-> descripcion_ind
+            'nombre_ind' => $this->nombre_ind,
+            'cedula_ind' => $this->cedula_ind,
+            'telefono_ind' => $this->telefono_ind,
+            'correo_ind' => $this->correo_ind,
+            'descripcion_ind' => $this->descripcion_ind
         ]);
-        
+
         $this->resetInput();
         $this->emit('closeModal');
         session()->flash('message', 'Individuale Successfully created.');
@@ -71,12 +69,12 @@ class Individuales extends Component
         $record = Individuale::findOrFail($id);
 
         $this->selected_id = $id; 
-        $this->nombre_ind = $record-> nombre_ind;
-        $this->cedula_ind = $record-> cedula_ind;
-        $this->telefono_ind = $record-> telefono_ind;
-        $this->correo_ind = $record-> correo_ind;
-        $this->descripcion_ind = $record-> descripcion_ind;
-        
+        $this->nombre_ind = $record->nombre_ind;
+        $this->cedula_ind = $record->cedula_ind;
+        $this->telefono_ind = $record->telefono_ind;
+        $this->correo_ind = $record->correo_ind;
+        $this->descripcion_ind = $record->descripcion_ind;
+
         $this->updateMode = true;
     }
 

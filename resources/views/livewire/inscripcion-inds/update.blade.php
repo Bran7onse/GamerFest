@@ -18,7 +18,7 @@
                             @enderror
                             <option>Seleccione</option>
                             @foreach($individuales as $individual)
-                            <option value="{{$jugador->id}}">{{$individual->nombre_ind}}</option>
+                            <option value="{{$individual->id}}">{{$individual->nombre_ind}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -34,6 +34,21 @@
                             @endforeach
                         </select>
                     </div>
+                    <div class="form-group">
+                        <label for="new_pago_ins">Nueva Imagen de Pago</label>
+                        <input wire:model="new_pago_ins" type="file" class="form-control" id="new_pago_ins" accept=".png, .jpg, .jpeg">
+                        @error('new_pago_ins') <span class="error text-danger">{{ $message }}</span> @enderror
+
+                        <!-- Vista previa de la nueva imagen o la imagen actual -->
+                        <div>
+                            @if($new_pago_ins)
+                                <img src="{{ $new_pago_ins->temporaryUrl() }}" alt="Preview" style="max-width: 100%; height: auto;">
+                            @elseif($pago_ins)
+                                <img src="{{ asset('storage/pagos/' . $pago_ins) }}" alt="Pago Ins" style="max-width: 100px; height: auto;">
+                            @endif
+                        </div>
+                    </div>
+                    
             <div class="form-group">
                 <label for="precio_ins"></label>
                 <input wire:model="precio_ins" type="text" class="form-control" id="precio_ins" placeholder="Precio Ins">@error('precio_ins') <span class="error text-danger">{{ $message }}</span> @enderror

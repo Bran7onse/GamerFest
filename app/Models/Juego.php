@@ -13,7 +13,7 @@ class Juego extends Model
 
     protected $table = 'juegos';
 
-    protected $fillable = ['id_aul', 'id_cat', 'nombre_jue', 'compania_jue', 'precio_jue', 'descripcion_jue', 'image_path'];
+    protected $fillable = ['id_aul','id_cat','nombre_jue','imagen','precio_jue','descripcion_jue'];
 	
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne

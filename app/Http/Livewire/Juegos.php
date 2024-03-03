@@ -4,47 +4,51 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Livewire\WithPagination;
+use Livewire\WithFileUploads;
 use App\Models\Juego;
 use App\Models\Aula;
 use App\Models\Categoria;
-use Livewire\WithFileUploads; 
-use Illuminate\Http\Request; // Agrega esta línea aquí
-use Illuminate\Support\Facades\Storage;
-
 
 class Juegos extends Component
 {
-    use WithPagination;
-    use WithFileUploads;
-
+    use WithPagination,  WithFileUploads;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $id_aul, $id_cat, $nombre_jue, $compania_jue, $precio_jue, $descripcion_jue;
+    public $selected_id, $keyWord, $id_aul, $id_cat, $nombre_jue, $imagen, $precio_jue, $descripcion_jue;
     public $updateMode = false;
-    protected $fillable = ['id_aul', 'id_cat', 'nombre_jue', 'compania_jue', 'precio_jue', 'descripcion_jue', 'image_path'];
-    public $image; // Propiedad para la imagen
-    public $newImage; // Propiedad para almacenar la nueva imagen subida por el usuario
 
+
+    protected $rules = [
+		'id_aula' => 'required',
+		'id_cat' => 'required',
+		'nombre_juego' => 'required',
+		'imagen' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'precio_jue' => 'required',
+        'descripcion_jue' => 'required',
+		
+	];
 
     public function render()
     {
-        $keyWord = '%' . $this->keyWord . '%';
+		$keyWord = '%'.$this->keyWord .'%';
         $aulas = Aula::all();
         $categorias = Categoria::all();
         return view('livewire.juegos.view', [
-            'juegos' => Juego::with('categorias', 'aulas')
-                ->whereHas('aulas', fn($query) =>
-                $query->where('codigo_aul', 'LIKE', $keyWord)
-                )
-                ->whereHas('categorias', fn($query) =>
-                $query->where('tipo_cat', 'LIKE', $keyWord)
-                )
-                ->orWhere('nombre_jue', 'LIKE', $keyWord)
-                ->orWhere('compania_jue', 'LIKE', $keyWord)
-                ->orWhere('precio_jue', 'LIKE', $keyWord)
-                ->orWhere('descripcion_jue', 'LIKE', $keyWord)
-                ->get(),
-        ], compact('aulas', 'categorias'));
+            'juegos' => Juego::with('categorias')->with('aulas')
+                        ->whereHas('aulas', fn ($query) => 
+                        $query->where('codigo_aul', 'LIKE', $keyWord)
+                        )
+                        ->whereHas('categorias', fn ($query) => 
+                        $query->where('tipo_cat', 'LIKE', $keyWord)
+                        )
+						->orWhere('nombre_jue', 'LIKE', $keyWord)
+						->orWhere('imagen', 'LIKE', $keyWord)
+						->orWhere('precio_jue', 'LIKE', $keyWord)
+						->orWhere('descripcion_jue', 'LIKE', $keyWord)   
+
+                        ->get()      
+,
+        ], compact('aulas','categorias'));
     }
 	
     public function cancel()
@@ -58,54 +62,31 @@ class Juegos extends Component
 		$this->id_aul = null;
 		$this->id_cat = null;
 		$this->nombre_jue = null;
-		$this->compania_jue = null;
+		$this->imagen = null;
 		$this->precio_jue = null;
 		$this->descripcion_jue = null;
-        $this->image = null;
     }
 
     public function store()
     {
         $this->validate([
-            'id_aul' => 'required',
-            'id_cat' => 'required',
-            'nombre_jue' => 'required',
-            'compania_jue' => 'required',
-            'precio_jue' => 'required',
-            'descripcion_jue' => 'required',
-            'image' => 'image|max:1024', // Valida que sea una imagen y no exceda de 1MB
+		'id_aul' => 'required',
+		'id_cat' => 'required',
         ]);
-    
-        // Asegúrate de que $this->id_aul tenga un valor antes de intentar guardar.
-        if (!isset($this->id_aul)) {
-            // Maneja el error como prefieras, por ejemplo, estableciendo un mensaje de error.
-            session()->flash('error', 'El campo Aula es obligatorio.');
-            return;
-        }
-
-        $imageName = null;
-        if ($this->image) {
-            $imageName = $this->image->store('imagenes', 'public'); // Guarda la imagen en storage/app/public/imagenes
-            $imageName = str_replace('public/', '', $imageName); 
-        }
         
-    
-        //dd($this->image);
-    
-        Juego::create([
-            'id_aul' => $this->id_aul,
-            'id_cat' => $this->id_cat,
-            'nombre_jue' => $this->nombre_jue,
-            'compania_jue' => $this->compania_jue,
-            'precio_jue' => $this->precio_jue,
-            'descripcion_jue' => $this->descripcion_jue,
-            'image_path' => $imageName,
+        Juego::create([ 
+			'id_aul' => $this-> id_aul,
+			'id_cat' => $this-> id_cat,
+			'nombre_jue' => $this-> nombre_jue,
+			'imagen' => $this-> imagen,
+			'precio_jue' => $this-> precio_jue,
+			'descripcion_jue' => $this-> descripcion_jue
         ]);
-    
+        
         $this->resetInput();
-        $this->emit('juegoStored');
-        session()->flash('message', 'Juego creado con éxito.');
-    }    
+		$this->emit('closeModal');
+		session()->flash('message', 'Juego Successfully created.');
+    }
 
     public function edit($id)
     {
@@ -115,7 +96,7 @@ class Juegos extends Component
 		$this->id_aul = $record-> id_aul;
 		$this->id_cat = $record-> id_cat;
 		$this->nombre_jue = $record-> nombre_jue;
-		$this->compania_jue = $record-> compania_jue;
+		$this->imagen = $record-> imagen;
 		$this->precio_jue = $record-> precio_jue;
 		$this->descripcion_jue = $record-> descripcion_jue;
 		
@@ -125,45 +106,26 @@ class Juegos extends Component
     public function update()
     {
         $this->validate([
-            'id_aul' => 'required',
-            'id_cat' => 'required',
-            'nombre_jue' => 'required',
-            'compania_jue' => 'required',
-            'precio_jue' => 'required',
-            'descripcion_jue' => 'required',
-            'newImage' => 'image|max:1024', // Solo validar newImage para la actualización de la imagen
+		'id_aul' => 'required',
+		'id_cat' => 'required',
         ]);
-    
+
         if ($this->selected_id) {
-            $record = Juego::find($this->selected_id);
-            $imagePath = $record->image_path; // Ruta de la imagen actual
-    
-            if ($this->newImage) {
-                // Opcional: Borrar la imagen antigua del almacenamiento
-                if ($imagePath && Storage::disk('public')->exists($imagePath)) {
-                    Storage::disk('public')->delete($imagePath);
-                }
-    
-                // Almacenar la nueva imagen y actualizar la ruta
-                $imageName = $this->newImage->store('juegos', 'public');
-                $imagePath = $imageName; // Asegúrate de que este sea el campo correcto en tu base de datos
-            }
-    
-            $record->update([
-                'id_aul' => $this->id_aul,
-                'id_cat' => $this->id_cat,
-                'nombre_jue' => $this->nombre_jue,
-                'compania_jue' => $this->compania_jue,
-                'precio_jue' => $this->precio_jue,
-                'descripcion_jue' => $this->descripcion_jue,
-                'image_path' => $imagePath,
+			$record = Juego::find($this->selected_id);
+            $record->update([ 
+			'id_aul' => $this-> id_aul,
+			'id_cat' => $this-> id_cat,
+			'nombre_jue' => $this-> nombre_jue,
+			'imagen' => $this-> imagen,
+			'precio_jue' => $this-> precio_jue,
+			'descripcion_jue' => $this-> descripcion_jue
             ]);
-    
+
             $this->resetInput();
             $this->updateMode = false;
-            session()->flash('message', 'Juego actualizado con éxito.');
+			session()->flash('message', 'Juego Successfully updated.');
         }
-    }    
+    }
 
     public function destroy($id)
     {
