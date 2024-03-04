@@ -80,7 +80,7 @@ class Juegos extends Component
 			'id_aul' => $this-> id_aul,
 			'id_cat' => $this-> id_cat,
 			'nombre_jue' => $this-> nombre_jue,
-			'imagen' => $this-> imagen,
+			'imagen' => $this->imagen->store('public/juegos'),
 			'precio_jue' => $this-> precio_jue,
             'num_jug' => $this-> num_jug,
 			'descripcion_jue' => $this-> descripcion_jue
@@ -120,7 +120,7 @@ class Juegos extends Component
 			'id_aul' => $this-> id_aul,
 			'id_cat' => $this-> id_cat,
 			'nombre_jue' => $this-> nombre_jue,
-			'imagen' => $this-> imagen,
+			'imagen' => $this->imagen->store('public/juegos'),
 			'precio_jue' => $this-> precio_jue,
             'num_jug' => $this-> num_jug,
 			'descripcion_jue' => $this-> descripcion_jue

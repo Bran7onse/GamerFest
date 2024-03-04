@@ -110,15 +110,9 @@ return [
         'img' => [
             'path' => 'images/gamer-zone.png',
             'alt' => 'AdminLTE Preloader Image',
-<<<<<<< HEAD
-            'effect' => 'animation__shake',
-            'width' => 500,
-            'height' => 500,
-=======
             'effect' => 'animation__wobble',
             'width' => 200,
             'height' => 200,
->>>>>>> ebd06940e6d24422ac5e9fa79abc7d8eff2637c0
         ],
     ],
 
