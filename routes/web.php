@@ -10,6 +10,7 @@ use App\Http\Livewire\Recaudacion;
 use App\Http\Livewire\EquiposIns;
 use App\Http\Livewire\JuegosRep;
 use App\Http\Livewire\Partidos;
+use App\Http\Livewire\CrearPartida;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,7 +56,8 @@ Route::middleware([
 	Route::view('recaudacion', 'livewire.recaudacion.index');
 	Route::view('partidos', 'livewire.partidos.index');
 	Route::view('juegos-rep', 'livewire.juegos-rep.index');
-
+	Route::view('crear-partida', 'livewire.crear-partida.index');
+	
 	Route::get('aulas/view-pdf', [Aulas::class, 'viewPDF'])->name('viewAulas-pdf');
 	Route::get('aulas/download-pdf', [Aulas::class, 'downloadPDF'])->name('downloadAulas-pdf');
 	Route::get('categorias/view-pdf', [Categorias::class, 'viewPDF'])->name('viewCategorias-pdf');
@@ -86,4 +88,5 @@ Route::middleware([
 	Route::get('recaudacion/excel', [Recaudacion::class, 'exportExcel'])->name('excelRecaudacion');
 	Route::get('partidos/excel', [Partidos::class, 'exportExcel'])->name('excelPartidos');
 	Route::post('/inscripciones/store', [InscripcionEquController::class, 'store'])->name('inscripciones.store');
-
+	Route::get('crear-partida/view-pdf', [CrearPartida::class, 'viewPDF'])->name('viewCrearPartida-pdf');
+	Route::get('crear-partida/download-pdf', [CrearPartida::class, 'downloadPDF'])->name('downloadCrearPartida-pdf');

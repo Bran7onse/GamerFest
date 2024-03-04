@@ -52,8 +52,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="imagen">Foto principal</label>
-                                <input wire:model="imagen" type="file" class="form-control"
-                                    id="imagen">
+                                <input wire:model="imagen" type="file" class="form-control" id="imagen">
                                 @error('imagen')
                                 <span class="error text-danger">{{ $message }}</span>
                                 @enderror
@@ -75,6 +74,14 @@
                             placeholder="Precio Juego">@error('precio_jue') <span
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
+
+                    <div class="form-group">
+                        <label for="num_jug">Num Jug</label>
+                        <input wire:model="num_jug" type="number" class="form-control" id="num_jug"
+                            placeholder="Num Jug">@error('num_jug') <span
+                            class="error text-danger">{{ $message }}</span> @enderror
+                    </div>
+
                     <div class="form-group">
                     <label for="tipo_cat">DESCRIPCION JUEGO</label>
                         <label for="descripcion_jue"></label>

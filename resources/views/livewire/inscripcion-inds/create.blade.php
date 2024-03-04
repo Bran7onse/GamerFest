@@ -31,7 +31,7 @@
                             placeholder="Juego">@error('id_jue') <span class="error text-danger">{{ $message }}</span>
                             @enderror
                             <option>Seleccione</option>
-                            @foreach($juegos as $juego)
+                            @foreach($juegos_ind as $juego)
                             <option value="{{$juego->id}}">{{$juego->nombre_jue}}</option>
                             @endforeach
                         </select>
@@ -44,6 +44,7 @@
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-group">
+
                         <label for="pago_ins">PAGO INSCRIPCION</label>
                         <input wire:model="pago_ins" type="file" class="form-control" id="pago_ins" accept=".png, .jpg, .jpeg" onchange="previewImage(this)">
                         @error('pago_ins') <span class="error text-danger">{{ $message }}</span> @enderror
@@ -51,7 +52,8 @@
                         <!-- Vista previa de la imagen -->
                         <div>
                             @if($pago_ins instanceof \Livewire\TemporaryUploadedFile)
-                                <img src="{{ $pago_ins->temporaryUrl() }}" alt="Preview" style="max-width: 100%; height: auto;">
+                            <img src="{{ $pago_ins->temporaryUrl() }}" alt="Preview"
+                                style="max-width: 100%; height: auto;">
                             @endif
                         </div>
                     </div>
