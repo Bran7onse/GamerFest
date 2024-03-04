@@ -12,6 +12,7 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
+                    <label for="tipo_cat">SELECCIONE AULA</label>
 
 
                         <label for="id_aul"></label>
@@ -28,6 +29,7 @@
                     </div>
 
                     <div class="form-group">
+                    <label for="tipo_cat">SELECCIONE CATEGORIA</label>
                         <label for="id_cat"></label>
                         <select wire:model="id_cat" type="text" class="form-control" id="id_cat"
                             placeholder="Id Cat">@error('id_cat') <span class="error text-danger">{{ $message }}</span>
@@ -39,9 +41,10 @@
                         </select>
                     </div>
                     <div class="form-group">
+                    <label for="tipo_cat">NOMBRE JUEGO</label>
                         <label for="nombre_jue"></label>
                         <input wire:model="nombre_jue" type="text" class="form-control" id="nombre_jue"
-                            placeholder="Nombre Jue">@error('nombre_jue') <span
+                            placeholder="Nombre Juego">@error('nombre_jue') <span
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
 
@@ -66,23 +69,25 @@
 
 
                     <div class="form-group">
+                    <label for="tipo_cat">PRECIO JUEGO</label>
                         <label for="precio_jue"></label>
                         <input wire:model="precio_jue" type="text" class="form-control" id="precio_jue"
-                            placeholder="Precio Jue">@error('precio_jue') <span
+                            placeholder="Precio Juego">@error('precio_jue') <span
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-group">
+                    <label for="tipo_cat">DESCRIPCION JUEGO</label>
                         <label for="descripcion_jue"></label>
                         <input wire:model="descripcion_jue" type="text" class="form-control" id="descripcion_jue"
-                            placeholder="Descripcion Jue">@error('descripcion_jue') <span
+                            placeholder="Descripcion Juego">@error('descripcion_jue') <span
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
 
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>
-                <button type="button" wire:click.prevent="store()" class="btn btn-primary close-modal">Save</button>
+                <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Cerrar</button>
+                <button type="button" wire:click.prevent="store()" class="btn btn-primary close-modal">Subir</button>
             </div>
         </div>
     </div>

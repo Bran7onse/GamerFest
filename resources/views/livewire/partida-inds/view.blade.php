@@ -17,7 +17,7 @@
 							<input wire:model='keyWord' type="text" class="form-control .col-auto .me-auto" name="search" id="search" placeholder="Search Partida Inds">
 						</div>
 						<div class="btn btn-sm btn-success .col-auto .me-auto" data-toggle="modal" data-target="#createDataModal">
-						<i class="fa fa-plus"></i> Crear
+						<i class="fa fa-plus"></i> Crear Partida Individuales
 						</div>
 					</div>
 				</div>
@@ -30,8 +30,8 @@
 						<thead class="thead">
 							<tr> 
 								<td>#</td> 
-								<th>Jug1</th>
-								<th>Jug2</th>
+								<th>Jugador 1</th>
+								<th>Jugador 2</th>
 								<th>Ganador </th>
 								<th>Fecha </th>
 								<th>Observacion </th>

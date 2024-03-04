@@ -19,7 +19,7 @@
 							<input wire:model='keyWord' type="text" class="form-control" name="search" id="search" placeholder="Validar Grupales">
 						</div>
 						<div class="btn btn-sm btn-info" data-toggle="modal" data-target="#createDataModal">
-						<i class="fa fa-plus"></i>  Add Validargrupales
+						<i class="fa fa-plus"></i>  Crear Validar Grupales
 						</div>
 					</div>
 				</div>
