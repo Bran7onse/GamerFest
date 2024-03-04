@@ -22,7 +22,7 @@ class InscripcionInds extends Component
     public function render()
     {
         $keyWord = '%' . $this->keyWord . '%';
-        $juegos = Juego::all();
+        $juegos_ind =  Juego::where('id_cat', '2')->get();
         $individuales = Individuale::all();
 
         return view('livewire.inscripcion-inds.view', [
@@ -32,7 +32,7 @@ class InscripcionInds extends Component
                 ->orWhere('precio_ins', 'LIKE', $keyWord)
                 ->orWhere('pago_ins', 'LIKE', $keyWord)
                 ->get(),
-        ], compact('juegos', 'individuales'));
+        ], compact('juegos_ind', 'individuales'));
     }
 
     public function cancel()

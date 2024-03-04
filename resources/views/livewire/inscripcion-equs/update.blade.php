@@ -29,7 +29,7 @@
                             placeholder="Juego">@error('id_jue') <span class="error text-danger">{{ $message }}</span>
                             @enderror
                             <option>Seleccione</option>
-                            @foreach($juegos as $juego)
+                            @foreach($juegos_equ as $juego)
                             <option value="{{$juego->id}}">{{$juego->nombre_jue}}</option>
                             @endforeach
                         </select>
@@ -40,20 +40,21 @@
                             placeholder="Precio Ins Equ">@error('precio_ins_equ') <span
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
-                    
+
                     <!-- Vista previa de la imagen cargada -->
                     <div class="form-group">
                         <label for="newPagoInsEqu">Nueva Imagen de Pago</label>
-                        <input wire:model="newPagoInsEqu" type="file" class="form-control" id="newPagoInsEqu" accept=".png, .jpg, .jpeg">
+                        <input wire:model="newPagoInsEqu" type="file" class="form-control" id="newPagoInsEqu"
+                            accept=".png, .jpg, .jpeg">
                         @error('newPagoInsEqu') <span class="error text-danger">{{ $message }}</span> @enderror
 
                         <!-- Vista previa de la imagen temporal o almacenada -->
                         @if($this->newPagoInsEqu instanceof \Livewire\TemporaryUploadedFile)
-                            <!-- Mostrar la imagen temporal -->
-                            <img src="{{ $this->newPagoInsEqu->temporaryUrl() }}" style="max-width: 100px; height: auto;">
+                        <!-- Mostrar la imagen temporal -->
+                        <img src="{{ $this->newPagoInsEqu->temporaryUrl() }}" style="max-width: 100px; height: auto;">
                         @elseif($this->getStoredImageUrl())
-                            <!-- Mostrar la imagen almacenada -->
-                            <img src="{{ $this->getStoredImageUrl() }}" style="max-width: 100px; height: auto;">
+                        <!-- Mostrar la imagen almacenada -->
+                        <img src="{{ $this->getStoredImageUrl() }}" style="max-width: 100px; height: auto;">
                         @endif
                     </div>
 
