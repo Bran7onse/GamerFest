@@ -379,6 +379,12 @@ return [
         ],
         
         [
+            'text' => 'Crear Partidas',
+            'url'  => 'crear-partida',
+            'icon' => 'fas fa-fw fa-chess',
+        ],
+        
+        [
             'text'    => 'Inscripciones',
             'icon'    => 'fas fa-fw fa-book',
             'submenu' => [
