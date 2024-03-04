@@ -6,8 +6,7 @@
 				<div class="card-header">
 					<div style="display: flex; justify-content: space-between; align-items: center;">
 						<div class="float-left">
-							<h4><i class="fab fa-laravel text-info"></i>
-							Inscripcion Individual </h4>
+							<h4>Inscripcion Individual </h4>
 						</div>
 						
 						@if (session()->has('message'))

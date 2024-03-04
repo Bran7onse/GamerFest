@@ -12,6 +12,7 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
+                    <label for="tipo_cat">SELECCIONE EQUIPO</label>
                         <label for="id_equ"></label>
                         <select wire:model="id_equ" type="text" class="form-control" id="id_equ"
                             placeholder="Equipo">@error('id_equ') <span class="error text-danger">{{ $message }}</span>
@@ -37,15 +38,16 @@
                         </select>
                     </div>
                     <div class="form-group">
+                    <label for="tipo_cat">PRECIO INSCRIPCION EQUIPO</label>
                         <label for="precio_ins_equ"></label>
                         <input wire:model="precio_ins_equ" type="text" class="form-control" id="precio_ins_equ"
                             placeholder="Precio Ins Equ">@error('precio_ins_equ') <span
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-group">
-                        <label for="pago_ins_equ">Pago Ins Equ</label>
-                        <input wire:model="pago_ins_equ" type="file" class="form-control" id="pago_ins_equ"
-                            accept=".png, .jpg, .jpeg">
+                        <label for="pago_ins_equ">PAGO INSCRIPCION EQUIPO</label>
+                        <input wire:model="pago_ins_equ" type="file" class="form-control" id="pago_ins_equ" accept=".png, .jpg, .jpeg">
+
                         @error('pago_ins_equ') <span class="error text-danger">{{ $message }}</span> @enderror
 
                         <!-- Vista previa de la imagen -->

@@ -12,6 +12,7 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
+                    <label for="tipo_cat">SELECCIONE NOMBRE JUGADOR</label>
                         <label for="id_ind"></label>
                         <select wire:model="id_ind" type="text" class="form-control" id="id_ind"
                             placeholder="Jugador">@error('id_ind') <span class="error text-danger">{{ $message }}</span>
@@ -24,6 +25,7 @@
                     </div>
 
                     <div class="form-group">
+                    <label for="tipo_cat">SELECCIONE JUEGO</label>
                         <label for="id_jue"></label>
                         <select wire:model="id_jue" type="text" class="form-control" id="id_jue"
                             placeholder="Juego">@error('id_jue') <span class="error text-danger">{{ $message }}</span>
@@ -35,15 +37,16 @@
                         </select>
                     </div>
                     <div class="form-group">
+                    <label for="tipo_cat">PRECIO INSCRIPCION</label>
                         <label for="precio_ins"></label>
                         <input wire:model="precio_ins" type="text" class="form-control" id="precio_ins"
                             placeholder="Precio Ins">@error('precio_ins') <span
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-group">
-                        <label for="pago_ins">Pago Ins</label>
-                        <input wire:model="pago_ins" type="file" class="form-control" id="pago_ins"
-                            accept=".png, .jpg, .jpeg" onchange="previewImage(this)">
+
+                        <label for="pago_ins">PAGO INSCRIPCION</label>
+                        <input wire:model="pago_ins" type="file" class="form-control" id="pago_ins" accept=".png, .jpg, .jpeg" onchange="previewImage(this)">
                         @error('pago_ins') <span class="error text-danger">{{ $message }}</span> @enderror
 
                         <!-- Vista previa de la imagen -->
@@ -57,8 +60,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>
-                <button type="button" wire:click.prevent="store()" class="btn btn-primary close-modal">Save</button>
+                <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Cerrar</button>
+                <button type="button" wire:click.prevent="store()" class="btn btn-primary close-modal">Subir</button>
             </div>
         </div>
 

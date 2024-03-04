@@ -23,19 +23,19 @@
                     </div>
             <div class="form-group">
                 <label for="nombre_jug">NOMBRE</label>
-                <input wire:model="nombre_jug" type="text" class="form-control" id="nombre_jug" placeholder="Nombre Jugagor">@error('nombre_jug') <span class="error text-danger">{{ $message }}</span> @enderror
+                <input wire:model="nombre_jug" type="text" class="form-control" id="nombre_jug" placeholder="Nombre Jugador">@error('nombre_jug') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
                 <label for="cedula_jug">CEDULA</label>
-                <input wire:model="cedula_jug" type="text" class="form-control" id="cedula_jug" placeholder="Cedula Jugagor">@error('cedula_jug') <span class="error text-danger">{{ $message }}</span> @enderror
+                <input wire:model="cedula_jug" type="text" class="form-control" id="cedula_jug" placeholder="Cedula Jugador">@error('cedula_jug') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
                 <label for="telefono_jug">TELEFONO</label>
-                <input wire:model="telefono_jug" type="text" class="form-control" id="telefono_jug" placeholder="Telefono Jugagor">@error('telefono_jug') <span class="error text-danger">{{ $message }}</span> @enderror
+                <input wire:model="telefono_jug" type="text" class="form-control" id="telefono_jug" placeholder="Telefono Jugador">@error('telefono_jug') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
                 <label for="correo_jug">CORREO</label>
-                <input wire:model="correo_jug" type="text" class="form-control" id="correo_jug" placeholder="Correo Jugagor">@error('correo_jug') <span class="error text-danger">{{ $message }}</span> @enderror
+                <input wire:model="correo_jug" type="text" class="form-control" id="correo_jug" placeholder="Correo Jugador">@error('correo_jug') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
                 <label for="descripcion_jug">DESCRIPCION</label>
