@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Livewire\WithPagination;
-use App\Models\Jugador;
+use App\Models\Individuale;
 use App\Models\Juego;
 use App\Models\InscripcionInd;
 use Maatwebsite\Excel\Facades\Excel;
@@ -15,7 +15,7 @@ class JugadorIns extends Component
     use WithPagination;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $id_equ, $nombre_jug, $cedula_jug, $telefono_jug, $correo_jug, $descripcion_jug,$nombre_jue;
+    public $selected_id, $keyWord, $id_ind, $nombre_ind, $cedula_ind, $telefono_ind, $correo_ind, $descripcion_ind,$nombre_jue;
     public $updateMode = false;
 
     public function render()
@@ -24,9 +24,9 @@ class JugadorIns extends Component
         $nombre_jue = $this->nombre_jue ;
         $juegos = Juego::all();
         return view('livewire.jugadores-ins.view', [
-            'jugadorsIns' => InscripcionInd::with('jugadors')->with('juegos')
-            ->whereHas('jugadors', fn ($query) => 
-            $query->orderBy('nombre_jug','desc')
+            'jugadorsIns' => InscripcionInd::with('individuales')->with('juegos')
+            ->whereHas('individuales', fn ($query) => 
+            $query->orderBy('nombre_ind','desc')
         )
                         ->whereHas('juegos', function ($query) use($nombre_jue){
                             if($nombre_jue){
@@ -45,21 +45,21 @@ class JugadorIns extends Component
     {
         $keyWord = '%'.$this->keyWord .'%';
 
-        $jugadorIns = InscripcionInd::with('jugadors')->with('juegos')
-        ->whereHas('jugadors', fn ($query) => 
-        $query->where('nombre_jug', 'LIKE', $keyWord)
+        $jugadorIns = InscripcionInd::with('individuales')->with('juegos')
+        ->whereHas('individuales', fn ($query) => 
+        $query->where('nombre_ind', 'LIKE', $keyWord)
         )
-        ->whereHas('jugadors', fn ($query) => 
-        $query->where('cedula_jug', 'LIKE', $keyWord)
+        ->whereHas('individuales', fn ($query) => 
+        $query->where('cedula_ind', 'LIKE', $keyWord)
         )
-        ->whereHas('jugadors', fn ($query) => 
-        $query->where('telefono_jug', 'LIKE', $keyWord)
+        ->whereHas('individuales', fn ($query) => 
+        $query->where('telefono_ind', 'LIKE', $keyWord)
         )
-        ->whereHas('jugadors', fn ($query) => 
-        $query->where('correo_jug', 'LIKE', $keyWord)
+        ->whereHas('individuales', fn ($query) => 
+        $query->where('correo_ind', 'LIKE', $keyWord)
         )
-        ->whereHas('jugadors', fn ($query) => 
-        $query->where('descripcion_jug', 'LIKE', $keyWord)
+        ->whereHas('individuales', fn ($query) => 
+        $query->where('descripcion_ind', 'LIKE', $keyWord)
         )
         ->whereHas('juegos', fn ($query) => 
         $query->where('nombre_jue', 'LIKE', $keyWord)
@@ -74,21 +74,21 @@ class JugadorIns extends Component
     {
         $keyWord = '%'.$this->keyWord .'%';
 
-        $jugadorIns = InscripcionInd::with('jugadors')->with('juegos')
-        ->whereHas('jugadors', fn ($query) => 
-        $query->where('nombre_jug', 'LIKE', $keyWord)
+        $jugadorIns = InscripcionInd::with('individuales')->with('juegos')
+        ->whereHas('individuales', fn ($query) => 
+        $query->where('nombre_ind', 'LIKE', $keyWord)
         )
-        ->whereHas('jugadors', fn ($query) => 
-        $query->where('cedula_jug', 'LIKE', $keyWord)
+        ->whereHas('individuales', fn ($query) => 
+        $query->where('cedula_ind', 'LIKE', $keyWord)
         )
-        ->whereHas('jugadors', fn ($query) => 
-        $query->where('telefono_jug', 'LIKE', $keyWord)
+        ->whereHas('individuales', fn ($query) => 
+        $query->where('telefono_ind', 'LIKE', $keyWord)
         )
-        ->whereHas('jugadors', fn ($query) => 
-        $query->where('correo_jug', 'LIKE', $keyWord)
+        ->whereHas('individuales', fn ($query) => 
+        $query->where('correo_ind', 'LIKE', $keyWord)
         )
-        ->whereHas('jugadors', fn ($query) => 
-        $query->where('descripcion_jug', 'LIKE', $keyWord)
+        ->whereHas('individuales', fn ($query) => 
+        $query->where('descripcion_ind', 'LIKE', $keyWord)
         )
         ->whereHas('juegos', fn ($query) => 
         $query->where('nombre_jue', 'LIKE', $keyWord)

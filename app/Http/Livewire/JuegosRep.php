@@ -16,7 +16,7 @@ class JuegosRep extends Component
     use WithPagination;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $id_aul, $id_cat, $nombre_jue, $compania_jue, $precio_jue, $descripcion_jue;
+    public $selected_id, $keyWord, $id_aul, $id_cat, $nombre_jue, $imagen, $precio_jue, $descripcion_jue;
     public $updateMode = false;
 
     public function render()
@@ -32,7 +32,7 @@ class JuegosRep extends Component
                         $query->where('tipo_cat', 'LIKE', $keyWord)
                         )
 						->orWhere('nombre_jue', 'LIKE', $keyWord)
-						->orWhere('compania_jue', 'LIKE', $keyWord)
+						->orWhere('imagen', 'LIKE', $keyWord)
 						->orWhere('precio_jue', 'LIKE', $keyWord)
 						->orWhere('descripcion_jue', 'LIKE', $keyWord)   
 
@@ -52,7 +52,7 @@ class JuegosRep extends Component
         $query->where('tipo_cat', 'LIKE', $keyWord)
         )
         ->orWhere('nombre_jue', 'LIKE', $keyWord)
-        ->orWhere('compania_jue', 'LIKE', $keyWord)
+        ->orWhere('imagen', 'LIKE', $keyWord)
         ->orWhere('precio_jue', 'LIKE', $keyWord)
         ->orWhere('descripcion_jue', 'LIKE', $keyWord)   
 
@@ -73,7 +73,7 @@ class JuegosRep extends Component
         $query->where('tipo_cat', 'LIKE', $keyWord)
         )
         ->orWhere('nombre_jue', 'LIKE', $keyWord)
-        ->orWhere('compania_jue', 'LIKE', $keyWord)
+        ->orWhere('imagen', 'LIKE', $keyWord)
         ->orWhere('precio_jue', 'LIKE', $keyWord)
         ->orWhere('descripcion_jue', 'LIKE', $keyWord)   
 

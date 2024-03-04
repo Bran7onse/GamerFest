@@ -45,7 +45,7 @@
 								<th>Aula</th>
 								<th>Categoria</th>
 								<th>Nombre </th>
-								<th>Compania </th>
+								<th>Juegos </th>
 								<th>Precio </th>
 								<th>Descripcion </th>
 							</tr>
@@ -57,7 +57,7 @@
 								<td>{{ $row->aulas->codigo_aul }}</td>
 								<td>{{ $row->categorias->tipo_cat }}</td>
 								<td>{{ $row->nombre_jue }}</td>
-								<td>{{ $row->compania_jue }}</td>
+								<td>{{ $row->imagen }}</td>
 								<td>{{ $row->precio_jue }}</td>
 								<td>{{ $row->descripcion_jue }}</td>
 								

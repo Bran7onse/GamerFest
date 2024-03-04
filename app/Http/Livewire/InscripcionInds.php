@@ -104,7 +104,7 @@ class InscripcionInds extends Component
             $record = InscripcionInd::find($this->selected_id);
 
             $record->update([
-                'id_ind' => $this->id_jug,
+                'id_ind' => $this->id_ind,
                 'id_jue' => $this->id_jue,
                 'precio_ins' => $this->precio_ins,
             ]);
