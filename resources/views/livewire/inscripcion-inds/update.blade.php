@@ -34,7 +34,12 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="form-group">
+                    
+            <div class="form-group">
+                <label for="precio_ins"></label>
+                <input wire:model="precio_ins" type="text" class="form-control" id="precio_ins" placeholder="Precio Ins">@error('precio_ins') <span class="error text-danger">{{ $message }}</span> @enderror
+            </div>
+            <div class="form-group">
                         <label for="new_pago_ins">Nueva Imagen de Pago</label>
                         <input wire:model="new_pago_ins" type="file" class="form-control" id="new_pago_ins" accept=".png, .jpg, .jpeg">
                         @error('new_pago_ins') <span class="error text-danger">{{ $message }}</span> @enderror
@@ -48,15 +53,7 @@
                             @endif
                         </div>
                     </div>
-                    
-            <div class="form-group">
-                <label for="precio_ins"></label>
-                <input wire:model="precio_ins" type="text" class="form-control" id="precio_ins" placeholder="Precio Ins">@error('precio_ins') <span class="error text-danger">{{ $message }}</span> @enderror
-            </div>
-            <div class="form-group">
-                <label for="pago_ins"></label>
-                <input wire:model="pago_ins" type="text" class="form-control" id="pago_ins" placeholder="Pago Ins">@error('pago_ins') <span class="error text-danger">{{ $message }}</span> @enderror
-            </div>
+            
 
                 </form>
             </div>

@@ -50,13 +50,14 @@
                 <label for="observacion_par_equ"></label>
                 <input wire:model="observacion_par_equ" type="text" class="form-control" id="observacion_par_equ" placeholder="Observacion Par Equ">@error('observacion_par_equ') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
-
-                </form>
-            </div>
             <div class="modal-footer">
                 <button type="button" wire:click.prevent="cancel()" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="button" wire:click.prevent="update()" class="btn btn-primary" data-dismiss="modal">Save</button>
             </div>
+
+                </form>
+            </div>
+            
        </div>
     </div>
 </div>

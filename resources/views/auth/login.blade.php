@@ -17,7 +17,7 @@
         <x-jet-authentication-card>
             <x-slot name="logo">
                 <img src="http://127.0.0.1:8000/images/gamer-zone.png" alt="Nuevo Logo" class=" w-20 h-20 mb-4 mx-auto " />
-                <span class="ml-4 text-lg font-semi"><b>GAMER</b>fest</span>
+                <span class="ml-4 text-lg font-semi"><b>GAMER</b>fest     </span>
             </x-slot>
 
             <x-jet-validation-errors class="mb-4" />
