@@ -3,7 +3,9 @@
         <x-jet-authentication-card>
             <x-slot name="logo">
             <img src="http://127.0.0.1:8000/images/gamer-zone.png" alt="Nuevo Logo" class="block mx-auto w-20 h-20" />
-            <span class="ml-2 text-lg font-semibold">GAMER fest ♣♠♦</span>
+            <span class="ml-2 text-lg font-semibold">
+                <b>GAMER</b>fest
+            </span>
             </x-slot>
 
             <x-jet-validation-errors class="mb-4" />

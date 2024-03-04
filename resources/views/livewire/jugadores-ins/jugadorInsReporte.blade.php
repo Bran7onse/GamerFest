@@ -11,6 +11,14 @@
 </head>
 
 <body>
+<div class="text-center">
+            <img src="https://srvcas.espe.edu.ec/authenticationendpoint/images/Espe-Angular-Logo.png" alt="" width="650" height="150">
+            <br>
+            <br>
+            <img src="https://cdn.pixabay.com/photo/2018/09/05/06/19/gamer-zone-3655575_960_720.png" alt="" width="110" height="110">       
+        </div>
+        <br>
+        <br>
     <div class="container-md">
         <div class="row justify-content-center">
             <div class="col">
@@ -32,11 +40,11 @@
                         @foreach($jugadorIns as $row)
                         <tr>
                             <td class="table-primary border border-dark">{{ $loop->iteration }}</td>
-                            <td class="table-info border border-dark">{{ $row->jugadors->nombre_jug }}</td>
-                            <td class="table-primary border border-dark">{{ $row->jugadors->cedula_jug }}</td>
-                            <td class="table-info border border-dark">{{ $row->jugadors->telefono_jug }}</td>
-                            <td class="table-primary border border-dark">{{ $row->jugadors->correo_jug }}</td>
-                            <td class="table-info border border-dark">{{ $row->jugadors->descripcion_jug }}</td>
+                            <td class="table-info border border-dark">{{ $row->individuales->nombre_ind }}</td>
+                            <td class="table-primary border border-dark">{{ $row->individuales->cedula_ind }}</td>
+                            <td class="table-info border border-dark">{{ $row->individuales->telefono_ind }}</td>
+                            <td class="table-primary border border-dark">{{ $row->individuales->correo_ind }}</td>
+                            <td class="table-info border border-dark">{{ $row->individuales->descripcion_ind }}</td>
                             <td class="table-primary border border-dark">{{ $row->juegos->nombre_jue }}</td>
                             <td class="table-info border border-dark">{{ $row->precio_ins }}</td>
                             @endforeach

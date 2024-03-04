@@ -64,7 +64,7 @@ return [
     */
 
     'logo' => '<b>GAMER</b>Fest',
-    'logo_img' => 'images/gamer-zone.png',
+    'logo_img' => url('https://cdn.pixabay.com/photo/2018/09/05/06/19/gamer-zone-3655575_960_720.png'),
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -85,7 +85,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'http://127.0.0.1:8000/images/gamer-zone.png',
+            'path' => url('https://cdn.pixabay.com/photo/2018/09/05/06/19/gamer-zone-3655575_960_720.png'),
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -108,11 +108,11 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'images/game-OVER.png',
+            'path' => url('https://cdn.pixabay.com/photo/2018/09/05/06/19/gamer-zone-3655575_960_720.png'),
             'alt' => 'AdminLTE Preloader Image',
-            'effect' => 'animation__shake',
-            'width' => 500,
-            'height' => 500,
+            'effect' => 'animation__wobble',
+            'width' => 200,
+            'height' => 200,
         ],
     ],
 

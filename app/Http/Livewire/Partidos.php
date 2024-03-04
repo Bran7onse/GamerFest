@@ -14,7 +14,7 @@ class Partidos extends Component
     use WithPagination;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $id_equ, $nombre_jug, $cedula_jug, $telefono_jug, $correo_jug, $descripcion_jug;
+    public $selected_id, $keyWord, $id_equ, $nombre_ind, $cedula_ind, $telefono_ind, $correo_ind, $descripcion_ind;
     public $updateMode = false;
 
     public function render()
@@ -24,13 +24,13 @@ class Partidos extends Component
         return view('livewire.partidos.view', [
             'partidosInd' => PartidaInd::with('jugadors1')->with('jugadors2')->with('jugadors3')
             ->whereHas('jugadors1', fn ($query) => 
-            $query->where('nombre_jug', 'LIKE', $keyWord)
+            $query->where('nombre_ind', 'LIKE', $keyWord)
             )
             ->whereHas('jugadors2', fn ($query) => 
-            $query->where('nombre_jug', 'LIKE', $keyWord)
+            $query->where('nombre_ind', 'LIKE', $keyWord)
             )
             ->whereHas('jugadors3', fn ($query) => 
-            $query->where('nombre_jug', 'LIKE', $keyWord)
+            $query->where('nombre_ind', 'LIKE', $keyWord)
             )
             ->orWhere('fecha_par_ind', 'LIKE', $keyWord)
             ->orWhere('observacion_par_ind', 'LIKE', $keyWord)
@@ -57,13 +57,13 @@ class Partidos extends Component
         $keyWord = '%'.$this->keyWord .'%';
         $partidosInd = PartidaInd::with('jugadors1')->with('jugadors2')->with('jugadors3')
         ->whereHas('jugadors1', fn ($query) => 
-        $query->where('nombre_jug', 'LIKE', $keyWord)
+        $query->where('nombre_ind', 'LIKE', $keyWord)
         )
         ->whereHas('jugadors2', fn ($query) => 
-        $query->where('nombre_jug', 'LIKE', $keyWord)
+        $query->where('nombre_ind', 'LIKE', $keyWord)
         )
         ->whereHas('jugadors3', fn ($query) => 
-        $query->where('nombre_jug', 'LIKE', $keyWord)
+        $query->where('nombre_ind', 'LIKE', $keyWord)
         )
         ->orWhere('fecha_par_ind', 'LIKE', $keyWord)
         ->orWhere('observacion_par_ind', 'LIKE', $keyWord)
@@ -92,13 +92,13 @@ class Partidos extends Component
         $keyWord = '%'.$this->keyWord .'%';
         $partidosInd = PartidaInd::with('jugadors1')->with('jugadors2')->with('jugadors3')
         ->whereHas('jugadors1', fn ($query) => 
-        $query->where('nombre_jug', 'LIKE', $keyWord)
+        $query->where('nombre_ind', 'LIKE', $keyWord)
         )
         ->whereHas('jugadors2', fn ($query) => 
-        $query->where('nombre_jug', 'LIKE', $keyWord)
+        $query->where('nombre_ind', 'LIKE', $keyWord)
         )
         ->whereHas('jugadors3', fn ($query) => 
-        $query->where('nombre_jug', 'LIKE', $keyWord)
+        $query->where('nombre_ind', 'LIKE', $keyWord)
         )
         ->orWhere('fecha_par_ind', 'LIKE', $keyWord)
         ->orWhere('observacion_par_ind', 'LIKE', $keyWord)
