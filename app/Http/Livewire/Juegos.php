@@ -4,17 +4,29 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use Livewire\WithPagination;
+use Livewire\WithFileUploads;
 use App\Models\Juego;
 use App\Models\Aula;
 use App\Models\Categoria;
 
 class Juegos extends Component
 {
-    use WithPagination;
+    use WithPagination,  WithFileUploads;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $id_aul, $id_cat, $nombre_jue, $compania_jue, $precio_jue, $descripcion_jue;
+    public $selected_id, $keyWord, $id_aul, $id_cat, $nombre_jue, $imagen, $precio_jue, $descripcion_jue;
     public $updateMode = false;
+
+
+    protected $rules = [
+		'id_aula' => 'required',
+		'id_cat' => 'required',
+		'nombre_juego' => 'required',
+		'imagen' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'precio_jue' => 'required',
+        'descripcion_jue' => 'required',
+		
+	];
 
     public function render()
     {
@@ -30,7 +42,7 @@ class Juegos extends Component
                         $query->where('tipo_cat', 'LIKE', $keyWord)
                         )
 						->orWhere('nombre_jue', 'LIKE', $keyWord)
-						->orWhere('compania_jue', 'LIKE', $keyWord)
+						->orWhere('imagen', 'LIKE', $keyWord)
 						->orWhere('precio_jue', 'LIKE', $keyWord)
 						->orWhere('descripcion_jue', 'LIKE', $keyWord)   
 
@@ -50,7 +62,7 @@ class Juegos extends Component
 		$this->id_aul = null;
 		$this->id_cat = null;
 		$this->nombre_jue = null;
-		$this->compania_jue = null;
+		$this->imagen = null;
 		$this->precio_jue = null;
 		$this->descripcion_jue = null;
     }
@@ -66,7 +78,7 @@ class Juegos extends Component
 			'id_aul' => $this-> id_aul,
 			'id_cat' => $this-> id_cat,
 			'nombre_jue' => $this-> nombre_jue,
-			'compania_jue' => $this-> compania_jue,
+			'imagen' => $this-> imagen,
 			'precio_jue' => $this-> precio_jue,
 			'descripcion_jue' => $this-> descripcion_jue
         ]);
@@ -84,7 +96,7 @@ class Juegos extends Component
 		$this->id_aul = $record-> id_aul;
 		$this->id_cat = $record-> id_cat;
 		$this->nombre_jue = $record-> nombre_jue;
-		$this->compania_jue = $record-> compania_jue;
+		$this->imagen = $record-> imagen;
 		$this->precio_jue = $record-> precio_jue;
 		$this->descripcion_jue = $record-> descripcion_jue;
 		
@@ -104,7 +116,7 @@ class Juegos extends Component
 			'id_aul' => $this-> id_aul,
 			'id_cat' => $this-> id_cat,
 			'nombre_jue' => $this-> nombre_jue,
-			'compania_jue' => $this-> compania_jue,
+			'imagen' => $this-> imagen,
 			'precio_jue' => $this-> precio_jue,
 			'descripcion_jue' => $this-> descripcion_jue
             ]);

@@ -12,9 +12,9 @@
             <div class="modal-body">
                 <form>
                     <div class="form-group">
-                        <label for="id_ind">JUGADOR</label>
+                        <label for="id_ind"></label>
                         <select wire:model="id_ind" type="text" class="form-control" id="id_ind"
-                            placeholder="Jugador">@error('id_ind') <span class="error text-daner">{{ $message }}</span>
+                            placeholder="Jugador">@error('id_ind') <span class="error text-danger">{{ $message }}</span>
                             @enderror
                             <option>Seleccione</option>
                             @foreach($individuales as $individual)
@@ -24,9 +24,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="id_jue">JUEGO</label>
+                        <label for="id_jue"></label>
                         <select wire:model="id_jue" type="text" class="form-control" id="id_jue"
-                            placeholder="Juego">@error('id_ind') <span class="error text-danger">{{ $message }}</span>
+                            placeholder="Juego">@error('id_jue') <span class="error text-danger">{{ $message }}</span>
                             @enderror
                             <option>Seleccione</option>
                             @foreach($juegos as $juego)
@@ -35,24 +35,30 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="precio_ins">PRECIO INSCRIPCION</label>
+                        <label for="precio_ins"></label>
                         <input wire:model="precio_ins" type="text" class="form-control" id="precio_ins"
-                            placeholder="Precio Inscripcion">@error('precio_ins') <span
+                            placeholder="Precio Ins">@error('precio_ins') <span
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-group">
-                        <label for="pago_ins">PAGO INSCRIPCION</label>
-                        <input wire:model="pago_ins" type="file" class="form-control" id="pago_ins"
-                            placeholder="Pago Inscripcion">@error('pago_ins') <span
-                            class="error text-danger">{{ $message }}</span> @enderror
-                    </div>
+                        <label for="pago_ins">Pago Ins</label>
+                        <input wire:model="pago_ins" type="file" class="form-control" id="pago_ins" accept=".png, .jpg, .jpeg" onchange="previewImage(this)">
+                        @error('pago_ins') <span class="error text-danger">{{ $message }}</span> @enderror
 
+                        <!-- Vista previa de la imagen -->
+                        <div>
+                            @if($pago_ins instanceof \Livewire\TemporaryUploadedFile)
+                                <img src="{{ $pago_ins->temporaryUrl() }}" alt="Preview" style="max-width: 100%; height: auto;">
+                            @endif
+                        </div>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Cerrar</button>
-                <button type="button" wire:click.prevent="store()" class="btn btn-primary close-modal">Subir</button>
+                <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>
+                <button type="button" wire:click.prevent="store()" class="btn btn-primary close-modal">Save</button>
             </div>
         </div>
+
     </div>
 </div>

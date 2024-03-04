@@ -12,7 +12,7 @@
             <div class="modal-body">
                 <form>
                 <div class="form-group">
-                        <label for="id_equ1">ID EQUIPO 1</label>
+                        <label for="id_equ1"></label>
                         <select wire:model="id_equ1" type="text" class="form-control" id="id_equ1"
                             placeholder="Equipo 1">@error('id_equ1') <span class="error text-danger">{{ $message }}</span>
                             @enderror
@@ -23,7 +23,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="id_equ2">ID EQUIPO 2</label>
+                        <label for="id_equ2"></label>
                         <select wire:model="id_equ2" type="text" class="form-control" id="id_equ2"
                             placeholder="Equipo 2">@error('id_equ2') <span class="error text-danger">{{ $message }}</span>
                             @enderror
@@ -34,7 +34,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="ganador_par_equ">GANADOR DE LA PARTIDA</label>
+                        <label for="ganador_par_equ"></label>
                         <select wire:model="ganador_par_equ" type="text" class="form-control" id="ganador_par_equ"
                             placeholder="Ganador">@error('ganador_par_equ') <span class="error text-danger">{{ $message }}</span>
                             @enderror
@@ -45,13 +45,13 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="fecha_par_equ">FECHA DE LA PARTIDA</label>
+                        <label for="fecha_par_equ"></label>
                         <input wire:model="fecha_par_equ" type="datetime-local" class="form-control" id="fecha_par_equ"
                             placeholder="Fecha de la partida">@error('fecha_par_equ') <span
                             class="error text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="form-group">
-                        <label for="observacion_par_equ">OBSERVACION</label>
+                        <label for="observacion_par_equ"></label>
                         <input wire:model="observacion_par_equ" type="text" class="form-control"
                             id="observacion_par_equ" placeholder="Observacion de la partida">@error('observacion_par_equ')
                         <span class="error text-danger">{{ $message }}</span> @enderror
@@ -60,8 +60,8 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Cerrar</button>
-                <button type="button" wire:click.prevent="store()" class="btn btn-primary close-modal">Subir</button>
+                <button type="button" class="btn btn-secondary close-btn" data-dismiss="modal">Close</button>
+                <button type="button" wire:click.prevent="store()" class="btn btn-primary close-modal">Save</button>
             </div>
         </div>
     </div>

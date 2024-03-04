@@ -7,14 +7,14 @@
 					<div style="display: flex; justify-content: space-between; align-items: center;">
 						<div class="float-left .col-auto .me-auto">
 							<h4>
-							PARTIDAS INDIVIDUALES </h4>
+							Partida Individual </h4>
 						</div>
 						
 						@if (session()->has('message'))
 						<div wire:poll.4s class="btn btn-sm btn-success" style="margin-top:0px; margin-bottom:0px;"> {{ session('message') }} </div>
 						@endif
 						<div>
-							<input wire:model='keyWord' type="text" class="form-control .col-auto .me-auto" name="search" id="search" placeholder="Partida Individuales">
+							<input wire:model='keyWord' type="text" class="form-control .col-auto .me-auto" name="search" id="search" placeholder="Search Partida Inds">
 						</div>
 						<div class="btn btn-sm btn-success .col-auto .me-auto" data-toggle="modal" data-target="#createDataModal">
 						<i class="fa fa-plus"></i> Crear
@@ -30,8 +30,8 @@
 						<thead class="thead">
 							<tr> 
 								<td>#</td> 
-								<th>Jugador 1</th>
-								<th>Jugador 2</th>
+								<th>Jug1</th>
+								<th>Jug2</th>
 								<th>Ganador </th>
 								<th>Fecha </th>
 								<th>Observacion </th>
@@ -42,9 +42,9 @@
 							@foreach($partidaInds as $row)
 							<tr>
 								<td>{{ $loop->iteration }}</td> 
-								<td>{{ $row->jugadors1->nombre_jug }}</td>
-								<td>{{ $row->jugadors2->nombre_jug }}</td>
-								<td>{{ $row->jugadors3->nombre_jug }}</td>
+								<td>{{ $row->jugadors1->nombre_ind }}</td>
+								<td>{{ $row->jugadors2->nombre_ind }}</td>
+								<td>{{ $row->jugadors3->nombre_ind }}</td>
 								<td>{{ $row->fecha_par_ind }}</td>
 								<td>{{ $row->observacion_par_ind }}</td>
 								<td width="90">

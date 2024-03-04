@@ -11,10 +11,10 @@
                                 Juegos </h4>
                         </div>
                         <div wire:model="nombre_equ" class="dropdown show .col-auto .me-auto">
-                            {{-- <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Acciones
-                            </a> --}}
+                            </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item"
                                     href="{{route('viewJuegosRep-pdf')}}">
@@ -45,7 +45,7 @@
 								<th>Aula</th>
 								<th>Categoria</th>
 								<th>Nombre </th>
-								<th>Compania </th>
+								<th>Juegos </th>
 								<th>Precio </th>
 								<th>Descripcion </th>
 							</tr>
@@ -57,7 +57,7 @@
 								<td>{{ $row->aulas->codigo_aul }}</td>
 								<td>{{ $row->categorias->tipo_cat }}</td>
 								<td>{{ $row->nombre_jue }}</td>
-								<td>{{ $row->compania_jue }}</td>
+								<td>{{ $row->imagen }}</td>
 								<td>{{ $row->precio_jue }}</td>
 								<td>{{ $row->descripcion_jue }}</td>
 								

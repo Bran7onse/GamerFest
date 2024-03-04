@@ -66,11 +66,11 @@
                                 @foreach($jugadorsIns as $row)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $row->jugadors->nombre_jug }}</td>
-                                    <td>{{ $row->jugadors->cedula_jug }}</td>
-                                    <td>{{ $row->jugadors->telefono_jug }}</td>
-                                    <td>{{ $row->jugadors->correo_jug }}</td>
-                                    <td>{{ $row->jugadors->descripcion_jug }}</td>
+                                    <td>{{ $row->individuales->nombre_ind }}</td>
+                                    <td>{{ $row->individuales->cedula_ind }}</td>
+                                    <td>{{ $row->individuales->telefono_ind }}</td>
+                                    <td>{{ $row->individuales->correo_ind }}</td>
+                                    <td>{{ $row->individuales->descripcion_ind }}</td>
                                     <td>{{ $row->juegos->nombre_jue }}</td>
                                     <td>{{ $row->precio_ins }}</td>
                                     @endforeach

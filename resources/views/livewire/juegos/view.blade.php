@@ -6,15 +6,15 @@
 				<div class="card-header">
 					<div style="display: flex; justify-content: space-between; align-items: center;">
 						<div class="float-left">
-							<h4><i class=""></i>
-							JUEGO </h4>
+							<h4><i class="fab fa-laravel text-info"></i>
+							Juego </h4>
 						</div>
 						
 						@if (session()->has('message'))
 						<div wire:poll.4s class="btn btn-sm btn-success" style="margin-top:0px; margin-bottom:0px;"> {{ session('message') }} </div>
 						@endif
 						<div>
-							<input wire:model='keyWord' type="text" class="form-control" name="search" id="search" placeholder="Juegos">
+							<input wire:model='keyWord' type="text" class="form-control" name="search" id="search" placeholder="Search Juegos">
 						</div>
 						<div class="btn btn-sm btn-success" data-toggle="modal" data-target="#createDataModal">
 						<i class="fa fa-plus"></i>  Crear Juego
@@ -33,7 +33,7 @@
 								<th>Aula</th>
 								<th>Categoria</th>
 								<th>Nombre </th>
-								<th>Compania </th>
+								<th>Imagen </th>
 								<th>Precio </th>
 								<th>Descripcion </th>
 								<td>Acciones</td>
@@ -46,7 +46,19 @@
 								<td>{{ $row->aulas->codigo_aul }}</td>
 								<td>{{ $row->categorias->tipo_cat }}</td>
 								<td>{{ $row->nombre_jue }}</td>
-								<td>{{ $row->compania_jue }}</td>
+
+								<td class="align-middle text-center">
+                                        @if ($row->imagen && file_exists('storage/' .
+                                        str_replace('public/', '', $row->imagen)))
+                                        <img class="img-thumbnail img-fluid"
+                                            src="{{ asset('storage/' . str_replace('public/', '', $row->imagen)) }}"
+                                            alt="Foto principal" width="100">
+                                        @else
+                                        <span class="text-muted">Sin foto</span>
+                                        @endif
+                                    </td>
+
+
 								<td>{{ $row->precio_jue }}</td>
 								<td>{{ $row->descripcion_jue }}</td>
 								<td width="90">

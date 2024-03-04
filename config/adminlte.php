@@ -64,7 +64,7 @@ return [
     */
 
     'logo' => '<b>GAMER</b>Fest',
-    'logo_img' => 'images/gamer-zone.png',
+    'logo_img' => 'http://127.0.0.1:8000/images/gamer-zone.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -108,11 +108,17 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'images/game-OVER.png',
+            'path' => 'images/gamer-zone.png',
             'alt' => 'AdminLTE Preloader Image',
+<<<<<<< HEAD
             'effect' => 'animation__shake',
             'width' => 500,
             'height' => 500,
+=======
+            'effect' => 'animation__wobble',
+            'width' => 200,
+            'height' => 200,
+>>>>>>> ebd06940e6d24422ac5e9fa79abc7d8eff2637c0
         ],
     ],
 
@@ -424,38 +430,38 @@ return [
                 
             ],
         ],
-        // [
-        //     'text'    => 'Reportes',
-        //     'icon'    => 'fas fa-fw fa-chess',
-        //     'submenu' => [
-        //         [
-        //             'text' => 'Juegos',
-        //             'url'  => 'juegos-rep',
-        //             'icon' => 'fas fa-chess',
-        //         ],
-        //         [
-        //             'text' => 'Jugadores Inscritos',
-        //             'url'  => 'jugadores-ins',//Alex
-        //             'icon' => '	fas fa-chess-knight',
-        //         ],
-        //         [
-        //             'text' => 'Equipos Inscritos',
-        //             'url'  => 'equipos-ins',//Kenneth
-        //             'icon' => '	fas fa-chess-knight',
-        //         ],
-        //         [
-        //             'text' => 'Recaudacion',
-        //             'url'  => 'recaudacion',
-        //             'icon' => '	fas fa-chess-knight',
-        //         ],
-        //         [
-        //             'text' => 'Partidos',
-        //             'url'  => 'partidos',
-        //             'icon' => '	fas fa-chess-knight',
-        //         ],
+         [
+             'text'    => 'Reportes',
+             'icon'    => 'fas fa-fw fa-chess',
+             'submenu' => [
+                 [
+                     'text' => 'Juegos',
+                     'url'  => 'juegos-rep',
+                     'icon' => 'fas fa-chess',
+                 ],
+                 [
+                     'text' => 'Jugadores Inscritos',
+                     'url'  => 'jugadores-ins',//Alex
+                     'icon' => '	fas fa-chess-knight',
+                 ],
+                 [
+                     'text' => 'Equipos Inscritos',
+                     'url'  => 'equipos-ins',//Kenneth
+                     'icon' => '	fas fa-chess-knight',
+                 ],
+                 [
+                     'text' => 'Recaudacion',
+                     'url'  => 'recaudacion',
+                     'icon' => '	fas fa-chess-knight',
+                 ],
+                 [
+                     'text' => 'Partidos',
+                     'url'  => 'partidos',
+                 'icon' => '	fas fa-chess-knight',
+                 ],
                 
-        //     ],
-        // ],
+         ],
+         ],
         
     ],
 
