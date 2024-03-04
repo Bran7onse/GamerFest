@@ -22,7 +22,7 @@ class InscripcionEqus extends Component
     public function render()
     {
         $keyWord = '%'.$this->keyWord .'%';
-        $juegos = Juego::all();
+        $juegos_equ =  Juego::where('id_cat', '1')->get();
         $equipos = Equipo::all();
         return view('livewire.inscripcion-equs.view', [
             'inscripcionEqus' => InscripcionEqu::with('juegos', 'equipos')
@@ -33,7 +33,7 @@ class InscripcionEqus extends Component
                 ->orWhere('precio_ins_equ', 'LIKE', $keyWord)
                 ->orWhere('pago_ins_equ', 'LIKE', $keyWord)
                 ->paginate(10),
-        ],compact('juegos','equipos'));
+        ],compact('juegos_equ','equipos'));
     }
 
     private function resetInput()

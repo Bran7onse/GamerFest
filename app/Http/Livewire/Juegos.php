@@ -14,7 +14,7 @@ class Juegos extends Component
     use WithPagination,  WithFileUploads;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $id_aul, $id_cat, $nombre_jue, $imagen, $precio_jue, $descripcion_jue;
+    public $selected_id, $keyWord, $id_aul, $id_cat, $nombre_jue, $imagen, $precio_jue, $descripcion_jue, $num_jug;
     public $updateMode = false;
 
 
@@ -44,6 +44,7 @@ class Juegos extends Component
 						->orWhere('nombre_jue', 'LIKE', $keyWord)
 						->orWhere('imagen', 'LIKE', $keyWord)
 						->orWhere('precio_jue', 'LIKE', $keyWord)
+                        ->orWhere('num_jug', 'LIKE', $keyWord)
 						->orWhere('descripcion_jue', 'LIKE', $keyWord)   
 
                         ->get()      
@@ -64,6 +65,7 @@ class Juegos extends Component
 		$this->nombre_jue = null;
 		$this->imagen = null;
 		$this->precio_jue = null;
+        $this->num_jug = null;
 		$this->descripcion_jue = null;
     }
 
@@ -80,6 +82,7 @@ class Juegos extends Component
 			'nombre_jue' => $this-> nombre_jue,
 			'imagen' => $this-> imagen,
 			'precio_jue' => $this-> precio_jue,
+            'num_jug' => $this-> num_jug,
 			'descripcion_jue' => $this-> descripcion_jue
         ]);
         
@@ -98,6 +101,7 @@ class Juegos extends Component
 		$this->nombre_jue = $record-> nombre_jue;
 		$this->imagen = $record-> imagen;
 		$this->precio_jue = $record-> precio_jue;
+        $this->num_jug = $record-> num_jug;
 		$this->descripcion_jue = $record-> descripcion_jue;
 		
         $this->updateMode = true;
@@ -118,6 +122,7 @@ class Juegos extends Component
 			'nombre_jue' => $this-> nombre_jue,
 			'imagen' => $this-> imagen,
 			'precio_jue' => $this-> precio_jue,
+            'num_jug' => $this-> num_jug,
 			'descripcion_jue' => $this-> descripcion_jue
             ]);
 
